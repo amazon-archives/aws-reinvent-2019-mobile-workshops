@@ -1,0 +1,52 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateLandmark {
+  onCreateLandmark {
+    id
+    name
+    category
+    city
+    state
+    isFeatured
+    isFavorite
+    park
+    coordinates {
+      longitude
+      latitude
+    }
+    imageName
+  }
+}
+subscription OnUpdateLandmark {
+  onUpdateLandmark {
+    id
+    name
+    category
+    city
+    state
+    isFeatured
+    isFavorite
+    park
+    coordinates {
+      longitude
+      latitude
+    }
+    imageName
+  }
+}
+subscription OnDeleteLandmark {
+  onDeleteLandmark {
+    id
+    name
+    category
+    city
+    state
+    isFeatured
+    isFavorite
+    park
+    coordinates {
+      longitude
+      latitude
+    }
+    imageName
+  }
+}

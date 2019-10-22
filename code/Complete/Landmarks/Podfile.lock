@@ -1,0 +1,65 @@
+PODS:
+  - AWSAppSync (2.15.0):
+    - AWSCore (~> 2.12.0)
+    - ReachabilitySwift (~> 4.3.1)
+    - SQLite.swift (~> 0.12.2)
+  - AWSAuthCore (2.12.0):
+    - AWSCore (= 2.12.0)
+  - AWSAuthUI (2.12.0):
+    - AWSAuthCore (= 2.12.0)
+    - AWSCore (= 2.12.0)
+  - AWSCognitoIdentityProvider (2.12.0):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.12.0)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.12.0)
+  - AWSMobileClient (2.12.0):
+    - AWSAuthCore (= 2.12.0)
+    - AWSCognitoIdentityProvider (= 2.12.0)
+  - AWSS3 (2.12.0):
+    - AWSCore (= 2.12.0)
+  - AWSUserPoolsSignIn (2.12.0):
+    - AWSAuthCore (= 2.12.0)
+    - AWSCognitoIdentityProvider (= 2.12.0)
+  - ReachabilitySwift (4.3.1)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+
+DEPENDENCIES:
+  - AWSAppSync (~> 2.15.0)
+  - AWSAuthUI (~> 2.12.0)
+  - AWSMobileClient (~> 2.12.0)
+  - AWSS3 (~> 2.12.0)
+  - AWSUserPoolsSignIn (~> 2.12.0)
+
+SPEC REPOS:
+  trunk:
+    - AWSAppSync
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSMobileClient
+    - AWSS3
+    - AWSUserPoolsSignIn
+    - ReachabilitySwift
+    - SQLite.swift
+
+SPEC CHECKSUMS:
+  AWSAppSync: 38d681c93c2909e7fb8d4e1d1f0e816684f9f64f
+  AWSAuthCore: 547617e1ed76a699b56018105133e23f0fddc8e2
+  AWSAuthUI: 198b81978538bca9fa17621f567154763afc9b13
+  AWSCognitoIdentityProvider: a4a37ca74ecce30ec534647e6aae89c7aff3348c
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: 6573232b6b4339ce0ffcf8abd4215a412488f71f
+  AWSMobileClient: 88d0584901dbe6e7917267c657ff980c9bfd2363
+  AWSS3: 4cd97615f756098bfa449e99bf0acc7bc6a31510
+  AWSUserPoolsSignIn: 070293a3e73401bbc35fc639244b555b9d9f1aa8
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+
+PODFILE CHECKSUM: 83c8cf47224126de9c73cc72c47423c08604f880
+
+COCOAPODS: 1.8.4

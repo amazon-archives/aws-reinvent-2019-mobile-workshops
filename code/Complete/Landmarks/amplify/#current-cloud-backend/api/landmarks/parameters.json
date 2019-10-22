@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "landmarks",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authlandmarks8edb73c3",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
