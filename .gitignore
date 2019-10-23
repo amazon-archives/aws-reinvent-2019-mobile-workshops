@@ -1,6 +1,9 @@
 # Mac OS
 .DS_Store
 
+# Hugo public web site (generated at build time)
+instructions/public
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
