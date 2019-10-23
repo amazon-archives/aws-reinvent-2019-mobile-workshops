@@ -1,0 +1,14 @@
+#Amplify Console build file
+version: 0.1
+frontend:
+  phases:
+    build:
+      commands:
+        - cd instructions
+        - hugo
+  artifacts:
+    baseDirectory: instructions/public
+    files:
+      - '**/*'
+  cache:
+    paths: []

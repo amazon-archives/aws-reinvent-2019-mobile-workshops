@@ -1,13 +1,19 @@
+This is the source code for [https://amplify-ios-workshop.go-aws.com/](https://amplify-ios-workshop.go-aws.com/)
+
 ## Status
 
-Oct 22.
+**Oct 23**
+Workshop web site is scaffolded and deployment pipeline ready.
+
+**Oct 22**
 Final application is working and demo-able.  Some tweaks and improvements can be done, but I have a basis to start to write the core of the workshop now.
 
 ### TODO
 
 - [X] scaffold the workshop web site
 - [X] host the project on github + amplify console for hosting and CI/CD.  Use the shared evangelist account.
-- [ ] start to write the workshop instructions
+- [ ] write the workshop instructions
+- [ ] refactor code to download images asynchronously and use a cache
 - [ ] eliminate the TODO in the code
 - [ ] test and dry run
 
