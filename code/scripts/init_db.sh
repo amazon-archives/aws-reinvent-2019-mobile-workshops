@@ -69,7 +69,7 @@ GRAPHQL_PAYLOAD='{
      }
    }'
 echo -n $GRAPHQL_PAYLOAD > graphql.json
-LANDMARKS_LIST=$(cat Landmarks/Resources/landmarkData.json)
+LANDMARKS_LIST=$(cat Complete/Landmarks/Landmarks/Resources/landmarkData.json)
 LANDMARKS_LIST_LENGTH=$(echo "${LANDMARKS_LIST}" | jq -rc 'length')
 
 API_ENDPOINT=$(cat awsconfiguration.json  | jq -r '.AppSync.Default.ApiUrl')
