@@ -9,7 +9,7 @@ weight: 1
 ### Welcome!
 
 {{% notice warning %}}
-This workshop is WORK IN PROGRESS - DO NOT ATTEMPT TO FOLLOW THE INSTRUCTIONS, it will fail at some point.  Please send your comments and feedback on Twitter <a href="https://twitter.com/sebsto" target="_blank">@sebsto</a>
+This workshop is a WORK IN PROGRESS - DO NOT ATTEMPT TO FOLLOW THE INSTRUCTIONS, it will fail at some point.  Please send your comments and feedback on Twitter <a href="https://twitter.com/sebsto" target="_blank">@sebsto</a>
 {{% /notice %}}
 
 <p style='text-align: left;'>

@@ -4,54 +4,84 @@ chapter = false
 weight = 20
 +++
 
-Before we begin coding, there are a few things we need to install, update, and configure in the Cloud9 environment.
+Before we begin coding, there are a few things we need to install, update, and configure on your laptop.
+
+### Apple Software
+
+In order to develop native applications for iOS, you need to have [XCode](https://apple.com/xcode) installed on your laptop.
+You can download and install XCode from [Apple's App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12).  The download is ~2Gb, so it might take up to one hour depending on your network connection.
+
+If you are attending this workshop during [re:Invent 2019](https://reinvent.awsevents.com), ask an AWS Staff member to get a USB key containing XCode 11 package.
+
+{{% notice note %}}
+This workshop requires [Swift 5.1](https://swift.org) and [Swift UI](https://developer.apple.com/xcode/swiftui/) framework.  These are provided by [XCode 11](https://apple.com/xcode) or more recent.
+{{% /notice %}}
 
 ### Installing and updating
 
-In the Cloud9 terminal, **run the following commands** to install and update some software we'll be using for this workshop:
+You need different command line tools to be installed : `aws`, `amplify` and `jq`.  These tools have themselves requirements on `python`, `pip`, `nodejs` and `npm`.  To install and configure these, open a Terminal on your laptop and type the following commands:
 
 ```bash
-# Update the AWS CLI
-pip install --user --upgrade awscli
+# check if pip is installed and install pip when required.
+# TODO 
 
-# Install and use Node.js v8.10 (to match AWS Lambda)
-nvm install v8.11.0
-nvm alias default v8.11.0
+# install the AWS CLI
+pip install --upgrade awscli
+
+# Install and use latest Node.js & npm
+# TODO 
 
 # Install the AWS Amplify CLI
 npm install -g @aws-amplify/cli
+
+# Check and install jq if required
+# TODO
 ```
 
 {{% notice note %}}
 These commands will take a few minutes to finish.
 {{% /notice %}}
 
-### Configuring a default region 
+### Configuring the aws command line
 
-A best practice is to deploy your infrastructure close to your customers, let's configure a default AWS region for this workshop : Northern Virginia (*us-east-1*) for North America or Ireland (*eu-west-1*) for Europe.
+Before using `aws` command line, you need to configure a default **region** and give the **access key and secret key** of the IAM user created in [the previous step](http://localhost:1313/10_prerequisites/10_account.html).
 
-**Create an AWS config file**, run:
+A best practice is to deploy your infrastructure close to your customers, let's configure a default AWS Region for this workshop : Oregpn (*us-west-2*) for North America or Frankfurt (*eu-central-1*) for Europe.
 
 {{% tabs %}}
-{{% tab "us-east-1" "North America" %}}
-```bash
-cat <<END > ~/.aws/config
-[default]
-region=us-east-1
-END
-```
+{{% tab "us-west-2" "North America" %}}
+In the Terminal, type:
+
+`aws configure`
+
+1. At the **AWS Access Key** prompt, enter **the IAM user access key**
+
+1. At the **AWS Secret Access Key** prompt, enter **the IAM user secret access key**
+
+1. At the **Default region name**, enter the region close to your customers (in this workshop, we use **us-west-2** for Northern America)
+
+1. At the Default output format, keep the defaut **None**
+
+TODO : add screenshot
+
 {{% /tab %}}
 
-{{% tab  "eu-west-1"  "Europe" %}}
-```bash
-cat <<END > ~/.aws/config
-[default]
-region=eu-west-1
-END
-```
+{{% tab  "eu-central-1"  "Europe" %}}
+In the Terminal, type:
+
+`aws configure`
+
+1. At the **AWS Access Key** prompt, enter **the IAM user access key**
+
+1. At the **AWS Secret Access Key** prompt, enter **the IAM user secret access key**
+
+1. At the **Default region name**, enter the region close to your customers (in this workshop, we use **eu-central-1** for Europe)
+
+1. At the Default output format, keep the defaut **None**
+
+TODO : add screenshot
+
 {{% /tab %}}
 {{% /tabs %}}
 
-{{% notice info %}}
-The AWS Amplify CLI is a toolchain which includes a robust feature set for simplifying mobile and web application development. The step above took care of installing it, but we also need to configure it. It needs to know what region to work with, and it determines this by looking for the *~/.aws/config* file. Cloud9 takes care of making sure we have valid Administrator credentials in the *~/.aws/credentials* file, but it doesn't create *~/.aws/config* for us.
-{{% /notice %}}
+
