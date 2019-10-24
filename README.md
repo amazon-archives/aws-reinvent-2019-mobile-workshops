@@ -63,6 +63,9 @@ AWS Access Key ID [****************J7E3]:
 AWS Secret Access Key [****************oGX3]:
 Default region name [eu-west-1]:
 Default output format [None]:
+
+$ pod --version
+1.8.4
 ```
 
 ## Init
