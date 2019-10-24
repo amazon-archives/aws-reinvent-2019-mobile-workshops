@@ -19,7 +19,7 @@ This workshop requires [Swift 5.1](https://swift.org) and [Swift UI](https://dev
 
 ### Installing or updating
 
-You need different command line tools to be installed : `aws`, `amplify` and `jq`.  These tools have themselves requirements on `python`, `pip`, `nodejs` and `npm`.  To install and configure these, open a Terminal on your laptop and type the following commands:
+You need different command line tools to be installed : `aws`, `amplify`, `cocoapods` and `jq`.  These tools have themselves requirements on `python`, `pip`, `nodejs` and `npm`.  To install and configure these, open a Terminal on your laptop and type the following commands:
 
 {{% tabs %}}
 {{% tab "brew" "Using Brew" %}}
@@ -41,6 +41,9 @@ npm install -g @aws-amplify/cli
 
 # install jq (only required to import some data into our API)
 brew install jq
+
+# install cocoa pods
+sudo gem install cocoapods
 ```
 {{% /tab %}}
 
@@ -54,3 +57,10 @@ TODO
 These commands will take a few minutes to finish.
 {{% /notice %}}
 
+To learn more about the tools we are instaling, you can follow the following links:
+
+- [AWS CLI](https://docs.aws.amazon.com/en_pv/cli/latest/userguide/cli-chap-welcome.html)
+- [AWS Amplify CLI](https://aws-amplify.github.io/docs/cli-toolchain/quickstart)
+- [jq](https://stedolan.github.io/jq/)
+- [Node.js](https://nodejs.org/en/)
+- [Cocoa Pods](https://cocoapods.org/)
