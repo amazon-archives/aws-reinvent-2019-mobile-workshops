@@ -7,6 +7,18 @@ A view showing a list of landmarks.
 
 import SwiftUI
 
+struct SignOutButton : View {
+    let app = UIApplication.shared.delegate as! AppDelegate
+
+    var body: some View {
+        NavigationLink(destination: LandingView(user: app.userData)) {
+            Button(action: { self.app.signOut() }) {
+                Text("Sign Out")
+            }
+        }
+    }
+}
+
 struct LandmarkList: View {
     @EnvironmentObject private var userData: UserData
     
@@ -29,6 +41,7 @@ struct LandmarkList: View {
                 }
             }
             .navigationBarTitle(Text("Landmarks"))
+            .navigationBarItems(trailing: SignOutButton())
         }
     }
 }
