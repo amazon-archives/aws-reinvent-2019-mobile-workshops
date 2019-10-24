@@ -537,3 +537,7 @@ What we did just change ?
 - we added that button as trailing item in the navigation bar.
 
 Before proceeding to the next steps, **build** (&#8984;B) the project to ensure there is no compilation error.
+
+## Summary
+
+The list of all changes we made to the code is visible in [this commit](https://github.com/sebsto/amplify-ios-workshop/commit/5c2813864e6824fec55953bb40a848cd87fb7f9c).

@@ -42,7 +42,6 @@ token : Optional(AWSMobileClient.Tokens(idToken: Optional(AWSMobileClient.Sessio
 (edited for brevity)
 ```
 
-
 {{% notice warning %}}
 This applisation displays user personal information, such as the email address and the Cognito token in the console.  In real life DO NOT print these information in the console.  We did this for education purpose only.
 {{% /notice %}}
