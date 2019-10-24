@@ -15,6 +15,8 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 - [ ] write the workshop instructions
 - [ ] refactor code to download images asynchronously and use a cache
 - [ ] eliminate the TODO in the code
+- [ ] Fix landmark details page 
+- [ ] use Hugo page resource to load images
 - [ ] test and dry run
 
 ### Dir Structure
