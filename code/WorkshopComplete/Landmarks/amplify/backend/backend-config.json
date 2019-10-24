@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"amplifyiosworkshop03fb32cb": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

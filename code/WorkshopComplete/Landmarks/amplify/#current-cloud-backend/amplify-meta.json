@@ -1,0 +1,38 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-ios-workshop-dev-20191024130552-authRole",
+			"UnauthRoleArn": "arn:aws:iam::486652066693:role/amplify-ios-workshop-dev-20191024130552-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::486652066693:role/amplify-ios-workshop-dev-20191024130552-authRole",
+			"Region": "eu-west-1",
+			"DeploymentBucketName": "amplify-ios-workshop-dev-20191024130552-deployment",
+			"UnauthRoleName": "amplify-ios-workshop-dev-20191024130552-unauthRole",
+			"StackName": "amplify-ios-workshop-dev-20191024130552",
+			"StackId": "arn:aws:cloudformation:eu-west-1:486652066693:stack/amplify-ios-workshop-dev-20191024130552/3e9ed770-f64e-11e9-931a-062647984902"
+		}
+	},
+	"auth": {
+		"amplifyiosworkshop03fb32cb": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-ios-workshop-dev-20191024130552-deployment/amplify-cfn-templates/auth/amplifyiosworkshop03fb32cb-cloudformation-template.yml",
+				"logicalId": "authamplifyiosworkshop03fb32cb"
+			},
+			"lastPushTimeStamp": "2019-10-24T11:42:33.542Z",
+			"output": {
+				"AppClientSecret": "ectu7r6ps7q0d5fhtmb1br85i99f7g4m9e3bagf6n60k2p35i7l",
+				"UserPoolId": "eu-west-1_VGW8eAi4i",
+				"AppClientIDWeb": "4kqah5ullfmojbgh837v3hodq3",
+				"AppClientID": "6fq8886pjqp9tqmd5jd820v0h4",
+				"HostedUIDomain": "amplify-ios-workshop03fb32cb-03fb32cb-dev",
+				"IdentityPoolId": "eu-west-1:4ae7b548-d3c4-4f18-895a-91e6173f0f59",
+				"IdentityPoolName": "amplifyiosworkshop03fb32cb_identitypool_03fb32cb__dev",
+				"OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarks://\"],\"LogoutURLs\":[\"landmarks://\"]}",
+				"UserPoolName": "amplifyiosworkshop03fb32cb_userpool_03fb32cb"
+			},
+			"lastPushDirHash": "dijzf3ZdyJcYX/5iK5/OyqujlEg="
+		}
+	}
+}
