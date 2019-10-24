@@ -8,7 +8,6 @@ The starting point for the workshop is the [Apple Swift UI tutorial](https://dev
 
 1. Download the {{% button href="/20_getting_started/20_bootstrapping_the_app.files/HandlingUserInput.zip" icon="fas fa-download" %}}project zip file{{% /button %}}
 
-
 1. Unzip the file, it creates the following directory structure
 ![Directory Structure](/images/20-10-directory-structure.png)
 

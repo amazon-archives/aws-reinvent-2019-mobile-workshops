@@ -6,7 +6,7 @@ weight = 10
 
 During this workshop, we are going to add a cloud-based authentication and API backend to an existing iOS application.  We will start with Apple's SwiftUI Example App, starting at the phase "[Handling User Input](https://developer.apple.com/tutorials/swiftui/tutorials").  The workshop provides steps-by-steps instruction to create and configure the backend and to modify the client code.
 
-Splash | Authentication | Main View
+Landing View | Authentication View | Main View
 :---: | :---: | :---: |
 ![App Login Screen](/images/20-10-app-01.png) | ![App Login Screen](/images/20-10-app-03.png) | ![App Login Screen](/images/20-10-app-02.png) |
 
