@@ -9,10 +9,9 @@ import SwiftUI
 import CoreLocation
 
 struct Landmark: Hashable, Codable, Identifiable {
-    
-    var id: String
+    var id: Int
     var name: String
-    var imageName: String
+    fileprivate var imageName: String
     fileprivate var coordinates: Coordinates
     var state: String
     var park: String
@@ -33,14 +32,9 @@ struct Landmark: Hashable, Codable, Identifiable {
     }
 }
 
-// this synchronously load the images.
-// TODO return a generic image while the correct one is loading
-// this method is called each time the UI needs to draw the image.
-// TODO Use a cache instead of downloading everytime
 extension Landmark {
     var image: Image {
-        let app = UIApplication.shared.delegate as! AppDelegate
-        return app.image(self)
+        ImageStore.shared.image(name: imageName)
     }
 }
 
