@@ -31,4 +31,6 @@ one now](https://aws.amazon.com/getting-started/)
 
 1. Generate and access key and secret key for the user
 
+TODO : add screenshots
+
 You now have an IAM user with administrative priviledges.  In the remaining steps of this workshop, you will use this IAM user to programmatically access your AWS account from your laptop.
