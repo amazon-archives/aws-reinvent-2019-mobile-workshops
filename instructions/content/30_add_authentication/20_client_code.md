@@ -8,9 +8,7 @@ Now that the cloud-based backend is ready, let's modify the application code to 
 
 - add AWS Amplify [dependencies](#add-the-amplify-library-to-the-ios-project) to the project 
 - add [the code](#add-authentication-code) to trigger the authentication UI and monitor the state of sessions
-- add a [Landing view](#add-a-landing-view) to route users to the authenticated and authenticated views
-
-We choose to write all AWS specific code in the ApplicationDelegate class, to avoid spreading dependencies all over the project.
+- add a [Landing view](#add-a-landing-view) to route users to the non-authenticated and authenticated views
 
 The view navigation will look like this:
 
@@ -21,6 +19,8 @@ graph LR;
     C -->|no| D(LoginView)
     C -->|Yes| E(LandmarksList)
 {{< /mermaid >}}
+
+We choose to write all AWS specific code in the `ApplicationDelegate` class, to avoid spreading dependencies all over the project. This is a design decision for this project, you may adopt other design for your projects.
 
 ## Add the amplify library to the iOS project
 
@@ -58,7 +58,7 @@ Without changing directory, let `pod` download and install the dependencies:
 pod install --repo-update
 ```
 
-After one or two minutes, you shoud see the below (it is safe to gnore the two warnings):
+After one or two minutes, you shoud see the below (it is safe to ignore the two warnings, we're going to fix that in a minute):
 
 ![pod install](/images/30-20-pod-install-1.png)
 
@@ -76,14 +76,14 @@ It is important to open the XCode **workspace** and not the XCode project.
 
 Rather than configuring each service through a constructor or constants file, the AWS SDKs for iOS support configuration through a centralized file called `awsconfiguration.json` which defines all the regions and service endpoints to communicate. Whenever you run `amplify push`, this file is automatically created allowing you to focus on your Swift application code. On iOS projects the `awsconfiguration.json` will be placed into the root directory and you will need to add it to your XCode project.
 
-In the Finder, drag `awsconfiguration.json` into Xcode under the top Project Navigator folder (the folder named HandleUserInput). When the Options dialog box appears, do the following:
+In the Finder, drag `awsconfiguration.json` into Xcode under the top Project Navigator folder (the folder named *HandleUserInput*). When the *Options* dialog box appears, do the following:
 
 - Clear the **Copy items if needed** check box.
 - Choose **Create groups**, and then choose **Finish**.
 
 ### Update Target Configurations for CocoaPods
 
-Click on **HandleUserInput** on the top left part of the screen, then **Info**.  Open **Configurations**, **Debug**.  For the **landmarks** target, replace the configuration by **Pods-landmarks.debug**. Repeat the operation for the **release** target, using **Pods-landmarks.release** configuration.  Your project should look like this:
+In your XCode project, click on **HandleUserInput** on the top left part of the screen, then **Info**.  Open **Configurations**, **Debug**.  For the **landmarks** target, replace the configuration by **Pods-landmarks.debug**. Repeat the operation for the **release** target, using **Pods-landmarks.release** configuration.  Your project should look like this:
 
 ![pod install](/images/30-20-pod-install-2.png)
 
@@ -97,7 +97,9 @@ After a few seconds, you should see the application running in the iOS simulator
 
 ## Add authentication code
 
-Add a flag in the UserData class to keep track of authentication status. Highlighted lines shows the update.  You can copy/paste the whole content to replace *Landmarks/Models/UserData.swift* :
+Now that the dependencies are installed, let's modify the application code to add a user authentication flow.
+
+Add a flag in the `UserData` class to keep track of authentication status. Highlighted lines show the update.  You can copy/paste the whole content to replace *Landmarks/Models/UserData.swift* :
 
 {{< highlight swift "hl_lines=8-8 10">}}
 // Landmarks/Models/UserData.swift
@@ -242,15 +244,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 What did we add ?
 
-- we moved `userData` object to the ApplicationDelegate to be able to access it from anywhere in the app.
-- we added an `AWSMobileClient.addUserStateListener` to listen for changes in authentication status. That code updates the `isSignedIn` flag inside the `userData` object.
-- we addedd an `authenticateWithDropinUI()` method to trigger the UI flow using Amplify's drop in component.
-- we added an `authenticateWithHostedUI()` method to trigger the UI flow using Cognito's hosted web interface.
+- we moved `userData` object to the `ApplicationDelegate` to be able to access it from anywhere in the app.
+- we added an `AWSMobileClient.addUserStateListener` to listen for changes in authentication status. That code updates the `isSignedIn` flag inside the `userData` object.  SwiftUI will automatically trigger a user interface refresh when the state of this object changes.  You can learn more about SwiftUI binding in [the SwiftUI documentation](https://developer.apple.com/documentation/swiftui/state_and_data_flow).
+- we addedd an `authenticateWithDropinUI()` method to trigger the UI flow using Amplify's [drop in component](https://aws-amplify.github.io/docs/ios/authentication).
+- we added an `authenticateWithHostedUI()` method to trigger the UI flow using Cognito's [hosted web user interface](https://aws.amazon.com/premiumsupport/knowledge-center/cognito-hosted-web-ui/).
 - we added a `signOut()` method to sign the user out.
 
 Before proceeding to the next steps, **build** (&#8984;B) the project to ensure there is no compilation error.
 
-## Add a landing view as router to authenticated and non-authenticated views
+## Route authenticated and non-authenticated views
+
+In this section, we're going to add a new application entry point: the LandingView.  This view will check if the user is authenticated and will display either the authentication view or the main application view.
 
 Let's create three new Swift classes:
 
@@ -261,6 +265,8 @@ Let's create three new Swift classes:
 To add a new Swift class to your project, use XCode menu and click **File**, then **New** or press **&#8984;N** and then enter the file name.
 
 ### UserBadge.swift 
+
+The user badge is a very simple graphical view representing a big login button.
 
 {{< highlight swift >}}
 //
@@ -303,6 +309,12 @@ struct UserBadge_Previews: PreviewProvider {
 {{< /highlight >}}
 
 ### LoginViewController.swift
+
+Despite we are using SwiftUI for this project, an UIKit ViewController is required by Amplify's drop in UI component.  This `LoginViewController` class has two purposes:
+
+1. it creates a bridge between SwiftUI and the UIKit world, as described in [Apple's Developer tutorial](https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit).
+
+2. the `authenticate()` method triggers the user authentication flow.  It is used in `LandingView` when user click on the `UserBadge` button.
 
 {{< highlight swift >}}
 //
@@ -347,13 +359,11 @@ struct LoginViewController: UIViewControllerRepresentable {
 }
 {{< /highlight >}}
 
-Despite we are using SwiftUI for this project, a ViewController is required by Amplify's drop in UI component.  This LoginViewController class has two purposes:
-
-1. it creates a bridge between SwiftUI and the UIKit world, as described in [Apple's Developer tutorial](https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit).
-
-2. the `authenticate()` method triggers the user authentication flow.  It will be called by the `LandingView`
-
 ### LandingView.swift
+
+This `LandingView` creates the `LoginViewController`.  When user is not authenticated, it creates a stack with the `loginView`, (provided by Amplify) and the `UserBadge`.  Clicking on the `UserBadge` triggers the `authenticate()` method. When user is authenticated, it passes the user object to `LandmarkList`.
+
+Pay attention to the `@ObservedObject` annotation.  This tells SwiftUI to invalidate and redraw the View when the state of the object changes.  When user signs in or signs out, `LandingView` will automatically adjust and render the `UserBadge` or the `LandmarksList` view.
 
 {{< highlight swift >}}
 //
@@ -397,11 +407,9 @@ struct LandingView_Previews: PreviewProvider {
 }
 {{< /highlight >}}
 
-This `LandingView` creates the `LoginViewController`.  When user is not authenticated, it creates a stack with the `loginView`, (provided by Amplify) and the `UserBadge`.  Clicking on the `UserBadge` triggers the `authenticate()` method. When user is authenticated, it passes the user object to `LandmarkList`.
+### Update SceneDelegate.swift
 
-### Update SceneDelegate.swift 
-
-Finally, we update `SceneDelegate.swift` to launch our new `LandingView` instead of launching `LandmarksList`. Highlighted lines shows the update.  You can copy/paste the whole content to replace *Landmarks/SceneDelegate.swift* :
+Finally, we update `SceneDelegate.swift` to launch our new `LandingView` instead of launching `LandmarksList` when the application starts. Highlighted lines show the update.  You can copy/paste the whole content to replace *Landmarks/SceneDelegate.swift* :
 
 {{< highlight swift "hl_lines=14-14 25-25 65" >}}
 /*
@@ -468,7 +476,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 ## Add a signout button
 
-To make our tests easier and to allow user to signout and invalidate their session, let's add a signout button on the top of the LandmarksList view.  Highlighted lines shows the update.  You can copy/paste the whole content to replace *Landmarks/LandmarksList.swift* 
+To make our tests easier and to allow users to signout and invalidate their session, let's add a signout button on the top of the `LandmarksList` view.  Highlighted lines show the update.  You can copy/paste the whole content to replace *Landmarks/LandmarksList.swift*
 
 {{< highlight swift "hl_lines=10-20 44-44 58" >}}
 /*
