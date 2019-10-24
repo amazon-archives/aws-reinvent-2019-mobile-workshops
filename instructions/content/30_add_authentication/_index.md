@@ -2,8 +2,11 @@
 title = "Add user authentication"
 chapter = true
 weight = 30
+pre = "<b>3. </b>"
 +++
 
-# Add user authentication
+### Section 3
+
+## Add user authentication
 
 {{% children showhidden="false" %}}

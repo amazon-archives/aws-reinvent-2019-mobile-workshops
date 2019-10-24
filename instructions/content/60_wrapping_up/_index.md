@@ -2,8 +2,11 @@
 title = "Wrapping Up"
 chapter = true
 weight = 60
+pre = "<b>6. </b>"
 +++
 
-# Wrapping Up
+### Section 6
+
+## Wrapping Up
 
 {{% children showhidden="false" %}}

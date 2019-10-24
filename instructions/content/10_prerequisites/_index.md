@@ -2,8 +2,11 @@
 title = "Prerequisites"
 chapter = true
 weight = 10
+pre = "<b>1. </b>"
 +++
 
-# Prerequisites for the Workshop
+### Section 1
+
+## Prerequisites for the Workshop
 
 {{% children showhidden="false" %}}
