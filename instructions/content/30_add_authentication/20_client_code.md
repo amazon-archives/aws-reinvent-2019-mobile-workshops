@@ -45,9 +45,9 @@ target 'Landmarks' do
   use_frameworks!
 
   # Pods for Landmarks
-  pod 'AWSMobileClient', '~> 2.12.0'      # Required dependency
-  pod 'AWSAuthUI', '~> 2.12.0'            # Optional dependency required to use drop-in UI
-  pod 'AWSUserPoolsSignIn', '~> 2.12.0'   # Optional dependency required to use drop-in UI
+  pod 'AWSMobileClient', '~> 2.12.1'      # Required dependency
+  pod 'AWSAuthUI', '~> 2.12.1'            # Optional dependency required to use drop-in UI
+  pod 'AWSUserPoolsSignIn', '~> 2.12.1'   # Optional dependency required to use drop-in UI
 
 end
 ```
