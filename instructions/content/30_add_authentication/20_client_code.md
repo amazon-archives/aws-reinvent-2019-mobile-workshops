@@ -244,9 +244,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 What did we add ?
 
 - we moved `userData` object to the `ApplicationDelegate` to be able to access it from anywhere in the app.
+
 - we added an `AWSMobileClient.addUserStateListener` to listen for changes in authentication status. That code updates the `isSignedIn` flag inside the `userData` object.  SwiftUI will automatically trigger a user interface refresh when the state of this object changes.  You can learn more about SwiftUI binding in [the SwiftUI documentation](https://developer.apple.com/documentation/swiftui/state_and_data_flow).
+
 - we addedd an `authenticateWithDropinUI()` method to trigger the UI flow using Amplify's [drop in component](https://aws-amplify.github.io/docs/ios/authentication).
-- we added an `authenticateWithHostedUI()` method to trigger the UI flow using Cognito's [hosted web user interface](https://aws.amazon.com/premiumsupport/knowledge-center/cognito-hosted-web-ui/).
+
+- we added an `authenticateWithHostedUI()` method to trigger the UI flow using Cognito's [hosted web user interface](https://aws.amazon.com/premiumsupport/knowledge-center/cognito-hosted-web-ui/). (not used during this workshop)
+
 - we added a `signOut()` method to sign the user out.
 
 Before proceeding to the next steps, **build** (&#8984;B) the project to ensure there is no compilation error.
@@ -541,6 +545,7 @@ struct LandmarksList_Previews: PreviewProvider {
 What we did just change ?
 
 - we created a `SignOutButton` struct that has a reference to the `ApplicationDelegate` and calls `signOut()` when pressed.  The button is just a text with a navigation link.
+
 - we added that button as trailing item in the navigation bar.
 
 Before proceeding to the next steps, **build** (&#8984;B) the project to ensure there is no compilation error.

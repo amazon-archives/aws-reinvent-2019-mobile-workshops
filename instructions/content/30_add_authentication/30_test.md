@@ -23,7 +23,7 @@ After clicking **Sign Up**, check your email.  Cognito sends you a confirmation 
 
 Code View | Registration View | Landmarks List View
 :---: | :---: | :---: |
-!![Landing View](/images/30-20-test-4.png) | ![App Login Screen](/images/30-20-test-5.png) | ![App Login Screen](/images/30-20-test-6.png) |
+!![Confirmation Code](/images/30-20-test-4.png) | ![Registration](/images/30-20-test-5.png) | ![Landmark list](/images/30-20-test-6.png) |
 
 Click **Sign Out** to end the session and return to the `LandingView`.
 
