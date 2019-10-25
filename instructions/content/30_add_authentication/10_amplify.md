@@ -17,7 +17,7 @@ cd $PROJECT_DIRECTORY
 amplify init
 ```
 
-1. Enter a name for your project: enter **amplify-ios-workshop** and press enter.
+1. Enter a name for your project: enter **amplifyiosworkshop** and press enter.
 
 1. Enter a name for your environment: enter **dev** and press enter.
 
@@ -52,7 +52,7 @@ amplify add auth
 
 1. Do you want to configure advanced settings? Accept the default **No, I am done.** and press enter.
 
-1. What domain name prefix you want us to create for you? **Replace the _ (underscore) with - (hyphen)** in the proposed name and press enter.
+1. What domain name prefix you want us to create for you? Accept the default (**amplifyiosworkshopxxxxxx**) and press enter.
 
 1. Enter your redirect signin URI: Type **landmarks://** and press enter.
 
