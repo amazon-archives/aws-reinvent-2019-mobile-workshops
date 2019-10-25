@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/bash 
 
 DIR=$(dirname "${BASH_SOURCE[0]}")
 source $DIR/prerequisites.sh
 
 echo "Checking prerequisites"
 check_prerequisites
+
+CODE_DIR=$DIR/../Complete/Landmarks
 
 #
 # Create an App Client in the user pool to allow programmatic access (Client Credentials flow)
@@ -13,7 +15,7 @@ check_prerequisites
 # https://docs.aws.amazon.com/en_pv/cognito/latest/developerguide/token-endpoint.html
 #
 echo "Getting an access token"
-USER_POOL_ID=$(cat awsconfiguration.json  | jq -r '.CognitoUserPool.Default.PoolId')
+USER_POOL_ID=$(cat "$CODE_DIR/awsconfiguration.json"  | jq -r '.CognitoUserPool.Default.PoolId')
 # create a temporary resource server.  This is mandatory for client_credentials grants
 aws cognito-idp create-resource-server --user-pool-id $USER_POOL_ID               \
                                        --name APIResourceServer                   \
@@ -33,7 +35,7 @@ CLIENT_SECRET=$(cat temp.json | jq -r '.UserPoolClient.ClientSecret')
 #
 # Call Cognito to get an access token, allowing us to call AppSync API
 #
-WEBDOMAIN=$(cat awsconfiguration.json  | jq -r '.Auth.Default.OAuth.WebDomain')
+WEBDOMAIN=$(cat "$CODE_DIR/awsconfiguration.json"  | jq -r '.Auth.Default.OAuth.WebDomain')
 BASIC=$(echo -n $CLIENT_ID:$CLIENT_SECRET | base64)
 AUTHENTICATION="Basic $BASIC"
 
@@ -69,10 +71,11 @@ GRAPHQL_PAYLOAD='{
      }
    }'
 echo -n $GRAPHQL_PAYLOAD > graphql.json
-LANDMARKS_LIST=$(cat Complete/Landmarks/Landmarks/Resources/landmarkData.json)
+LANDMARKS_LIST=$(cat "$CODE_DIR/Landmarks/Resources/landmarkData.json")
 LANDMARKS_LIST_LENGTH=$(echo "${LANDMARKS_LIST}" | jq -rc 'length')
 
-API_ENDPOINT=$(cat awsconfiguration.json  | jq -r '.AppSync.Default.ApiUrl')
+API_ENDPOINT=$(cat "$CODE_DIR/awsconfiguration.json"  | jq -r '.AppSync.Default.ApiUrl')
+echo "Uploading data to $API_ENDPOINT"
 
 # for each entry in landmarks file, call the API to insert the data in the DB
 for ((i=0; i<$LANDMARKS_LIST_LENGTH; i++)); do
