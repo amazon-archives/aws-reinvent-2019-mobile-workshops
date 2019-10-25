@@ -2,14 +2,19 @@
 
 import UIKit
 import AWSMobileClient
+import AWSAppSync
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public let userData = UserData()
+    var appSyncClient: AWSAppSyncClient?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-                
+        
+        //init appsync
+        self.appSyncInit()
+        
         AWSMobileClient.default().addUserStateListener(self) { (userState, info) in
             
             // notify our subscriber the value changed
@@ -21,10 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             case .signedOut:
                 print("user just signed out")
+                self.userData.landmarks = []
                 
             case .signedIn:
                 print("user just signed in.")
                 print("username : \(String(describing: AWSMobileClient.default().username))")
+                
+                print("Loading data")
+                self.queryLandmarks()
 
                 AWSMobileClient.default().getUserAttributes(completionHandler: { (attributes, error) in
                     print("error : \(String(describing: error))")
@@ -34,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     AWSMobileClient.default().getTokens({ (tokens, error) in
                         print("error : \(String(describing: error))")
                         print("token : \(String(describing: tokens))")
-                        print("")
+                        print("")                        
                     })
                 })
                                 
@@ -61,6 +70,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
+        if (self.userData.isSignedIn) {
+            print("Loading data")
+            self.queryLandmarks()
+        }
+
+        
         return true
     }
 
@@ -120,4 +135,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AWSMobileClient.default().signOut()
     }
     
+    // MARK: AWSAppSync
+        
+    func appSyncInit() {
+        do {
+            // You can choose the directory in which AppSync stores its persistent cache databases
+            let cacheConfiguration = try AWSAppSyncCacheConfiguration()
+
+            // AppSync configuration & client initialization
+            let appSyncServiceConfig = try AWSAppSyncServiceConfig()
+            let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: appSyncServiceConfig,
+                                                                  userPoolsAuthProvider: AWSMobileClient.default() as AWSCognitoUserPoolsAuthProvider,
+                                                                  cacheConfiguration: cacheConfiguration)
+            self.appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+            print("Initialized appsync client.")
+        } catch {
+            print("Error initializing appsync client. \(error)")
+        }
+    }
+    
+    func queryLandmarks() {
+        print("Query landmarks")
+        self.appSyncClient?.fetch(query: ListLandmarksQuery(limit:100), cachePolicy: .fetchIgnoringCacheData) {(result, error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "")
+                    return
+                }
+                print("Landmarks query complete.")
+                result?.data?.listLandmarks?.items!.forEach {
+                    
+                    // convert the AppSync jsonObject (aka Dictionary<String, Any> to Data
+                    // the code below assumes there is no casting / nil error
+                    // TODO should add guard statement and handle errors
+                    // https://nacho4d-nacho4d.blogspot.com/2016/05/dictionary-to-json-string-and-json.html
+                    let jsonData = try! JSONSerialization.data(withJSONObject: $0?.jsonObject as Any, options: [])
+                    // this allows to create a Landmark object using the Decodable protocol
+                    let l : Landmark = try! JSONDecoder().decode(Landmark.self, from: jsonData)
+                    self.userData.landmarks.append(l);
+                    
+                }
+            }
+    }
+}
+
+// Make sure AWSMobileClient is a Cognito User Pool credentails providers
+// this makes it easy to AWSMobileClient shared instance with AppSync Client
+// read https://github.com/awslabs/aws-mobile-appsync-sdk-ios/issues/157 for details
+extension AWSMobileClient: AWSCognitoUserPoolsAuthProviderAsync {
+    public func getLatestAuthToken(_ callback: @escaping (String?, Error?) -> Void) {
+        getTokens { (tokens, error) in
+            if error != nil {
+                callback(nil, error)
+            } else {
+                callback(tokens?.idToken?.tokenString, nil)
+            }
+        }
+    }
 }
