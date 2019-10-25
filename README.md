@@ -208,7 +208,7 @@ type Landmark
   @model
   @auth(rules: [ {allow: private, provider: userPools, operations: [ read ] } ])
 {
-  id: ID!
+  id: Int!
   name: String!
   category: String
   city: String
