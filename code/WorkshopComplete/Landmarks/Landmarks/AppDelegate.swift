@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             case .signedOut:
                 print("user just signed out")
-                self.userData.landmarks = []
                 
             case .signedIn:
                 print("user just signed in.")
