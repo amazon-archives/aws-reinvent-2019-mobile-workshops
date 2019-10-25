@@ -108,14 +108,9 @@
 							"Arn"
 						]
 					},
-					"useDefault": "defaultSocial",
+					"useDefault": "default",
 					"hostedUI": true,
-					"hostedUIDomainName": "amplifyiosworkshop42ccb821-42ccb821",
-					"authProvidersUserPool": "",
-					"hostedUIProviderMeta": "[]",
-					"oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarks://\"],\"LogoutURLs\":[\"landmarks://\"]}",
 					"dependsOn": "",
-					"hostedUIProviderCreds": "[]",
 					"env": "dev"
 				}
 			}
@@ -137,6 +132,40 @@
 					},
 					"S3DeploymentBucket": "amplifyiosworkshop-dev-20191025122039-deployment",
 					"S3DeploymentRootKey": "amplify-appsync-files/e0b96dcde75723d1b87ecaee77f9bb6dbb71accd",
+					"env": "dev"
+				}
+			}
+		},
+		"storageamplifyiosworkshop": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplifyiosworkshop-dev-20191025122039-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"Parameters": {
+					"bucketName": "amplifyiosworkshopa51bbe725c374d37b1f3aaae6303900b",
+					"authPolicyName": "s3_amplify_fb660f2c",
+					"unauthPolicyName": "s3_amplify_fb660f2c",
+					"authRoleName": {
+						"Ref": "AuthRoleName"
+					},
+					"unauthRoleName": {
+						"Ref": "UnauthRoleName"
+					},
+					"selectedGuestPermissions": "s3:GetObject,s3:ListBucket",
+					"selectedAuthenticatedPermissions": "s3:GetObject,s3:ListBucket",
+					"s3PermissionsAuthenticatedPublic": "s3:GetObject",
+					"s3PublicPolicy": "Public_policy_f2930302",
+					"s3PermissionsAuthenticatedUploads": "DISALLOW",
+					"s3UploadsPolicy": "Uploads_policy_f2930302",
+					"s3PermissionsAuthenticatedProtected": "s3:GetObject",
+					"s3ProtectedPolicy": "Protected_policy_f2930302",
+					"s3PermissionsAuthenticatedPrivate": "s3:GetObject",
+					"s3PrivatePolicy": "Private_policy_f2930302",
+					"AuthenticatedAllowList": "ALLOW",
+					"s3ReadPolicy": "read_policy_f2930302",
+					"s3PermissionsGuestPublic": "DISALLOW",
+					"s3PermissionsGuestUploads": "DISALLOW",
+					"GuestAllowList": "DISALLOW",
+					"triggerFunction": "NONE",
 					"env": "dev"
 				}
 			}

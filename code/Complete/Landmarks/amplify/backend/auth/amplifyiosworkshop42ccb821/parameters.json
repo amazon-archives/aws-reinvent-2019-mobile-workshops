@@ -44,11 +44,7 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
+    "useDefault": "default",
     "hostedUI": true,
-    "hostedUIDomainName": "amplifyiosworkshop42ccb821-42ccb821",
-    "authProvidersUserPool": [],
-    "hostedUIProviderMeta": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarks://\"],\"LogoutURLs\":[\"landmarks://\"]}",
     "dependsOn": []
 }

@@ -12,9 +12,7 @@
         },
         "categories": {
             "auth": {
-                "amplifyiosworkshop42ccb821": {
-                    "hostedUIProviderCreds": "[]"
-                }
+                "amplifyiosworkshop42ccb821": {}
             }
         }
     }

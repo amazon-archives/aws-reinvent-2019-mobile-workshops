@@ -20,7 +20,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplifyiosworkshop-dev-20191025122039-deployment/amplify-cfn-templates/auth/amplifyiosworkshop42ccb821-cloudformation-template.yml",
 				"logicalId": "authamplifyiosworkshop42ccb821"
 			},
-			"lastPushTimeStamp": "2019-10-25T10:52:47.462Z",
+			"lastPushTimeStamp": "2019-10-25T17:22:49.176Z",
 			"output": {
 				"AppClientSecret": "13ft1duk8jqtss527fpdtldh4j3qo0kmoe6esec6lo81jr5h5m7v",
 				"UserPoolId": "eu-west-1_5BwEWgqaf",
@@ -32,7 +32,7 @@
 				"OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarks://\"],\"LogoutURLs\":[\"landmarks://\"]}",
 				"UserPoolName": "amplifyiosworkshop42ccb821_userpool_42ccb821"
 			},
-			"lastPushDirHash": "RsGUotNCf61rGYd6PBaGbVW9/QA="
+			"lastPushDirHash": "7TrNmxWbw7dqdW/oBjLdFXG8+80="
 		}
 	},
 	"api": {
@@ -56,8 +56,24 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplifyiosworkshop-dev-20191025122039-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiamplifyiosworkshop"
 			},
-			"lastPushTimeStamp": "2019-10-25T10:52:48.500Z",
+			"lastPushTimeStamp": "2019-10-25T17:22:49.174Z",
 			"lastPushDirHash": "Dhx4i265IFg7M2Abht2FuPTkAhY="
+		}
+	},
+	"storage": {
+		"amplifyiosworkshop": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplifyiosworkshop-dev-20191025122039-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storageamplifyiosworkshop"
+			},
+			"lastPushTimeStamp": "2019-10-25T17:22:49.176Z",
+			"output": {
+				"BucketName": "amplifyiosworkshopa51bbe725c374d37b1f3aaae6303900b-dev",
+				"Region": "eu-west-1"
+			},
+			"lastPushDirHash": "Mp2Lk9Tl3+vPo5ZZsxujXvu8qxg="
 		}
 	}
 }

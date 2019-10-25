@@ -10,3 +10,6 @@ projects:
         codeGenTarget: swift
         generatedFileName: API.swift
         docsFilePath: graphql
+extensions:
+  amplify:
+    version: 3
