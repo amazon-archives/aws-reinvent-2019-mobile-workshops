@@ -8,9 +8,11 @@ Now that we have a GraphQL API to support access our data model from the cloud, 
 
 At high level, here is how we gonna proceed
 
-- first, we're going to add the `pod` dependency to access the AWS AppSync client library
-- the app sync client code is contained in the `ApplicationDelegate` class, as we did for authentication.
-- `UserData` class holds a hard code reference to the list of Landmarks loaded at application startup time.  We are going to replace with an empty list (`[]`) and we're going to add code to query the API and populate the list after sucesfull sign in.
+- first, we're going [to add](#add-the-aws-appsync-client-library) the `pod` dependency to access the AWS AppSync client library
+
+- the [app sync client code is contained](#add-client-code-in-applicationdelegate) in the `ApplicationDelegate` class, as we did for authentication.
+
+- `UserData` class holds a hard code reference to the list of Landmarks loaded at application startup time.  [We are going to replace with an empty list](#modify-userdata-class) (`[]`) and we're going to add code to query the API and populate the list after sucesfull sign in.
 
 ## Add the AWS AppSync client library
 

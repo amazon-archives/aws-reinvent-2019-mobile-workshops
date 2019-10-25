@@ -129,7 +129,7 @@ But don't worry, the way AWS AppSync is resolving fields into data isn't hidden 
 
 ## Upload existing application data
 
-The sample application we started from uses a local file (*Landmarks/Resources/ladnmarkData.json*) to hold the application data.  We wrote a script to upload the content of this file to the cloud database.  
+The sample application we started from uses a local file (*Landmarks/Resources/ladnmarkData.json*) to hold the application data.  We provide a script to upload the content of this file to the cloud database.  
 
 In a Terminal, type:
 
