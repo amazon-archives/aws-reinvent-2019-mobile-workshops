@@ -34,7 +34,7 @@ cd $PROJECT_DIRECTORY
 pod init
 ```
 
-Edit `Podfile` to add Amplify dependencies.  You `Podfile` must look like this:
+Edit `Landmarks/Podfile` to add the Amplify dependencies.  Your `Podfile` must look like this:
 
 ```text
 # Uncomment the next line to define a global platform for your project
