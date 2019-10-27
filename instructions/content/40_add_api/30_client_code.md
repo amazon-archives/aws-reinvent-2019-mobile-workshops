@@ -16,7 +16,6 @@ At high level, here is how we gonna proceed
 
 ## Add the AWS AppSync client library
 
-
 Edit `Landmarks/Podfile` to add the AppSync dependency.  Your `Podfile` must look like this (you can safely copy/paste the entire file from belowpwd):
 
 {{< highlight text "hl_lines=12">}}
@@ -43,7 +42,7 @@ cd $PROJECT_DIRECTORY
 pod install --repo-update
 ```
 
-After one minutes, you shoud see the below:
+After one minute, you shoud see the below:
 
 ![Pod update](/images/40-30-appsync-code-1.png)
 
@@ -296,7 +295,7 @@ What we did change ?
 
 The list of all changes we made to the code is visible in [this commit](https://github.com/sebsto/amplify-ios-workshop/commit/9ec7a9a76395f49e324781fb2cad055d9e7d087a).
 
-### Launch the app 
+## Launch the app 
 
 Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i>.
 ![build](/images/20-10-xcode.png)
