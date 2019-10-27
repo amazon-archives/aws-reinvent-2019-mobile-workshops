@@ -415,3 +415,5 @@ After a few seconds, you should see the application running in the iOS simulator
 {{% notice tip %}}
 There might be a small delay between the moment the Landmark list is displayed and the moment the list is populated.  This is because image loading is synchronous and calls are blocked while the images are downloaed.  One way to improve this would be to modify `UserData` class to return a pre-canned image while loading the landmark image, and replace images as they are being loaded.  
 {{% /notice %}}
+
+Now that we have the basic building blocks of the app defined, let's explore the options offered to customize the authentication user interface and user experience.
