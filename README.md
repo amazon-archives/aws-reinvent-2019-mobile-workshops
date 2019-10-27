@@ -27,6 +27,7 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 
 ### Dir Structure
 
+```text
 x (you are here)
 |
 |-- code
@@ -34,6 +35,7 @@ x (you are here)
       |-- StartingPoint  <== this is the starting point of the app
 |
 |-- instructions         <== this is the static web site
+```
 
 ### Deploy
 
