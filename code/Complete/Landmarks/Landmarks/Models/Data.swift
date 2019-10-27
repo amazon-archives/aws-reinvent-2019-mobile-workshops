@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
+// this is just used for the previews. At runtime, data are now taken from UserData and loaded through AppDelegate
 let landmarkData: [Landmark] = load("landmarkData.json")
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
@@ -47,13 +48,15 @@ final class ImageStore {
         return Image(images.values[index], scale: CGFloat(ImageStore.scale), label: Text(verbatim: name))
     }
 
+    // load the image from Amazon S3 instead of local resource bundle
     static func loadImage(name: String) -> CGImage {
+        let app = UIApplication.shared.delegate as! AppDelegate
         guard
-            let url = Bundle.main.url(forResource: name, withExtension: "jpg"),
-            let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
-            let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
+            // going trough a UIImage is the shortest way I found to get a CGImage from NSData
+            let i = UIImage(data: app.image(name)!),
+            let image = i.cgImage
         else {
-            fatalError("Couldn't load image \(name).jpg from main bundle.")
+            fatalError("Couldn't load image \(name).jpg from Amazon S3.")
         }
         return image
     }

@@ -3,6 +3,7 @@
 import UIKit
 import AWSMobileClient
 import AWSAppSync
+import AWSS3
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -175,6 +176,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                 }
             }
+    }
+
+    // MARK: AWS S3 & Image Loading
+
+    /**
+        Asynchronously load the image from S3.  This method blocks until the S3 download is completed.
+        https://stackoverflow.com/questions/42484281/waiting-until-the-task-finishes
+     */
+    func image(_ imageName : String) -> Data? {
+        
+        print("Downloading image : \(imageName)")
+        
+        var result : Data?
+        
+        let group = DispatchGroup()
+        group.enter()
+        
+        let transferUtility = AWSS3TransferUtility.default()
+        transferUtility.downloadData(
+            forKey: "public/\(imageName).jpg",
+              expression: nil,
+              completionHandler: { (task, URL, data, error) -> Void in
+                
+                if let e = error {
+                    print("Can not download image : \(e)")
+                } else {
+                    print("Image \(imageName) loaded")
+                    result = data!
+                }
+                
+                group.leave()
+              }
+        )
+        
+        // wait for image to be downloaded
+        group.wait()
+        
+        return result
     }
 }
 
