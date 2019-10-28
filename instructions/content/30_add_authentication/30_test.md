@@ -46,8 +46,14 @@ token : Optional(AWSMobileClient.Tokens(idToken: Optional(AWSMobileClient.Sessio
 This applisation displays user personal information, such as the email address and the Cognito token in the console.  In real life DO NOT print these information in the console.  We did this for education purpose only.
 {{% /notice %}}
 
-You can ignore the following warning in XCode console :
+You can ignore the following warning in XCode console, [as they appear only in the Simulator](https://openradar.appspot.com/45237042):
 
 ```text 
 2019-10-24 16:47:05.056651+0200 Landmarks[92803:3338639] [Client] Updating selectors failed with: Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service on pid 0 named com.apple.commcenter.coretelephony.xpc was invalidated." UserInfo={NSDebugDescription=The connection to service on pid 0 named com.apple.commcenter.coretelephony.xpc was invalidated.}
+```
+
+To permanently disable these warning,s open a Terminal and type:
+
+```bash
+xcrun simctl spawn booted log config --mode "level:off"  --subsystem com.apple.CoreTelephony
 ```
