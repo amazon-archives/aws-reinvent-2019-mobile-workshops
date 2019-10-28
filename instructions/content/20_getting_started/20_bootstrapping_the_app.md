@@ -26,7 +26,7 @@ cd $PROJECT_DIRECTORY
 open HandlingUserInput.xcodeproj
 ```
 
-**Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;B**.
+**Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
 ![First build](/images/20-10-xcode.png)
 
 After a few seconds, you should see the application running in the iOS simulator.

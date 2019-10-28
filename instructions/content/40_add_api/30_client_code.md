@@ -297,7 +297,7 @@ The list of all changes we made to the code is visible in [this commit](https://
 
 ## Launch the app 
 
-Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;B**.
+Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
 ![build](/images/20-10-xcode.png)
 
 After a few seconds, you should see the application running in the iOS simulator.

@@ -403,7 +403,7 @@ You can view the whole code changes for this section [from this commit](https://
 
 ## Build and Test 
 
-Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;B**.
+Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
 ![build](/images/20-10-xcode.png)
 
 If you are still authenticated, click **Sign Out** and click the user badge to sign in again. You should see this:
