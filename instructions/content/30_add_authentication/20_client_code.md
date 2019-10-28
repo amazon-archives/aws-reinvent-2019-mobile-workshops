@@ -89,7 +89,7 @@ In your XCode project, click on **HandleUserInput** on the top left part of the 
 
 ### Build & Verify 
 
-Build and launch the application to verify everything is working as expected. **Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i>.
+Build and launch the application to verify everything is working as expected. **Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i>  or press **&#8984;B**.
 ![First build](/images/20-10-xcode.png)
 
 After a few seconds, you should see the application running in the iOS simulator.

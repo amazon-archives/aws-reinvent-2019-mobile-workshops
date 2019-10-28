@@ -44,7 +44,7 @@ To experiment the hosted UI, you replace one line of code in the file *Landmarks
 
 ## Build and test 
 
-Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i>.
+Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;B**.
 ![build](/images/20-10-xcode.png)
 
 If you are still authenticated, click **Sign Out** and click the user badge to sign in again. You should see this:
