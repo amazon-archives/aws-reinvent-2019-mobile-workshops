@@ -132,6 +132,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    public func signIn(username: String, password: String) {
+        AWSMobileClient.default().signIn(username: username, password: password) { (signInResult, error) in
+
+            if let error = error  {
+                print("\(error)")
+                // in real life, present an error message to user
+            } else if let signInResult = signInResult {
+                switch (signInResult.signInState) {
+                case .signedIn:
+                    print("User is signed in.")
+                case .smsMFA:
+                    print("SMS message sent to \(signInResult.codeDetails!.destination!)")
+                default:
+                    print("Sign In needs info which is not et supported.")
+                }
+            }
+        }
+    }
+    
     public func signOut() {
         AWSMobileClient.default().signOut()
     }
