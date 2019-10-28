@@ -44,7 +44,13 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "defaultSocial",
     "hostedUI": true,
-    "dependsOn": []
+    "dependsOn": [],
+    "hostedUIDomainName": "amplifyiosworkshopaf0e3fe3-af0e3fe3",
+    "authProvidersUserPool": [
+        "Facebook"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarkscomplete://\"],\"LogoutURLs\":[\"landmarkscomplete://\"]}"
 }

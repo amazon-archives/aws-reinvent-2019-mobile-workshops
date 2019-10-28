@@ -108,9 +108,14 @@
 							"Arn"
 						]
 					},
-					"useDefault": "default",
+					"useDefault": "defaultSocial",
 					"hostedUI": true,
 					"dependsOn": "",
+					"hostedUIDomainName": "amplifyiosworkshopaf0e3fe3-af0e3fe3",
+					"authProvidersUserPool": "Facebook",
+					"hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
+					"oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarkscomplete://\"],\"LogoutURLs\":[\"landmarkscomplete://\"]}",
+					"hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"2312411109071148\",\"client_secret\":\"9d5d3790cd0e7e20fc1c624d2cb46c64\"}]",
 					"env": "dev"
 				}
 			}

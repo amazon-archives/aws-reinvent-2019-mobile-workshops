@@ -34,7 +34,8 @@ struct LoginViewController: UIViewControllerRepresentable {
     
     func authenticate() {
         let app = UIApplication.shared.delegate as! AppDelegate
-        app.authenticateWithDropinUI(navigationController: navController)
+        //app.authenticateWithDropinUI(navigationController: navController)
+        app.authenticateWithHostedUI(navigationController: navController)
     }
     
 }

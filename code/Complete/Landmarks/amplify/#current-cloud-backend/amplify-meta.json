@@ -20,19 +20,19 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplifyiosworkshop-dev-20191025122039-deployment/amplify-cfn-templates/auth/amplifyiosworkshop42ccb821-cloudformation-template.yml",
 				"logicalId": "authamplifyiosworkshop42ccb821"
 			},
-			"lastPushTimeStamp": "2019-10-25T17:22:49.176Z",
+			"lastPushTimeStamp": "2019-10-28T17:47:46.802Z",
 			"output": {
 				"AppClientSecret": "13ft1duk8jqtss527fpdtldh4j3qo0kmoe6esec6lo81jr5h5m7v",
 				"UserPoolId": "eu-west-1_5BwEWgqaf",
 				"AppClientIDWeb": "1dmbtvlema0vf7gqvjp4dh239k",
 				"AppClientID": "5k3ebepv4cpshora5lpao1cmv",
-				"HostedUIDomain": "amplifyiosworkshop42ccb821-42ccb821-dev",
+				"HostedUIDomain": "amplifyiosworkshopaf0e3fe3-af0e3fe3-dev",
 				"IdentityPoolId": "eu-west-1:c25f8708-a249-4165-aef0-71b811404b09",
 				"IdentityPoolName": "amplifyiosworkshop42ccb821_identitypool_42ccb821__dev",
-				"OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarks://\"],\"LogoutURLs\":[\"landmarks://\"]}",
+				"OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarkscomplete://\"],\"LogoutURLs\":[\"landmarkscomplete://\"]}",
 				"UserPoolName": "amplifyiosworkshop42ccb821_userpool_42ccb821"
 			},
-			"lastPushDirHash": "7TrNmxWbw7dqdW/oBjLdFXG8+80="
+			"lastPushDirHash": "4qT4af2V2GIFDM1DfBZdHQKen6s="
 		}
 	},
 	"api": {
@@ -56,7 +56,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplifyiosworkshop-dev-20191025122039-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiamplifyiosworkshop"
 			},
-			"lastPushTimeStamp": "2019-10-25T17:22:49.174Z",
+			"lastPushTimeStamp": "2019-10-28T17:47:46.799Z",
 			"lastPushDirHash": "Dhx4i265IFg7M2Abht2FuPTkAhY="
 		}
 	},
@@ -68,7 +68,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplifyiosworkshop-dev-20191025122039-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
 				"logicalId": "storageamplifyiosworkshop"
 			},
-			"lastPushTimeStamp": "2019-10-25T17:22:49.176Z",
+			"lastPushTimeStamp": "2019-10-28T17:47:46.800Z",
 			"output": {
 				"BucketName": "amplifyiosworkshopa51bbe725c374d37b1f3aaae6303900b-dev",
 				"Region": "eu-west-1"

@@ -12,7 +12,9 @@
         },
         "categories": {
             "auth": {
-                "amplifyiosworkshop42ccb821": {}
+                "amplifyiosworkshop42ccb821": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"2312411109071148\",\"client_secret\":\"9d5d3790cd0e7e20fc1c624d2cb46c64\"}]"
+                }
             }
         }
     }

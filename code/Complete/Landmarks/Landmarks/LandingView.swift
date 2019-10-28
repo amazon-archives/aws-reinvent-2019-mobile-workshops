@@ -11,10 +11,19 @@ struct LandingView: View {
     
     var body: some View {
         
+        let loginView = LoginViewController()
+        
         return VStack {
             // .wrappedValue is used to extract the Bool from Binding<Bool> type
             if (!$user.isSignedIn.wrappedValue) {
-                CustomLoginView()
+                
+//                CustomLoginView()
+                ZStack {
+                   loginView
+                   Button(action: { loginView.authenticate() } ) {
+                       UserBadge().scaleEffect(0.5)
+                   }
+                }
             } else {
                 LandmarkList().environmentObject(user)
             }
