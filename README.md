@@ -16,8 +16,8 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 - [X] scaffold the workshop web site
 - [X] host the project on github + amplify console for hosting and CI/CD.  Use the shared evangelist account.
 - [X] write the workshop instructions
-- [ ] add instructions for identity federation (section 6)
-- [ ] add instruction to use a custom GUI screen (section 7)
+- [X] add instructions for identity federation (section 6)
+- [X] add instruction to use a custom GUI screen (section 7)
 - [ ] refactor code to download images asynchronously 
 - [X] cache downloaded images
 - [ ] eliminate the TODO in the code
