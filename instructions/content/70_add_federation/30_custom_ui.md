@@ -78,6 +78,8 @@ If you are still authenticated, click **Sign Out** and click the user badge to s
 
 Click **Continue** With Facebook, follow the Facebook login process, including accepting AMplify iOS Workshop app to access your profile data and, eventually, you should see the Landmark list.
 
+At this stage, no code change is required if you decide to add other identity providers to your backend configuration.  The Hosted UI will automatically propose "Login with XXX" buttons based on the providers configured on the backend.  All the interactions between the identity provider and Cognito happen on the backend, no client code is involved.
+
 ## Checking Amazon Cognito Identities
 
 By choosing **Continue with Facebook**, you actually created a second identity in your backend.  As seen from Amazon Cognito, the user you created earlier and the Facebook federated user are two different identities.  You can connect to Amazon Cognito console, click on the user pool name (landmarksxxxxx), select **User and Groups** on the left menu to verify two identities have been created:
