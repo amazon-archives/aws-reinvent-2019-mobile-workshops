@@ -49,7 +49,7 @@ Build and launch the application to verify everything is working as expected. Cl
 
 If you are still authenticated, click **Sign Out** and click the user badge to sign in again. You should see this:
 
-![customized drop in UI](/images/70-30-hostedui-2.png)
+![customized drop in UI](/images/60-20-1.png)
 
 {{% notice tip %}}
 The very first time user launches the hosted UI, iOS displays a confirmation message to inform users they are going to open a web address.  This message is part of [iOS Universal Link](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content) and can not be modified.
