@@ -42,6 +42,8 @@ To experiment the hosted UI, you replace one line of code in the file *Landmarks
     }
 {{< /highlight >}}
 
+## Build and test 
+
 Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i>.
 ![build](/images/20-10-xcode.png)
 
