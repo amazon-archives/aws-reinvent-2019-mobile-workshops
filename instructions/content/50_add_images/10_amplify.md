@@ -93,7 +93,15 @@ Now that the storage is in place and the images are in the cloud, let's modify t
 The `init_s3.sh` script is much shorter than the previous one we used to initialise the database.  The script uses the `aws` command line tool to synchronize the local resources directory with the Amazon S3 bucket.
 
 ```bash
+#
+# The code below is an extract from the script 'init_s3.sh'
+# Check the full script in $PROJECT_DIRECTORY/../../../
+#
+
+CODE_DIR=...
+IMAGE_BUCKET=...
+
 aws s3 sync $CODE_DIR/Landmarks/Resources/ s3://$IMAGE_BUCKET/public
 ```
 
-Note that the `public` prefix does not mean anybody can access the images.  It means *any authenicated user* can read and write the images.  Amplify Storage service supports two other storage classes : `protected/{user_identity_id}/` for files readable by all authenticated users but writable only by the owner, and `private/{user_identity_id}/` for files only accessible by their owner.
+Note that the `public` prefix does not mean anybody can access the images.  It means *any authenticated user* can read and write the images.  Amplify Storage service supports two other storage classes : `protected/{user_identity_id}/` for files readable by all authenticated users but writable only by the owner, and `private/{user_identity_id}/` for files only accessible by their owner.

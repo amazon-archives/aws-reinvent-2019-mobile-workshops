@@ -297,9 +297,9 @@ You can read more about Dispatch groups in [Apple's Developer documentation](htt
 
 ## Update ImageStore class
 
-The `ImageStore` class is part of the original code sample we started from. It is located in *Landmarks/Models/Data.swift* file.  Accessing the `image` property of a Landmark triggers the image loading logic. This class also takes care of caching images in mmeory to avoid loading them at each access.
+The `ImageStore` class is part of the original code sample we started from. It is located in *Landmarks/Models/Data.swift* file.  Accessing the `image` property of a Landmark triggers the image loading logic. This class also takes care of caching images in memory to avoid loading them at each access.
 
-In *Landmarks/Models/Landmark.swift*:
+Let's look how it works by reading code in *Landmarks/Models/Landmark.swift*:
 
 ```swift
 extension Landmark {
@@ -309,13 +309,17 @@ extension Landmark {
 }
 ```
 
-In *Landmarks/Models/Data.swift*:
+and in *Landmarks/Models/Data.swift*:
 
 ```swift
     static func loadImage(name: String) -> CGImage {
         // load image from the local bundle
     }
 ```
+
+{{% notice tip %}}
+You do not need to copy/paste the code above.  We provide the above code for reading / exploration only.
+{{% /notice %}}
 
 To download images from S3, we just replace the logic inside the `loadImage()` function.
 
@@ -413,7 +417,7 @@ After a few seconds, you should see the application running in the iOS simulator
 ![run](/images/40-30-appsync-code-2.png)
 
 {{% notice tip %}}
-There might be a small delay between the moment the Landmark list is displayed and the moment the list is populated.  This is because image loading is synchronous and calls are blocked while the images are downloaed.  One way to improve this would be to modify `UserData` class to return a pre-canned image while loading the landmark image, and replace images as they are being loaded.  
+There might be a small delay between the moment the Landmark list is displayed and the moment the list is populated.  This is because image loading is synchronous and calls are blocked while the images are downloaded.  One way to improve this would be to modify `UserData` class to return a pre-canned image while loading the landmark image, and replace images as they are being loaded.  
 {{% /notice %}}
 
 Now that we have the basic building blocks of the app defined, let's explore the options offered to customize the authentication user interface and user experience.
