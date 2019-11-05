@@ -12,7 +12,7 @@ The starting point for the workshop is the [Apple Swift UI tutorial](https://dev
 ![Directory Structure](/images/20-10-directory-structure.png)
 
 1. This workshop will start from the *Complete* version of the tutorial project.  
-In the remaining part of this workshop, `$PROJECT_DIRECTORY` will refer to `HandlingUserInput/Complete/Landmarks`.  
+In the remaining part of this workshop, `$PROJECT_DIRECTORY` will refer to `~/Downloads/amplify-ios-workshop/Complete/Landmarks`.  
 Open the XCode project:
 ```bash
 cd ~/Downloads
