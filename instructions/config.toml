@@ -19,7 +19,8 @@ description = "Amplify iOS Workshop"
 disableSearch = false
 disableAssetsBusting = false
 disableLanguageSwitchingButton = true
-disableShortcutsTitle=true
+disableShortcutsTitle = true
+disableInlineCopyToClipBoard = true
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-twitter fa-lg'></i> @sebsto"

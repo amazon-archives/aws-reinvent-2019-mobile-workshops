@@ -24,6 +24,9 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 - [X] Fix landmark details page 
 - [ ] use Hugo page resource to load images
 - [ ] test and dry run
+- [ ] refactor IAM permissions to use least priviledges
+- [ ] add reinvent specific instructions to use event engine accounts
+- [ ] ask guidance about best practices for Region choice.
 
 ### Dir Structure
 
