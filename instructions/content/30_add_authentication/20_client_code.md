@@ -17,7 +17,7 @@ graph LR;
     A(SceneDelegate) -->|entry point| B(LandingView)
     B --> C{is user<br/>authenticated?}
     C -->|no| D(LoginView)
-    C -->|Yes| E(LandmarksList)
+    C -->|Yes| E(LandmarkList)
 {{< /mermaid >}}
 
 We choose to write all AWS specific code in the `AppDelegate` class, to avoid spreading dependencies all over the project. This is a design decision for this project, you may adopt other design for your projects.
@@ -81,6 +81,8 @@ In the Finder, drag `awsconfiguration.json` into Xcode under the top Project Nav
 - Clear the **Copy items if needed** check box.
 - Choose **Create groups**, and then choose **Finish**.
 
+![Add awsconfiguration](/images/30-20-add-awsconfiguration.gif)
+
 ### Update Target Configurations for CocoaPods
 
 In your XCode project, click on **HandleUserInput** on the top left part of the screen, then **Info**.  Open **Configurations**, **Debug**.  For the **landmarks** target, replace the configuration by **Pods-landmarks.debug**. Repeat the operation for the **release** target, using **Pods-landmarks.release** configuration.  Your project should look like this:
@@ -94,6 +96,10 @@ Build and launch the application to verify everything is working as expected. **
 
 After a few seconds, you should see the application running in the iOS simulator.
 ![First run](/images/20-10-app-start.png)
+
+{{% notice info %}}
+You will notice ~150 compiler warning due to null type management in the Amplify libraries.  These will be addressed in a future release (or you can send us [a pull request](https://github.com/aws-amplify/aws-sdk-ios) :-) ) 
+{{% /notice %}}
 
 ## Add authentication code
 
@@ -259,11 +265,11 @@ Before proceeding to the next steps, **build** (&#8984;B) the project to ensure 
 
 In this section, we're going to add a new application entry point: the LandingView.  This view will check if the user is authenticated and will display either the authentication view or the main application view.
 
-Let's create three new Swift classes:
+Let's create three new Swift classes in `$PROJECT_DIRECTORY/Landmarks` (same directory as `AppDelegate.swift` or `LandmarkList,swift`)
 
 - **UserBadge.swift** is the view to use when user is not authenticated
 - **LoginViewController.swift** is the View Controller to host the Amplify drop in UI component
-- **LandingView.swift** is the application entry point.  It displays either LoginViewControler or LandmarksList based on user's authentication status.
+- **LandingView.swift** is the application entry point.  It displays either LoginViewControler or LandmarkList based on user's authentication status.
 
 To add a new Swift class to your project, use XCode menu and click **File**, then **New** or press **&#8984;N** and then enter the file name.
 
@@ -366,7 +372,7 @@ struct LoginViewController: UIViewControllerRepresentable {
 
 This `LandingView` creates the `LoginViewController`.  When user is not authenticated, it creates a stack with the `loginView`, (provided by Amplify) and the `UserBadge`.  Clicking on the `UserBadge` triggers the `authenticate()` method. When user is authenticated, it passes the user object to `LandmarkList`.
 
-Pay attention to the `@ObservedObject` annotation.  This tells SwiftUI to invalidate and redraw the View when the state of the object changes.  When user signs in or signs out, `LandingView` will automatically adjust and render the `UserBadge` or the `LandmarksList` view.
+Pay attention to the `@ObservedObject` annotation.  This tells SwiftUI to invalidate and redraw the View when the state of the object changes.  When user signs in or signs out, `LandingView` will automatically adjust and render the `UserBadge` or the `LandmarkList` view.
 
 {{< highlight swift >}}
 //
@@ -412,7 +418,7 @@ struct LandingView_Previews: PreviewProvider {
 
 ### Update SceneDelegate.swift
 
-Finally, we update `SceneDelegate.swift` to launch our new `LandingView` instead of launching `LandmarksList` when the application starts. Highlighted lines show the update.  You can copy/paste the whole content to replace *Landmarks/SceneDelegate.swift* :
+Finally, we update `SceneDelegate.swift` to launch our new `LandingView` instead of launching `LandmarkList` when the application starts. Highlighted lines show the update.  You can copy/paste the whole content to replace *Landmarks/SceneDelegate.swift* :
 
 {{< highlight swift "hl_lines=14-14 25-25 65" >}}
 /*
@@ -479,7 +485,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 ## Add a signout button
 
-To make our tests easier and to allow users to signout and invalidate their session, let's add a signout button on the top of the `LandmarksList` view.  Highlighted lines show the update.  You can copy/paste the whole content to replace *Landmarks/LandmarksList.swift*
+To make our tests easier and to allow users to signout and invalidate their session, let's add a signout button on the top of the `LandmarkList` view.  Highlighted lines show the update.  You can copy/paste the whole content to replace *Landmarks/LandmarkList.swift*
 
 {{< highlight swift "hl_lines=10-20 44-44 58" >}}
 /*

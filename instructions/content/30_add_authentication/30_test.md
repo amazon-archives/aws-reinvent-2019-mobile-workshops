@@ -8,7 +8,7 @@ weight = 30
   src = "images/30-20-test-1.png"
 +++
 
-You just add a bit of logic in `AppDelegate` class to sign in and to sign out users.  You also modified the screen flow to start the app with a `LandingView` that controls the routing towards a `LoginViewController` or the `LandmarksList` view based on the user authentication status.
+You just add a bit of logic in `AppDelegate` class to sign in and to sign out users.  You also modified the screen flow to start the app with a `LandingView` that controls the routing towards a `LoginViewController` or the `LandmarkList` view based on the user authentication status.
 
 Let's now verify everythign works as expected.  Start the application using XCode's menu and click **Product**, then **Run** (or press **&#8984;R**).
 
