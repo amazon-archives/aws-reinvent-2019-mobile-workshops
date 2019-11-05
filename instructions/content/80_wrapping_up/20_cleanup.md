@@ -39,3 +39,5 @@ aws s3 rb s3://$DEPLOYMENT_BUCKET
 
 rm awsconfiguration.json
 ```
+
+Thank you for having follwed this workshop instruction until the end.  Please le us know your feedback by opening an issue or a pull request on our [GitHub repository](https://TODO).
