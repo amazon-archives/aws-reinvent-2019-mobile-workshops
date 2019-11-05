@@ -19,6 +19,7 @@ cd ~/Downloads
 mkdir amplify-ios-workshop 
 cd amplify-ios-workshop
 unzip ../HandlingUserInput.zip
+rm -rf __MACOSX
 
 PROJECT_DIRECTORY=~/Downloads/amplify-ios-workshop/Complete/Landmarks
 cd $PROJECT_DIRECTORY
@@ -26,7 +27,10 @@ cd $PROJECT_DIRECTORY
 open HandlingUserInput.xcodeproj
 ```
 
-**Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
+You can safely ackowledge XCode's message informing you this app has been downloaded from Internet.
+![XCode warning](/images/20-20-xcode-warning.png)
+
+In XCode, **Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
 ![First build](/images/20-10-xcode.png)
 
 After a few seconds, you should see the application running in the iOS simulator.
