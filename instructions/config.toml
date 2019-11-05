@@ -4,7 +4,7 @@ defaultContentLanguage = "en"
 title = "Amplify iOS Workshop"
 theme = "hugo-theme-learn"
 uglyurls = true
-#googleAnalytics = "UA-129511631-1"
+googleAnalytics = "UA-151590472-1"
 sectionPagesMenu = "main"
 pygmentsCodeFences = true
 
