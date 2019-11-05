@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 
 struct Landmark: Hashable, Codable, Identifiable {
-    var id: Int
+    var id: String
     var name: String
     fileprivate var imageName: String
     fileprivate var coordinates: Coordinates

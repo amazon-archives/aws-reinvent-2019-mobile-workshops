@@ -8,7 +8,7 @@ A model object that stores app data.
 import Combine
 import SwiftUI
 
-final class UserData: ObservableObject {
+final class UserData : ObservableObject {
     @Published var showFavoritesOnly = false
     @Published var landmarks : [Landmark] = []
     @Published var isSignedIn : Bool = false

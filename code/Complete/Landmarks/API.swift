@@ -129,13 +129,13 @@ public struct CoordinateInput: GraphQLMapConvertible {
 public struct UpdateLandmarkInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: Int, name: String? = nil, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: CoordinateInput? = nil, imageName: String? = nil) {
+  public init(id: GraphQLID, name: String? = nil, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: CoordinateInput? = nil, imageName: String? = nil) {
     graphQLMap = ["id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates, "imageName": imageName]
   }
 
-  public var id: Int {
+  public var id: GraphQLID {
     get {
-      return graphQLMap["id"] as! Int
+      return graphQLMap["id"] as! GraphQLID
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "id")
@@ -244,13 +244,13 @@ public struct DeleteLandmarkInput: GraphQLMapConvertible {
 public struct ModelLandmarkFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIntFilterInput? = nil, name: ModelStringFilterInput? = nil, category: ModelStringFilterInput? = nil, city: ModelStringFilterInput? = nil, state: ModelStringFilterInput? = nil, isFeatured: ModelBooleanFilterInput? = nil, isFavorite: ModelBooleanFilterInput? = nil, park: ModelStringFilterInput? = nil, imageName: ModelStringFilterInput? = nil, and: [ModelLandmarkFilterInput?]? = nil, or: [ModelLandmarkFilterInput?]? = nil, not: ModelLandmarkFilterInput? = nil) {
+  public init(id: ModelIDFilterInput? = nil, name: ModelStringFilterInput? = nil, category: ModelStringFilterInput? = nil, city: ModelStringFilterInput? = nil, state: ModelStringFilterInput? = nil, isFeatured: ModelBooleanFilterInput? = nil, isFavorite: ModelBooleanFilterInput? = nil, park: ModelStringFilterInput? = nil, imageName: ModelStringFilterInput? = nil, and: [ModelLandmarkFilterInput?]? = nil, or: [ModelLandmarkFilterInput?]? = nil, not: ModelLandmarkFilterInput? = nil) {
     graphQLMap = ["id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "imageName": imageName, "and": and, "or": or, "not": not]
   }
 
-  public var id: ModelIntFilterInput? {
+  public var id: ModelIDFilterInput? {
     get {
-      return graphQLMap["id"] as! ModelIntFilterInput?
+      return graphQLMap["id"] as! ModelIDFilterInput?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "id")
@@ -357,91 +357,100 @@ public struct ModelLandmarkFilterInput: GraphQLMapConvertible {
   }
 }
 
-public struct ModelIntFilterInput: GraphQLMapConvertible {
+public struct ModelIDFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(ne: Int? = nil, eq: Int? = nil, le: Int? = nil, lt: Int? = nil, ge: Int? = nil, gt: Int? = nil, contains: Int? = nil, notContains: Int? = nil, between: [Int?]? = nil) {
-    graphQLMap = ["ne": ne, "eq": eq, "le": le, "lt": lt, "ge": ge, "gt": gt, "contains": contains, "notContains": notContains, "between": between]
+  public init(ne: GraphQLID? = nil, eq: GraphQLID? = nil, le: GraphQLID? = nil, lt: GraphQLID? = nil, ge: GraphQLID? = nil, gt: GraphQLID? = nil, contains: GraphQLID? = nil, notContains: GraphQLID? = nil, between: [GraphQLID?]? = nil, beginsWith: GraphQLID? = nil) {
+    graphQLMap = ["ne": ne, "eq": eq, "le": le, "lt": lt, "ge": ge, "gt": gt, "contains": contains, "notContains": notContains, "between": between, "beginsWith": beginsWith]
   }
 
-  public var ne: Int? {
+  public var ne: GraphQLID? {
     get {
-      return graphQLMap["ne"] as! Int?
+      return graphQLMap["ne"] as! GraphQLID?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "ne")
     }
   }
 
-  public var eq: Int? {
+  public var eq: GraphQLID? {
     get {
-      return graphQLMap["eq"] as! Int?
+      return graphQLMap["eq"] as! GraphQLID?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "eq")
     }
   }
 
-  public var le: Int? {
+  public var le: GraphQLID? {
     get {
-      return graphQLMap["le"] as! Int?
+      return graphQLMap["le"] as! GraphQLID?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "le")
     }
   }
 
-  public var lt: Int? {
+  public var lt: GraphQLID? {
     get {
-      return graphQLMap["lt"] as! Int?
+      return graphQLMap["lt"] as! GraphQLID?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "lt")
     }
   }
 
-  public var ge: Int? {
+  public var ge: GraphQLID? {
     get {
-      return graphQLMap["ge"] as! Int?
+      return graphQLMap["ge"] as! GraphQLID?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "ge")
     }
   }
 
-  public var gt: Int? {
+  public var gt: GraphQLID? {
     get {
-      return graphQLMap["gt"] as! Int?
+      return graphQLMap["gt"] as! GraphQLID?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "gt")
     }
   }
 
-  public var contains: Int? {
+  public var contains: GraphQLID? {
     get {
-      return graphQLMap["contains"] as! Int?
+      return graphQLMap["contains"] as! GraphQLID?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "contains")
     }
   }
 
-  public var notContains: Int? {
+  public var notContains: GraphQLID? {
     get {
-      return graphQLMap["notContains"] as! Int?
+      return graphQLMap["notContains"] as! GraphQLID?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "notContains")
     }
   }
 
-  public var between: [Int?]? {
+  public var between: [GraphQLID?]? {
     get {
-      return graphQLMap["between"] as! [Int?]?
+      return graphQLMap["between"] as! [GraphQLID?]?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "between")
+    }
+  }
+
+  public var beginsWith: GraphQLID? {
+    get {
+      return graphQLMap["beginsWith"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "beginsWith")
     }
   }
 }
@@ -615,7 +624,7 @@ public final class CreateLandmarkMutation: GraphQLMutation {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("category", type: .scalar(String.self)),
         GraphQLField("city", type: .scalar(String.self)),
@@ -633,7 +642,7 @@ public final class CreateLandmarkMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: Int, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
+      public init(id: GraphQLID, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
         self.init(snapshot: ["__typename": "Landmark", "id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates.flatMap { $0.snapshot }, "imageName": imageName])
       }
 
@@ -646,9 +655,9 @@ public final class CreateLandmarkMutation: GraphQLMutation {
         }
       }
 
-      public var id: Int {
+      public var id: GraphQLID {
         get {
-          return snapshot["id"]! as! Int
+          return snapshot["id"]! as! GraphQLID
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
@@ -831,7 +840,7 @@ public final class UpdateLandmarkMutation: GraphQLMutation {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("category", type: .scalar(String.self)),
         GraphQLField("city", type: .scalar(String.self)),
@@ -849,7 +858,7 @@ public final class UpdateLandmarkMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: Int, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
+      public init(id: GraphQLID, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
         self.init(snapshot: ["__typename": "Landmark", "id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates.flatMap { $0.snapshot }, "imageName": imageName])
       }
 
@@ -862,9 +871,9 @@ public final class UpdateLandmarkMutation: GraphQLMutation {
         }
       }
 
-      public var id: Int {
+      public var id: GraphQLID {
         get {
-          return snapshot["id"]! as! Int
+          return snapshot["id"]! as! GraphQLID
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
@@ -1047,7 +1056,7 @@ public final class DeleteLandmarkMutation: GraphQLMutation {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("category", type: .scalar(String.self)),
         GraphQLField("city", type: .scalar(String.self)),
@@ -1065,7 +1074,7 @@ public final class DeleteLandmarkMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: Int, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
+      public init(id: GraphQLID, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
         self.init(snapshot: ["__typename": "Landmark", "id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates.flatMap { $0.snapshot }, "imageName": imageName])
       }
 
@@ -1078,9 +1087,9 @@ public final class DeleteLandmarkMutation: GraphQLMutation {
         }
       }
 
-      public var id: Int {
+      public var id: GraphQLID {
         get {
-          return snapshot["id"]! as! Int
+          return snapshot["id"]! as! GraphQLID
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
@@ -1263,7 +1272,7 @@ public final class GetLandmarkQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("category", type: .scalar(String.self)),
         GraphQLField("city", type: .scalar(String.self)),
@@ -1281,7 +1290,7 @@ public final class GetLandmarkQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: Int, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
+      public init(id: GraphQLID, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
         self.init(snapshot: ["__typename": "Landmark", "id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates.flatMap { $0.snapshot }, "imageName": imageName])
       }
 
@@ -1294,9 +1303,9 @@ public final class GetLandmarkQuery: GraphQLQuery {
         }
       }
 
-      public var id: Int {
+      public var id: GraphQLID {
         get {
-          return snapshot["id"]! as! Int
+          return snapshot["id"]! as! GraphQLID
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
@@ -1529,7 +1538,7 @@ public final class ListLandmarksQuery: GraphQLQuery {
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
           GraphQLField("category", type: .scalar(String.self)),
           GraphQLField("city", type: .scalar(String.self)),
@@ -1547,7 +1556,7 @@ public final class ListLandmarksQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: Int, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
+        public init(id: GraphQLID, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
           self.init(snapshot: ["__typename": "Landmark", "id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates.flatMap { $0.snapshot }, "imageName": imageName])
         }
 
@@ -1560,9 +1569,9 @@ public final class ListLandmarksQuery: GraphQLQuery {
           }
         }
 
-        public var id: Int {
+        public var id: GraphQLID {
           get {
-            return snapshot["id"]! as! Int
+            return snapshot["id"]! as! GraphQLID
           }
           set {
             snapshot.updateValue(newValue, forKey: "id")
@@ -1739,7 +1748,7 @@ public final class OnCreateLandmarkSubscription: GraphQLSubscription {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("category", type: .scalar(String.self)),
         GraphQLField("city", type: .scalar(String.self)),
@@ -1757,7 +1766,7 @@ public final class OnCreateLandmarkSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: Int, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
+      public init(id: GraphQLID, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
         self.init(snapshot: ["__typename": "Landmark", "id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates.flatMap { $0.snapshot }, "imageName": imageName])
       }
 
@@ -1770,9 +1779,9 @@ public final class OnCreateLandmarkSubscription: GraphQLSubscription {
         }
       }
 
-      public var id: Int {
+      public var id: GraphQLID {
         get {
-          return snapshot["id"]! as! Int
+          return snapshot["id"]! as! GraphQLID
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
@@ -1948,7 +1957,7 @@ public final class OnUpdateLandmarkSubscription: GraphQLSubscription {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("category", type: .scalar(String.self)),
         GraphQLField("city", type: .scalar(String.self)),
@@ -1966,7 +1975,7 @@ public final class OnUpdateLandmarkSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: Int, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
+      public init(id: GraphQLID, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
         self.init(snapshot: ["__typename": "Landmark", "id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates.flatMap { $0.snapshot }, "imageName": imageName])
       }
 
@@ -1979,9 +1988,9 @@ public final class OnUpdateLandmarkSubscription: GraphQLSubscription {
         }
       }
 
-      public var id: Int {
+      public var id: GraphQLID {
         get {
-          return snapshot["id"]! as! Int
+          return snapshot["id"]! as! GraphQLID
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")
@@ -2157,7 +2166,7 @@ public final class OnDeleteLandmarkSubscription: GraphQLSubscription {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
         GraphQLField("category", type: .scalar(String.self)),
         GraphQLField("city", type: .scalar(String.self)),
@@ -2175,7 +2184,7 @@ public final class OnDeleteLandmarkSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: Int, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
+      public init(id: GraphQLID, name: String, category: String? = nil, city: String? = nil, state: String? = nil, isFeatured: Bool? = nil, isFavorite: Bool? = nil, park: String? = nil, coordinates: Coordinate? = nil, imageName: String? = nil) {
         self.init(snapshot: ["__typename": "Landmark", "id": id, "name": name, "category": category, "city": city, "state": state, "isFeatured": isFeatured, "isFavorite": isFavorite, "park": park, "coordinates": coordinates.flatMap { $0.snapshot }, "imageName": imageName])
       }
 
@@ -2188,9 +2197,9 @@ public final class OnDeleteLandmarkSubscription: GraphQLSubscription {
         }
       }
 
-      public var id: Int {
+      public var id: GraphQLID {
         get {
-          return snapshot["id"]! as! Int
+          return snapshot["id"]! as! GraphQLID
         }
         set {
           snapshot.updateValue(newValue, forKey: "id")

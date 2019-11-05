@@ -24,6 +24,7 @@ struct LandingView: View {
                        UserBadge().scaleEffect(0.5)
                    }
                 }
+                
             } else {
                 LandmarkList().environmentObject(user)
             }

@@ -33,16 +33,35 @@ struct CustomLoginView : View {
             .background(Color(UIColor.systemFill))
             .padding(.bottom, 10)
 
-            Button(action: { self.app.signIn(username: self.username, password: self.password) }) {
-                HStack() {
-                    Spacer()
-                    Text("Signin")
-                        .foregroundColor(Color.white)
-                        .bold()
-                    Spacer()
-                }
-                                
-            }.padding().background(Color.green).cornerRadius(4.0)
+            HStack() {
+                
+                Button(action: { self.app.signIn(username: self.username, password: self.password) }) {
+                    HStack() {
+                        Spacer()
+                        Text("Login with Facebook")
+                            .foregroundColor(Color.white)
+                            .bold()
+                            .multilineTextAlignment(.center)
+                        Spacer()
+                    }
+                                    
+                }.padding().background(Color.blue).cornerRadius(4.0)
+                
+                Spacer()
+                
+                Button(action: { self.app.signIn(username: self.username, password: self.password) }) {
+                    HStack() {
+                        Spacer()
+                        Text("Signin with Cognito")
+                            .foregroundColor(Color.white)
+                            .bold()
+                            .multilineTextAlignment(.center)
+                        Spacer()
+                    }
+                                    
+                }.padding().background(Color.green).cornerRadius(4.0)
+                
+            }
         }.padding()
     }
 }

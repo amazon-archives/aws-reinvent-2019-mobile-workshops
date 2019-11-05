@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "amplifyiosworkshop42ccb821_identitypool_42ccb821",
+    "identityPoolName": "landmarks8edb73c3_identitypool_8edb73c3",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "amplif42ccb821",
-    "userPoolName": "amplifyiosworkshop42ccb821_userpool_42ccb821",
+    "resourceNameTruncated": "landma8edb73c3",
+    "userPoolName": "landmarks8edb73c3_userpool_8edb73c3",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "amplif42ccb821_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "landma8edb73c3_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "amplifyiosworkshop42ccb821",
+    "resourceName": "landmarks8edb73c3",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -47,10 +47,10 @@
     "useDefault": "defaultSocial",
     "hostedUI": true,
     "dependsOn": [],
-    "hostedUIDomainName": "amplifyiosworkshopaf0e3fe3-af0e3fe3",
+    "hostedUIDomainName": "landmarks47bf635d-47bf635d",
     "authProvidersUserPool": [
         "Facebook"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarkscomplete://\"],\"LogoutURLs\":[\"landmarkscomplete://\"]}"
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"landmarks://\"],\"LogoutURLs\":[\"landmarks://\"]}"
 }

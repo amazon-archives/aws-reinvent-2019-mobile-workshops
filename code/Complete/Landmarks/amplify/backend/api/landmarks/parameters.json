@@ -1,10 +1,10 @@
 {
-    "AppSyncApiName": "amplifyiosworkshop",
+    "AppSyncApiName": "landmarks",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": "false",
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
-            "authamplifyiosworkshop42ccb821",
+            "authlandmarks8edb73c3",
             "Outputs.UserPoolId"
         ]
     }

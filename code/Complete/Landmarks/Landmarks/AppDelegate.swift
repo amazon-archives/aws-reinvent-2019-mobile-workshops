@@ -1,4 +1,9 @@
-// Landmarks/AppDelegate.swift
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The application delegate.
+*/
 
 import UIKit
 import AWSMobileClient
@@ -99,11 +104,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
     // MARK: AWSMobileClient - Authentication
     
+
     public func authenticateWithDropinUI(navigationController : UINavigationController) {
         print("dropinUI()")
         
         // Option to launch sign in directly
-        let signinUIOptions = SignInUIOptions(canCancel: false)
+        let signinUIOptions = SignInUIOptions(canCancel: false,
+                                              logoImage: UIImage(named: "turtlerock"),
+                                              backgroundColor: .black)
 
         AWSMobileClient.default().showSignIn(navigationController: navigationController, signInUIOptions: signinUIOptions, { (signInState, error) in
             if let signInState = signInState {
@@ -150,6 +158,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+//    public func signInFederated() {
+//        AWSMobileClient.default().federatedSignIn(providerName: <#T##String#>, token: <#T##String#>, completionHandler: <#T##((UserState?, Error?) -> Void)##((UserState?, Error?) -> Void)##(UserState?, Error?) -> Void#>)
+//
+//            if let error = error  {
+//                print("\(error)")
+//                // in real life, present an error message to user
+//            } else if let signInResult = signInResult {
+//                switch (signInResult.signInState) {
+//                case .signedIn:
+//                    print("User is signed in.")
+//                case .smsMFA:
+//                    print("SMS message sent to \(signInResult.codeDetails!.destination!)")
+//                default:
+//                    print("Sign In needs info which is not et supported.")
+//                }
+//            }
+//        }
+//    }
     
     public func signOut() {
         AWSMobileClient.default().signOut()
@@ -250,3 +277,5 @@ extension AWSMobileClient: AWSCognitoUserPoolsAuthProviderAsync {
         }
     }
 }
+
+

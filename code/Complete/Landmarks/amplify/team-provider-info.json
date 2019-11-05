@@ -1,19 +1,19 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplifyiosworkshop-dev-20191025122039-authRole",
-            "UnauthRoleArn": "arn:aws:iam::486652066693:role/amplifyiosworkshop-dev-20191025122039-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::486652066693:role/amplifyiosworkshop-dev-20191025122039-authRole",
+            "AuthRoleName": "landmarks-dev-20191019133013-authRole",
+            "UnauthRoleArn": "arn:aws:iam::486652066693:role/landmarks-dev-20191019133013-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::486652066693:role/landmarks-dev-20191019133013-authRole",
             "Region": "eu-west-1",
-            "DeploymentBucketName": "amplifyiosworkshop-dev-20191025122039-deployment",
-            "UnauthRoleName": "amplifyiosworkshop-dev-20191025122039-unauthRole",
-            "StackName": "amplifyiosworkshop-dev-20191025122039",
-            "StackId": "arn:aws:cloudformation:eu-west-1:486652066693:stack/amplifyiosworkshop-dev-20191025122039/178a8710-f711-11e9-949e-06982f8c16e4"
+            "DeploymentBucketName": "landmarks-dev-20191019133013-deployment",
+            "UnauthRoleName": "landmarks-dev-20191019133013-unauthRole",
+            "StackName": "landmarks-dev-20191019133013",
+            "StackId": "arn:aws:cloudformation:eu-west-1:486652066693:stack/landmarks-dev-20191019133013/d0e2a830-f263-11e9-a55d-024e38e0666a"
         },
         "categories": {
             "auth": {
-                "amplifyiosworkshop42ccb821": {
-                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"2312411109071148\",\"client_secret\":\"9d5d3790cd0e7e20fc1c624d2cb46c64\"}]"
+                "landmarks8edb73c3": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"2662415317114701\",\"client_secret\":\"89721bacdb3f343d06642367ccc63605\"}]"
                 }
             }
         }

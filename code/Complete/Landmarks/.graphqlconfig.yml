@@ -1,5 +1,5 @@
 projects:
-  amplifyiosworkshop:
+  landmarks:
     schemaPath: graphql/schema.json
     includes:
       - graphql/**/*.graphql
