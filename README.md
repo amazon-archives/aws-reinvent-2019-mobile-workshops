@@ -13,20 +13,21 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 
 ### TODO
 
+- [ ] refactor code to download images asynchronously 
+- [ ] eliminate the TODO in the code
+- [ ] use Hugo page resource to load images
+- [ ] test and dry run
+- [ ] refactor IAM permissions to use least priviledge
+- [ ] add reinvent specific instructions to use event engine accounts
+- [ ] ask guidance about best practices for Region choice.
+- [ ] add instruction to use other IDP (google, amazon)
 - [X] scaffold the workshop web site
 - [X] host the project on github + amplify console for hosting and CI/CD.  Use the shared evangelist account.
 - [X] write the workshop instructions
 - [X] add instructions for identity federation (section 6)
 - [X] add instruction to use a custom GUI screen (section 7)
-- [ ] refactor code to download images asynchronously 
-- [X] cache downloaded images
-- [ ] eliminate the TODO in the code
 - [X] Fix landmark details page 
-- [ ] use Hugo page resource to load images
-- [ ] test and dry run
-- [ ] refactor IAM permissions to use least priviledges
-- [ ] add reinvent specific instructions to use event engine accounts
-- [ ] ask guidance about best practices for Region choice.
+- [X] code : cache downloaded images
 
 ### Dir Structure
 

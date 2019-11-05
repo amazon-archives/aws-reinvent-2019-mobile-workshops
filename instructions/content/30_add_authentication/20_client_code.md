@@ -273,6 +273,8 @@ Let's create three new Swift classes in `$PROJECT_DIRECTORY/Landmarks` (same dir
 
 To add a new Swift class to your project, use XCode menu and click **File**, then **New** or press **&#8984;N** and then enter the file name.
 
+![add classes to xcode](/images/30-20-xcode-add-class.gif)
+
 ### UserBadge.swift 
 
 The user badge is a very simple graphical view representing a big login button.
