@@ -4,7 +4,7 @@ chapter = false
 weight = 10
 +++
 
-Now that we have authenticated users, let's make an API for retrieving Landmarks. The application we started from uses a locally bundled JSON file to list all Landmarks.  You can check that file in *Landmarks/Resources/ladnmarkData.json*.  We are going to create a database in the cloud to store this list and an API to allow our application to retrieve the list.
+Now that we have authenticated users, let's make an API for retrieving Landmarks. The application we started from uses a locally bundled JSON file to list all Landmarks.  You can check that file in *Landmarks/Resources/landmarkData.json*.  We are going to create a database in the cloud to store this list and an API to allow our application to retrieve the list.
 
 {{% notice tip %}}
 To build our API we'll use [AWS AppSync](https://aws.amazon.com/appsync/), a managed GraphQL service for building data-driven apps. If you're not yet familiar with the basics of GraphQL, you should take a few minutes and check out [https://graphql.github.io/learn/](https://graphql.github.io/learn/) before continuing, or use the site to refer back to when you have questions as you read along.
@@ -129,7 +129,7 @@ But don't worry, the way AWS AppSync is resolving fields into data isn't hidden 
 
 ## Upload existing application data
 
-The sample application we started from uses a local file (*Landmarks/Resources/ladnmarkData.json*) to hold the application data.  We provide a script to upload the content of this file to the cloud database.  
+The sample application we started from uses a local file (*Landmarks/Resources/landmarkData.json*) to hold the application data.  We provide a script to upload the content of this file to the cloud database.  
 
 In a Terminal, type:
 
