@@ -8,7 +8,7 @@ Now that the storage backend is ready, let's modify the application code to load
 
 - [add AWS Amplify dependencies](#add-amazon-s3-client-library) to the project 
 
-- [add the code](#add-storage-access-code) to query S3 in `ApplicationDelegate`
+- [add the code](#add-storage-access-code) to query S3 in `AppDelegate`
 
 - [update](#update-imagestore-class) the `ImageStore` class in the *Landmarks/Models/Data.swift* file to load the cloud images instead of the local ones.
 

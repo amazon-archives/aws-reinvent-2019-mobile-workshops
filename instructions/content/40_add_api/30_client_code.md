@@ -10,7 +10,7 @@ At high level, here is how we gonna proceed
 
 - first, we're going [to add](#add-the-aws-appsync-client-library) the `pod` dependency to access the AWS AppSync client library
 
-- the [app sync client code is contained](#add-client-code-in-applicationdelegate) in the `ApplicationDelegate` class, as we did for authentication.
+- the [app sync client code is contained](#add-client-code-in-the-application-delegate) in `AppDelegate` class, as we did for authentication.
 
 - `UserData` class holds a hard code reference to the list of Landmarks loaded at application startup time.  [We are going to replace with an empty list](#modify-userdata-class) (`[]`) and we're going to add code to query the API and populate the list after sucesfull sign in.
 
@@ -83,9 +83,9 @@ Thanks to the strongly typed nature of GraphQL, Amplify generated Swift code to 
 - Clear the **Copy items if needed** check box.
 - Choose **Create groups**, and then choose **Finish**.
 
-## Add client code in ApplicationDelegate 
+## Add client code in the application delegate 
 
-We modify `ApplicationDelegate` to add code to call the GraphQL API.  You can safely copy/paste the entire file from below. 
+We modify `AppDelegate` to add code to call the GraphQL API.  You can safely copy/paste the entire file from below. 
 
 {{< highlight swift "hl_lines=5 11 15-16 29 35-36 73-76 140-155 157-178 180-193" >}}
 // Landmarks/AppDelegate.swift

@@ -6,7 +6,7 @@ weight = 10
 
 You can customize the Amplify dropin UI with minimum effort.  The `SignInUIOptions` allows you to [customize elements](https://aws-amplify.github.io/docs/ios/authentication#customization) such as the background color or the logo.
 
-For example, let's modify some `SignInUIOptions` in `authenticateWithDropinUI()` method (in *Landmarks/ApplicationDelegate.swift* class)
+For example, let's modify some `SignInUIOptions` in `authenticateWithDropinUI()` method (in *Landmarks/AppDelegate.swift* class)
 
 {{< highlight swift "hl_lines=5-7" >}}
 public func authenticateWithDropinUI(navigationController : UINavigationController) {

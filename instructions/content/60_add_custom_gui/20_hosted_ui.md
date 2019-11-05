@@ -8,7 +8,7 @@ Amazon Cognito offers a hosted user interface, i.e. a web based authentication v
 
 You can learn more about the Hosted UI experience in the [Amplify documentation](https://aws-amplify.github.io/docs/ios/authentication#using-hosted-ui-for-authentication) or in the [Amazon Cognito documentation](https://docs.aws.amazon.com/en_pv/cognito/latest/developerguide/cognito-user-pools-configuring-app-integration.html).
 
-The code to launch the hosted UI is already in the `ApplicationDelegate` class:
+The code to launch the hosted UI is already in `AppDelegate` class:
 
 {{< highlight swift >}}
     public func authenticateWithHostedUI(navigationController : UINavigationController) {
