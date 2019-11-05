@@ -351,9 +351,9 @@ The last step consists of using this `CustomLoginView` instead of the dropin or 
 
 ## Update LandingView 
 
-The `LandindView` is the view displayed when the application starts.  It routes toward a login screen or the Landmark list based on user signin attribute.  
+The `LandingView` is the view displayed when the application starts.  It routes toward a login screen or the Landmark list based on user signin attribute.  
 
-We update `LandingView` to make use of `CutomLoginView` with this code update:
+We update `LandingView` to make use of `CustomLoginView` with this code update:
 
 ```swift
 // .wrappedValue is used to extract the Bool from Binding<Bool> type
