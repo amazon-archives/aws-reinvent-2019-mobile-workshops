@@ -26,8 +26,6 @@ In the Terminal, type:
 
 1. At the Default output format, keep the defaut **None**
 
-TODO : add screenshot
-
 {{% /tab %}}
 
 {{% tab  "eu-central-1"  "Europe" %}}
@@ -43,8 +41,9 @@ In the Terminal, type:
 
 1. At the Default output format, keep the defaut **None**
 
-TODO : add screenshot
-
 {{% /tab %}}
 {{% /tabs %}}
 
+This should look like the below (actual values will vary):
+
+![aws configure](/images/10-30-aws-config.png)
