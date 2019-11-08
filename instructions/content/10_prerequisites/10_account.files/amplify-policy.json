@@ -58,6 +58,16 @@
                 "iam:PassRole",
                 "iam:PutRolePolicy",
                 "iam:UpdateRole",
+                "lambda:AddPermission",
+                "lambda:CreateFunction",
+                "lambda:DeleteFunction",
+                "lambda:GetFunction",
+                "lambda:GetFunctionConfiguration",
+                "lambda:InvokeAsync",
+                "lambda:InvokeFunction",
+                "lambda:RemovePermission",
+                "lambda:UpdateFunctionCode",
+                "lambda:UpdateFunctionConfiguration",                
                 "s3:*"
             ],
             "Resource": "*"
