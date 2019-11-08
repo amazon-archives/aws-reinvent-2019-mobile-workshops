@@ -8,7 +8,7 @@ Now that the prerequisites are installed, let's finish the configuration.
 
 ### Configuring the aws command line
 
-Before using `aws` command line, you need to configure a default **region** and give the **access key and secret key** of the IAM user created in [the previous step](http://localhost:1313/10_prerequisites/20_installs.html).
+Before using `aws` command line, you need to configure a default **region** and give the **access key and secret key** of the IAM user created in [the previous step](http://localhost:1313/10_prerequisites/10_account.html).
 
 A best practice is to deploy your infrastructure close to your customers, let's configure a default AWS Region for this workshop : Oregon (*us-west-2*) for North America or Frankfurt (*eu-central-1*) for Europe.
 
