@@ -35,7 +35,7 @@ Follow these instructions to install the prerequisites using [HomeBrew](https://
 brew install python3 
 
 # install the AWS CLI
-pip3 install --upgrade awscli
+brew install awscli
 
 # install Node.js & npm
 brew install node
