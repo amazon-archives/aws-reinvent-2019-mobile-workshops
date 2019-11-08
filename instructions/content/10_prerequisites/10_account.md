@@ -106,7 +106,7 @@ Once you have an AWS account, create an **IAM user** and follow these steps:
 1. Review your choices and click **Create user** 
 
 1. Take note of the **Access Key ID** and the **Secret access key** . You will need these in the next section.
-![Access Key](/images/10-10-access-key.png)
+![Access Key](/images/10-10-access-key.png).  When the two keys are copied, click **Close**
 
 {{% notice warning %}}
 This screen in the IAM console is the only place where you can access the secret access key.  If you fail to take a note it at this stage, you will need to regenerate a new one later.
