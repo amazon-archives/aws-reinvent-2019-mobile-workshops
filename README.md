@@ -17,7 +17,7 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 - [ ] eliminate the TODO in the code
 - [ ] use Hugo page resource to load images
 - [ ] test and dry run
-- [ ] refactor IAM permissions to use least priviledge
+- [X] refactor IAM permissions to use least priviledge
 - [ ] add reinvent specific instructions to use event engine accounts
 - [ ] ask guidance about best practices for Region choice.
 - [ ] add instruction to use other IDP (google, amazon)

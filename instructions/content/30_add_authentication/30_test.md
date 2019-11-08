@@ -43,7 +43,7 @@ token : Optional(AWSMobileClient.Tokens(idToken: Optional(AWSMobileClient.Sessio
 ```
 
 {{% notice warning %}}
-This applisation displays user personal information, such as the email address and the Cognito token in the console.  In real life DO NOT print these information in the console.  We did this for education purpose only.
+This application displays user personal information, such as the email address and the Cognito token in the console.  In real life DO NOT print these information in the console.  We did this for education purpose only.
 {{% /notice %}}
 
 You can ignore the following warning in XCode console, [as they appear only in the Simulator](https://openradar.appspot.com/45237042):
