@@ -27,7 +27,7 @@ amplify init
 
 1. Do you want to use an AWS profile? accept the default **Yes** and press enter.
 
-1. Please choose the profile you want to use: accept the default **default** and press enter.
+1. Please choose the profile you want to use: accept the default **default** or type the name of the profile you created during [step 1.3](/10_prerequisites/30_configs.html#configuring-the-aws-command-line) (such as **workshop**) and press enter.
 
 ![amplify init](/images/30-10-amplify-init.png)
 

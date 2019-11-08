@@ -18,6 +18,8 @@ In the Terminal, type:
 
 `aws configure`
 
+(if the AWS CLI is already configured, you can create a new profile by typing `aws configure --profile workshop` )
+
 1. At the **AWS Access Key** prompt, enter **the IAM user access key**
 
 1. At the **AWS Secret Access Key** prompt, enter **the IAM user secret access key**
@@ -32,6 +34,8 @@ In the Terminal, type:
 In the Terminal, type:
 
 `aws configure`
+
+(if the AWS CLI is already configured, you can create a new profile by typing `aws configure --profile workshop` )
 
 1. At the **AWS Access Key** prompt, enter **the IAM user access key**
 
