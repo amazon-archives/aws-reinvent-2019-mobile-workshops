@@ -266,6 +266,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
     }
+}
 
 // Make sure AWSMobileClient is a Cognito User Pool credentails providers
 // this makes it easy to AWSMobileClient shared instance with AppSync Client

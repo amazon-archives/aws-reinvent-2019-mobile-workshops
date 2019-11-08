@@ -23,7 +23,7 @@ Once you have an AWS account, create an **IAM user** and follow these steps:
 1. click **Attach existing policies directly**, then click the button **Create Policy**. This creates a new tab to create the policy.
 ![Create Policy](/images/10-10-create-policy.png)
 
-1. Click **JSON** tab and replace the polciy with the one below, then click **Review Policy**
+1. Click **JSON** tab and replace the policy with the one below, then click **Review Policy**
 ![Add Policy](/images/10-10-add-policy.png)
 
 ```json
@@ -87,6 +87,16 @@ Once you have an AWS account, create an **IAM user** and follow these steps:
                 "iam:PassRole",
                 "iam:PutRolePolicy",
                 "iam:UpdateRole",
+                "lambda:AddPermission",
+                "lambda:CreateFunction",
+                "lambda:DeleteFunction",
+                "lambda:GetFunction",
+                "lambda:GetFunctionConfiguration",
+                "lambda:InvokeAsync",
+                "lambda:InvokeFunction",
+                "lambda:RemovePermission",
+                "lambda:UpdateFunctionCode",
+                "lambda:UpdateFunctionConfiguration",
                 "s3:*"
             ],
             "Resource": "*"
