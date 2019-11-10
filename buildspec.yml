@@ -5,7 +5,7 @@ frontend:
     build:
       commands:
         - cd instructions
-        - hugo
+        - hugo --enableGitInfo
   artifacts:
     baseDirectory: instructions/public
     files:
