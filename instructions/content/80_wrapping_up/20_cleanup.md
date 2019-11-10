@@ -15,8 +15,10 @@ Let's first capture some information we will need to manually clean resources, a
 ```bash
 # capture a couple of information for manual cleanup 
 cd $PROJECT_DIRECTORY
-AMPLIFY_BUCKET=$(cat amplify/team-provider-info.json | jq -r .dev.awscloudformation.DeploymentBucketName)
-DEPLOYMENT_BUCKET=$(cat awsconfiguration.json | jq -r .S3TransferUtility.Default.Bucket)
+ENV_NAME=$(cat ./amplify/.config/local-env-info.json | jq -r '.envName')
+PROFILE=$(cat ./amplify/.config/local-aws-info.json | jq -r ".$ENV_NAME.profileName")
+AMPLIFY_BUCKET=$(cat ./amplify/team-provider-info.json | jq -r .dev.awscloudformation.DeploymentBucketName)
+DEPLOYMENT_BUCKET=$(cat ./awsconfiguration.json | jq -r .S3TransferUtility.Default.Bucket)
 
 # let amplify delete the backend infrastructure
 amplify delete
@@ -31,11 +33,11 @@ amplify delete
 `amplify delete` deletes most of the infrastructure created.  But it plays it safe by not deleting Amazon S3 buckets where you might have stored additional files.  Should you not ned them anymore, let's delete these now.  In a Terminal, type:
 
 ```bash
-aws s3 rm --recursive s3://$AMPLIFY_BUCKET
-aws s3 rm --recursive s3://$DEPLOYMENT_BUCKET
+aws s3 --profile $PROFILE rm --recursive s3://$AMPLIFY_BUCKET
+aws s3 --profile $PROFILE rm --recursive s3://$DEPLOYMENT_BUCKET
 
-aws s3 rb s3://$AMPLIFY_BUCKET
-aws s3 rb s3://$DEPLOYMENT_BUCKET
+aws s3 --profile $PROFILE rb s3://$AMPLIFY_BUCKET
+aws s3 --profile $PROFILE rb s3://$DEPLOYMENT_BUCKET
 
 rm awsconfiguration.json
 ```
