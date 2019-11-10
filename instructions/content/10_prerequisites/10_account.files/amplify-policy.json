@@ -43,6 +43,8 @@
                 "cognito-idp:DescribeUserPool",
                 "cognito-idp:UpdateUserPool",
                 "cognito-idp:UpdateUserPoolClient",
+                "cognito-idp:CreateResourceServer",
+                "cognito-idp:DeleteResourceServer",                
                 "dynamodb:CreateTable",
                 "dynamodb:DeleteItem",
                 "dynamodb:DeleteTable",

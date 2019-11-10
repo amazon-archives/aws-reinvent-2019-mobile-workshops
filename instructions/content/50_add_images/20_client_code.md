@@ -13,7 +13,7 @@ Now that the storage backend is ready, let's modify the application code to load
 - [update](#update-imagestore-class) the `ImageStore` class in the *Landmarks/Models/Data.swift* file to load the cloud images instead of the local ones.
 
 ## Add Amazon S3 client library
-Edit `Landmarks/Podfile` to add the Amazon S3 client dependency.  Your `Podfile` must look like this (you can safely copy/paste the entire file from belowpwd):
+Edit `$PROJECT_DIRECTORY/Podfile` to add the Amazon S3 client dependency.  Your `Podfile` must look like this (you can safely copy/paste the entire file from belowpwd):
 
 {{< highlight text "hl_lines=13">}}
 # Uncomment the next line to define a global platform for your project
@@ -321,7 +321,7 @@ and in *Landmarks/Models/Data.swift*:
 You do not need to copy/paste the code above.  We provide the above code for reading / exploration only.
 {{% /notice %}}
 
-To download images from S3, we just replace the logic inside the `loadImage()` function.
+To download images from S3, we just replace the logic inside the `loadImage()` function. In XCode, open `Landmarks/Models/Data.swift` and paste the content below:
 
 {{< highlight swift "hl_lines=51-62" >}}
 /*

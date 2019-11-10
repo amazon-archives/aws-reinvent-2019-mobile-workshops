@@ -6,20 +6,18 @@ weight = 20
 
 The starting point for the workshop is the [Apple Swift UI tutorial](https://developer.apple.com/tutorials/swiftui/tutorials) at the "Handling User Input" step.
 
-1. Download the {{% button href="/20_getting_started/20_bootstrapping_the_app.files/HandlingUserInput.zip" icon="fas fa-download" %}}project zip file{{% /button %}}
-
-1. Unzip the file, it creates the following directory structure
+1. Download the {{% button href="/20_getting_started/20_bootstrapping_the_app.files/HandlingUserInput.zip" icon="fas fa-download" %}}project zip file{{% /button %}}  
+The file has the following directory structure
 ![Directory Structure](/images/20-10-directory-structure.png)
 
 1. This workshop will start from the *Complete* version of the tutorial project.  
 In the remaining part of this workshop, `$PROJECT_DIRECTORY` will refer to `~/Downloads/amplify-ios-workshop/Complete/Landmarks`.  
-Open the XCode project:
+Unzip the file and open the XCode project:
 ```bash
 cd ~/Downloads
 mkdir amplify-ios-workshop 
 cd amplify-ios-workshop
 unzip ../HandlingUserInput.zip
-rm -rf __MACOSX
 
 PROJECT_DIRECTORY=~/Downloads/amplify-ios-workshop/Complete/Landmarks
 cd $PROJECT_DIRECTORY

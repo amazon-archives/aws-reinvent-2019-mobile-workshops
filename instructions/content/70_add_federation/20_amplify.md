@@ -6,18 +6,26 @@ weight = 20
 
 Amazon Cognito does support Identity Federation out of the box with [Login With Amazon](https://login.amazon.com/), [Login with Google](https://developers.google.com/identity/sign-in/web/sign-in), [Login with Facebook](https://developers.facebook.com/docs/facebook-login/), or any [OIDC](https://openid.net/connect/) or [SAMLv2](https://en.wikipedia.org/wiki/SAML_2.0) compliant identity provider.  
 
-We use AWS Amplify command line to configure Amazon Cognito on the backend and add support for Login With Facebook.
+We use AWS Amplify command line to update the Amazon Cognito configuration on the backend and add support for Login With Facebook.
+
+{{% notice warning %}}
+It is important to not overwrite the values we entered previously, be sure to follow instructions carefully.
+{{% /notice %}}
 
 In a terminal, type:
 
 ```bash
 cd $PROJECT_DIRECTORY
+
+# save the existing Cognito web domain
+echo $(cat awsconfiguration.json | jq -r .Auth.Default.OAuth.WebDomain | sed -e "s/\..*$//") | pbcopy
+
 amplify update auth
 ```
 
 1. What do you want to do? Choose the default **Apply default configuration with Social Provider (Federation)** and press enter.
 
-1. What domain name prefix you want us to create for you?  Accept the default and press enter.
+1. What domain name prefix you want us to create for you?  **Paste (&#8984;V)** the web domain we just saved and **press enter**.
 
 1. Enter your redirect signin URI.  Enter **landmarks://** and press enter.
 

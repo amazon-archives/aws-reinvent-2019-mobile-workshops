@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 DIR=$(dirname "${BASH_SOURCE[0]}")
 source $DIR/prerequisites.sh
@@ -15,14 +15,21 @@ CODE_DIR=$DIR/../Complete/Landmarks
 # https://docs.aws.amazon.com/en_pv/cognito/latest/developerguide/token-endpoint.html
 #
 echo "Getting an access token"
+ENV_NAME=$(cat $CODE_DIR/amplify/.config/local-env-info.json | jq -r '.envName')
+PROFILE=$(cat $CODE_DIR/amplify/.config/local-aws-info.json | jq -r ".$ENV_NAME.profileName")
 USER_POOL_ID=$(cat "$CODE_DIR/awsconfiguration.json"  | jq -r '.CognitoUserPool.Default.PoolId')
+REGION=$(cat "$CODE_DIR/awsconfiguration.json"  | jq -r '.CognitoUserPool.Default.Region')
 # create a temporary resource server.  This is mandatory for client_credentials grants
-aws cognito-idp create-resource-server --user-pool-id $USER_POOL_ID               \
+aws cognito-idp create-resource-server --region $REGION                           \
+                                       --profile $PROFILE                         \
+                                       --user-pool-id $USER_POOL_ID               \
                                        --name APIResourceServer                   \
                                        --identifier API                           \
                                        --scopes "ScopeName=all,ScopeDescription=Full API Access" > /dev/null
 # create a temporary app client to accept client_credentials request from this script
-aws cognito-idp create-user-pool-client --user-pool-id $USER_POOL_ID              \
+aws cognito-idp create-user-pool-client --region $REGION                          \
+                                        --profile $PROFILE                        \
+                                        --user-pool-id $USER_POOL_ID              \
                                         --client-name temp_client_for_cli         \
                                         --generate-secret                         \
                                         --allowed-o-auth-flows client_credentials \
@@ -90,8 +97,14 @@ done
 
 # clean up
 echo "Cleaning up"
-aws cognito-idp delete-user-pool-client --user-pool-id $USER_POOL_ID --client-id $CLIENT_ID
-aws cognito-idp delete-resource-server --user-pool-id $USER_POOL_ID --identifier API
+aws cognito-idp delete-user-pool-client --region $REGION               \
+                                        --profile $PROFILE             \
+                                        --user-pool-id $USER_POOL_ID   \
+                                        --client-id $CLIENT_ID
+aws cognito-idp delete-resource-server --region $REGION                \
+                                       --profile $PROFILE              \
+                                       --user-pool-id $USER_POOL_ID    \
+                                       --identifier API
 rm temp.json token.json graphql.json
 
 Echo "Done - success"

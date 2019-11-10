@@ -64,7 +64,7 @@ In a Terminal, type:
 
 ```bash
 cd $PROJECT_DIRECTORY
-../../../scripts/init_s3.sh
+../../scripts/init_s3.sh
 ```
 
 The script should output the following:

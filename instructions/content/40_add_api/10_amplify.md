@@ -29,13 +29,13 @@ amplify add api
 
 1. Do you want to configure advanced settings for the GraphQL API.  Select **Yes, I want to make some additional changes** and press enter.
 
-1. Choose the additional authorization types you want to configure for the API.  We do not need additional authorization types, just press enter without selecting any.
+1. Choose the additional authorization types you want to configure for the API.  We do not need additional authorization types, just **press enter** without selecting any.
 
 1. Do you have an annotated GraphQL schema? Accept the default (**No**) and press enter.
 
 1. Do you want a guided schema creation? Accept the default (**Yes**) and press enter.
 
-1. What best describes your project.  Select any proposed schema, we are going to repace it in a next step.  Press enter.
+1. What best describes your project.  Select any proposed schema, we are going to repace it in a next step.  **Press enter**.
 
 1. Do you want to edit the schema now? Enter **No** and press enter.
 
@@ -49,7 +49,7 @@ Let's edit the GraphQL schema.
 
 Below is a schema that will suit our needs for storing and querying Landmarks.
 
-1. **Paste this into Landmarks/amplify/backend/api/amplifyiosworkshop/schema.graphql**, replacing the example schema content. Remember to save the file.
+1. **Paste this into `$PROJECT_DIRECTORY/amplify/backend/api/amplifyiosworkshop/schema.graphql`**, replacing the example schema content. Remember to save the file.
 
 ```graphql
     type Landmark
@@ -135,7 +135,7 @@ In a Terminal, type:
 
 ```bash
 cd $PROJECT_DIRECTORY
-../../../scripts/init_db.sh 
+../../scripts/init_db.sh 
 ```
 
 The script should output the following:

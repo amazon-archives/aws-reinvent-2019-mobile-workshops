@@ -16,7 +16,7 @@ At high level, here is how we gonna proceed
 
 ## Add the AWS AppSync client library
 
-Edit `Landmarks/Podfile` to add the AppSync dependency.  Your `Podfile` must look like this (you can safely copy/paste the entire file from belowpwd):
+Edit `$PROJECT_DIRECTORY/Podfile` to add the AppSync dependency.  Your `Podfile` must look like this (you can safely copy/paste the entire file from belowpwd):
 
 {{< highlight text "hl_lines=12">}}
 # Uncomment the next line to define a global platform for your project

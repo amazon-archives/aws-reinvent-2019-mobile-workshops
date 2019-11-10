@@ -8,7 +8,7 @@ Amazon Cognito offers a hosted user interface, i.e. a web based authentication v
 
 You can learn more about the Hosted UI experience in the [Amplify documentation](https://aws-amplify.github.io/docs/ios/authentication#using-hosted-ui-for-authentication) or in the [Amazon Cognito documentation](https://docs.aws.amazon.com/en_pv/cognito/latest/developerguide/cognito-user-pools-configuring-app-integration.html).
 
-The code to launch the hosted UI is already in `AppDelegate` class:
+The code to launch the hosted UI is already in `AppDelegate` class (DO NOT copy it, the below is just for exploration):
 
 {{< highlight swift >}}
     public func authenticateWithHostedUI(navigationController : UINavigationController) {
@@ -30,7 +30,7 @@ The code to launch the hosted UI is already in `AppDelegate` class:
     }
 {{< /highlight >}}
 
-Notice that the `showSignIn()` is used t display both the dropin UI and the hosted UI.  The difference lies in the options passed.  To show the drop in UI, pass a `HostedUIOptions` object.
+Notice that the `showSignIn()` is used to display both the dropin UI and the hosted UI.  The difference lies in the options passed.  To show the drop in UI, pass a `HostedUIOptions` object.
 
 To experiment the hosted UI, you replace one line of code in the file *Landmarks/LoginViewController.swift*:
 
@@ -40,6 +40,39 @@ To experiment the hosted UI, you replace one line of code in the file *Landmarks
 //        app.authenticateWithDropinUI(navigationController: navController)
         app.authenticateWithHostedUI(navigationController: navController)
     }
+{{< /highlight >}}
+
+Last step is to configure the iOS app to accept the redirection URL.
+
+## Setup Amazon Cognito Hosted UI in iOS App
+
+Uppon sucessful authentication, the OAuth server (Facebook's authentication page in this case) redirects to the URI we provided when we configure Amplify authentication in [step 3.1](/30_add_authentication/10_amplify.html#add-an-authentication-backend).  We used the `landmarks://` URI.  We need to tell iOS to launch our app when a request is made for this URI.
+
+To do this, we add `landmarks://` to the app’s URL schemes:
+
+1. In XCode, right-click **Info.plist** and then choose **Open As** > **Source Code**.
+
+1. Add the following entry in URL scheme:
+{{< highlight xml "hl_lines=6-16" >}}
+<plist version="1.0">
+
+     <dict>
+     <!-- YOUR OTHER PLIST ENTRIES HERE -->
+
+     <!-- ADD AN ENTRY TO CFBundleURLTypes for Cognito Auth -->
+     <!-- IF YOU DO NOT HAVE CFBundleURLTypes, YOU CAN COPY THE WHOLE BLOCK BELOW -->
+     <key>CFBundleURLTypes</key>
+     <array>
+         <dict>
+             <key>CFBundleURLSchemes</key>
+             <array>
+                 <string>landmarks</string>
+             </array>
+         </dict>
+     </array>
+
+     <!-- ... -->
+     </dict>
 {{< /highlight >}}
 
 ## Build and test 

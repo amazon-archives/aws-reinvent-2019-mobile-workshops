@@ -9,11 +9,11 @@ weight = 20
 
 {{% tabs %}}
 {{% tab "us-west-2" "North America" %}}
-Link to [AWS AppSync web console in Oregon](https://console.aws.amazon.com/appsync/home?region=us-east-1#/apis)
+Link to [AWS AppSync web console in Oregon](https://console.aws.amazon.com/appsync/home?region=us-west-2#/apis)
 {{% /tab %}}
 
 {{% tab  "eu-central-1"  "Europe" %}}
-Link to [AWS AppSync web console in Frankfurt](https://console.aws.amazon.com/appsync/home?region=eu-west-1#/apis)
+Link to [AWS AppSync web console in Frankfurt](https://console.aws.amazon.com/appsync/home?region=eu-central-1#/apis)
 {{% /tab %}}
 {{% /tabs %}}
 
@@ -31,11 +31,21 @@ Before we can issue queries, we'll need to authenticate (because our AppSync API
 
 1. **Click the Login with User Pools button** at the top of the query editor.
 
-1. Look up the value for the **ClientId** field
+1. Look up the value for the **ClientId** field.  You can either use the script below or get the client ID in the console. To use the script, in your terminal, type:
+
+```bash
+cd $PROJECT_DIRECTORY
+../../scripts/get_app_client.sh
+```
+
+    Copy the **Client ID** value returned, for example:
+    ![Client ID](/images/40-20-client-id.png)
+
+    Alternatively, you can retrieve the ClientID in the Amazon Cognito console:
+
     1.  Click on the link to open the Cognito console in your Region: [Northern America](https://eu-west-1.console.aws.amazon.com/cognito/users/?region=us-east-1#/) or [Europe](https://eu-west-1.console.aws.amazon.com/cognito/users/?region=eu-central-1#/)
     2.  Select the User Pool named **amplifyiosworkshopxxxxx_userpool_xxxx-dev** (the xxx is generated randomly and will vary)
-    3. Click **App Client** on the left menu and click **Show Details** to reveal both the App client id and the App client secret.  Copy the **App client id** for the app that has (no secret key)
-
+    3. Click **App Clients** on the left menu, select the client named **amplifyxxxx_app_clientWeb** and click **Show Details** to reveal both the App client id and the App client secret.  Copy the **App client id**.  The correct app client has (no secret key) as "App client secret".  
     ![app client id](/images/40-20-appsync-2.png)
 
 1. Go back to the **AppSync console**, in the **Query** section Paste the value into the **ClientId** field

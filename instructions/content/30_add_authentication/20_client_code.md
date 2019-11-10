@@ -34,7 +34,8 @@ cd $PROJECT_DIRECTORY
 pod init
 ```
 
-Edit `Landmarks/Podfile` to add the Amplify dependencies.  Your `Podfile` must look like this:
+It is safe to ignore the `PBXNativeTarget` warning, we’re going to fix that in a minute.  
+Edit `$PROJECT_DIRECTORY/Podfile` to add the Amplify dependencies.  Your `Podfile` must look like this:
 
 ```text
 # Uncomment the next line to define a global platform for your project
@@ -58,11 +59,10 @@ Without changing directory, let `pod` download and install the dependencies:
 pod install --repo-update
 ```
 
-After one or two minutes, you shoud see the below (it is safe to ignore the two warnings, we're going to fix that in a minute):
-
+After one or two minutes, you shoud see the below (it is safe to ignore the three warnings, we're going to fix that in a minute):
 ![pod install](/images/30-20-pod-install-1.png)
 
-If your XCode project is open, close XCode and re-open the project *workspace* that `pod` just created.
+If your XCode project is open, **close XCode** and re-open the project *workspace* that `pod` just created.
 
 ```bash 
 open HandlingUserInput.xcworkspace/
@@ -85,8 +85,7 @@ In the Finder, drag `awsconfiguration.json` into Xcode under the top Project Nav
 
 ### Update Target Configurations for CocoaPods
 
-In your XCode project, click on **HandleUserInput** on the top left part of the screen, then **Info**.  Open **Configurations**, **Debug**.  For the **landmarks** target, replace the configuration by **Pods-landmarks.debug**. Repeat the operation for the **release** target, using **Pods-landmarks.release** configuration.  Your project should look like this:
-
+In your XCode project, click on **HandleUserInput** on the top left part of the screen, then **Info**.  Select **HandlingUserInput** under **Project**.  Open **Configurations**, **Debug**.  For the **landmarks** target, replace the configuration by **Pods-landmarks.debug**. Repeat the operation for the **release** target, using **Pods-landmarks.release** configuration.  Your project should look like this:  
 ![pod install](/images/30-20-pod-install-2.png)
 
 ### Build & Verify 
