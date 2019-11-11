@@ -78,10 +78,17 @@ If you are still authenticated, click **Sign Out** and click the user badge to s
 
 Click **Continue With Facebook**, follow the Facebook login process, including accepting Amplify iOS Workshop app to access your profile data and, eventually, you should see the Landmark list.
 
+{{% notice info %}}
+When tapping the User Badge, you might be immediately redirected to the Landmark List.  This is because your authentication is cached on the device.  The app is using Safari to display the Amazon Cognito Hosted UI and Safari is caching web cookies and other web site data.  To force the login screen to appear again, go to the phone **Settings** => **Safari** => **Clear History and Web Site Data**.  Then signout the app and tap the User Badge again.
+{{% /notice %}}
+
+![continue with facebook](/images/70-30-hostedui-3.png)
+
+
 At this stage, no code change is required if you decide to add other identity providers to your backend configuration.  The Hosted UI will automatically propose "Login with XXX" buttons based on the providers configured on the backend.  All the interactions between the identity provider and Cognito happen on the backend, no client code is involved.
 
 ## Checking Amazon Cognito Identities
 
 By choosing **Continue with Facebook**, you actually created a second identity in your backend.  As seen from Amazon Cognito, the user you created earlier and the Facebook federated user are two different identities.  You can connect to Amazon Cognito console, click on the user pool name (`amplifyiosworkshopxxxxx`), select **User and Groups** on the left menu to verify two identities have been created:
 
-![cognito identities](/images/70-30-hostedui-3.png)
+![cognito identities](/images/70-30-hostedui-30.png)
