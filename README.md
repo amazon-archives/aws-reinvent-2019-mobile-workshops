@@ -1,5 +1,7 @@
 ## re:Invent 2019 AWS Mobile Workshop
 
+https://github.com/aws-samples/aws-reinvent-2019-mobile-workshops
+
 This is the official repository for AWS re:Invent 2019 mobile workshops.
 
 ## MOB302
