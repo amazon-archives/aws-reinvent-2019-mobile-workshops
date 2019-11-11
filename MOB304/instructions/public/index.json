@@ -1,0 +1,43 @@
+[
+{
+	"uri": "https://amplify-ios-workshop.go-aws.com/",
+	"title": "Amplify iOS Workshop",
+	"tags": [],
+	"description": "",
+	"content": " Build an iOS Appusing a cloud-based backend. Welcome! This workshop is a WORK IN PROGRESS - DO NOT ATTEMPT TO FOLLOW THE INSTRUCTIONS, it will fail at some point. Please send your comments and feedback on Twitter @sebsto\n In this workshop, we will create a data-driven native iOS app, integrated with a cloud-based backend. We will use AWS Cognito to manage user authentication and we'll use AWS AppSync to get up and running quickly with a GraphQL API that backs our data in Amazon DynamoDB. We'll demonstrate how to use the AWS Amplify library to authenticate users, to communicate with our API, and to download images from Amazon S3. "
+},
+{
+	"uri": "https://amplify-ios-workshop.go-aws.com/10_prerequisites/10_account.html",
+	"title": "Create an IAM User",
+	"tags": [],
+	"description": "",
+	"content": "To follow the instructions proposed by this workshop, you need to have an AWS Account and an IAM user with administrative priviledges. In addition, you need to know the access key and secret key for the IAM users.\nIf you already have an AWS account, have IAM Administrator access and have access key and secret key, you can skip this page.\n  If you don\u0026rsquo;t already have an AWS account with Administrator access: create one now\n Once you have an AWS account, create an IAM user with administrator access to the AWS account: Create a new IAM user to use for the workshop\n Enter the user details:  Attach the AdministratorAccess IAM Policy:  Click to create the new user:  Take note of the login URL and save:  Generate and access key and secret key for the user\n  You now have an IAM user with administrative priviledges. In the remaining steps of this workshop, you will use this IAM user to programmatically access your AWS account from your laptop.\n"
+},
+{
+	"uri": "https://amplify-ios-workshop.go-aws.com/10_prerequisites.html",
+	"title": "Prerequisites",
+	"tags": [],
+	"description": "",
+	"content": " Prerequisites for the Workshop  Create an IAM User   Installs \u0026amp; Configs   "
+},
+{
+	"uri": "https://amplify-ios-workshop.go-aws.com/10_prerequisites/20_software.html",
+	"title": "Installs &amp; Configs",
+	"tags": [],
+	"description": "",
+	"content": " Before we begin coding, there are a few things we need to install, update, and configure on your laptop.\nApple Software In order to develop native applications for iOS, you need to have XCode installed on your laptop. You can download and install XCode from Apple\u0026rsquo;s App Store. The download is ~2Gb, so it might take up to one hour depending on your network connection.\nInstalling and updating You need different command line tools to be installed : aws, amplify and jq. These tools have themselves requirements on python, pip, nodejs and npm. To install and configure these, open a Terminal on your laptop and type the following commands:\n# check if pip is installed and install pip when required. # install the AWS CLI pip install --upgrade awscli # Install and use latest Node.js \u0026amp; npm # Install the AWS Amplify CLI npm install -g @aws-amplify/cli These commands will take a few minutes to finish.\n Configuring the aws command line Before using aws comnand line, you need to configure a default region and give the access key and secret key of the IAM user created in the previous step.\nA best practice is to deploy your infrastructure close to your customers, let\u0026rsquo;s configure a default AWS region for this workshop : Northern Virginia (us-east-1) for North America or Ireland (eu-west-1) for Europe.\nIn your Terminal, type:\n aws configure ...  aws configure ...  \n"
+},
+{
+	"uri": "https://amplify-ios-workshop.go-aws.com/categories.html",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://amplify-ios-workshop.go-aws.com/tags.html",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
