@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is the source code for [https://amplify-ios-workshop.go-aws.com/](https://amplify-ios-workshop.go-aws.com/)
 
 ## Status
@@ -51,3 +52,18 @@ hugo
 ```
 
 This site is automatically deployed to https://amplify-ios-workshop.go-aws.com
+=======
+## My Project
+
+TODO: Fill this README out!
+
+Be sure to:
+
+* Change the title in this README
+* Edit your repository description on GitHub
+
+## License
+
+This library is licensed under the MIT-0 License. See the LICENSE file.
+
+>>>>>>> 0d367091c143014a92a7d11f402dae1feaa4e0bc
