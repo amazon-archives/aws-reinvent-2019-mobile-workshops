@@ -4,10 +4,10 @@ frontend:
   phases:
     build:
       commands:
-        - cd instructions
+        - cd MOB304/instructions
         - hugo --enableGitInfo
   artifacts:
-    baseDirectory: instructions/public
+    baseDirectory: MOB304/instructions/public
     files:
       - '**/*'
   cache:
