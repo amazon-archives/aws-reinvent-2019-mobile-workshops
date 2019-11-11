@@ -74,6 +74,7 @@ Once you have an AWS account, create an **IAM user** and follow these steps:
                 "cognito-idp:UpdateUserPoolClient",
                 "cognito-idp:CreateResourceServer",
                 "cognito-idp:DeleteResourceServer",
+                "cognito-idp:ListUserPoolClients",
                 "dynamodb:CreateTable",
                 "dynamodb:DeleteItem",
                 "dynamodb:DeleteTable",
