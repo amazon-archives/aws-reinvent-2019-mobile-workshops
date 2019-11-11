@@ -72,17 +72,12 @@ The list of changes in the code (including Amplify configuration changes) are vi
 Build and launch the application to verify everything is working as expected. Click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
 ![build](/images/20-10-xcode.png)
 
-If you are still authenticated, click **Sign Out** and click the user badge to sign in again. You should see this:
-
+If you are still authenticated, click **Sign Out** and click the user badge to sign in again. You should see the Amazon Cognito hosted UI.  Click **Continue With Facebook**, follow the Facebook login process, including accepting Amplify iOS Workshop app to access your profile data and, eventually, you should see the Landmark list.
 ![customized drop in UI](/images/70-30-hostedui-2.png)
-
-Click **Continue With Facebook**, follow the Facebook login process, including accepting Amplify iOS Workshop app to access your profile data and, eventually, you should see the Landmark list.
 
 {{% notice info %}}
 When tapping the User Badge, you might be immediately redirected to the Landmark List.  This is because your authentication is cached on the device.  The app is using Safari to display the Amazon Cognito Hosted UI and Safari is caching web cookies and other web site data.  To force the login screen to appear again, go to the phone **Settings** => **Safari** => **Clear History and Web Site Data**.  Then signout the app and tap the User Badge again.
 {{% /notice %}}
-
-![continue with facebook](/images/70-30-hostedui-3.png)
 
 
 At this stage, no code change is required if you decide to add other identity providers to your backend configuration.  The Hosted UI will automatically propose "Login with XXX" buttons based on the providers configured on the backend.  All the interactions between the identity provider and Cognito happen on the backend, no client code is involved.
