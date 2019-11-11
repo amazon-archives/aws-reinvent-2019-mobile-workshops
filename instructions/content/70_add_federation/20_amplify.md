@@ -17,23 +17,10 @@ In a terminal, type:
 ```bash
 cd $PROJECT_DIRECTORY
 
-# save the existing Cognito web domain
-echo $(cat awsconfiguration.json | jq -r .Auth.Default.OAuth.WebDomain | sed -e "s/\..*$//") | pbcopy
-
 amplify update auth
 ```
 
-1. What do you want to do? Choose the default **Apply default configuration with Social Provider (Federation)** and press enter.
-
-1. What domain name prefix you want us to create for you?  **Paste (&#8984;V)** the web domain we just saved and **press enter**.
-
-1. Enter your redirect signin URI.  Enter **landmarks://** and press enter.
-
-1. Do you want to add another redirect signin URI?  Accept the default (**N**) and press enter.
-
-1. Enter your redirect signout URI.  Enter **landmarks://** and press enter.
-
-1. Do you want to add another redirect signout URI? Accept the default (**N**) and press enter.
+1. What do you want to do? Choose **Update OAuth social providers** and **press enter** 
 
 1. Select the identity providers you want to configure for your user pool:  Use the arrow keys to highlight **Facebook** and press **space**, then press enter.
 
@@ -43,7 +30,7 @@ amplify update auth
 
 `amplify` creates the required resources to depoy your storage service in the cloud.
 
-![amplify add storage](/images/70-20-amplify-1.png)
+![amplify update auth](/images/70-20-amplify-1.png)
 
 ## Create the API backend in the cloud
 
