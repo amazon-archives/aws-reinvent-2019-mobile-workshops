@@ -8,10 +8,6 @@ weight: 1
 
 ## Welcome!
 
-{{% notice warning %}}
-This workshop is a WORK IN PROGRESS - it might fail at some point.  Please send your comments and feedback on Twitter <a href="https://twitter.com/sebsto" target="_blank">@sebsto</a>
-{{% /notice %}}
-
 In this workshop, we will create a data-driven native iOS app, integrated with a cloud-based backend.  We will use [AWS Cognito](http://aws.amazon.com/cognito) to manage user authentication and we'll use [AWS AppSync](https://aws.amazon.com/appsync/) to get up and running quickly with a [GraphQL API](https://graphql.org/learn/) that backs our data in [Amazon DynamoDB](https://aws.amazon.com/dynamodb/). We'll demonstrate how to use the [AWS Amplify](https://aws.amazon.com/amplify/) library to authenticate users, to communicate with our API, and to download images from [Amazon S3](https://aws.amazon.com/s3/).
 
 {{% notice info %}}
