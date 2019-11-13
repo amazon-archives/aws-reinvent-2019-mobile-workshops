@@ -43,7 +43,9 @@ brew install node
 # install the AWS Amplify CLI
 npm install -g @aws-amplify/cli
 
-# install jq (only required to import some data into our API)
+# install jq
+# required to import some data into our API and
+# to automate local tasks, such as cleanup)
 brew install jq
 
 # install cocoa pods
