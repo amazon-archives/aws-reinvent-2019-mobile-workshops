@@ -20,11 +20,34 @@ Should you attend this workshop on your own or in a non-AWS event, you can skip 
 1. Click **AWS Console**
 ![link to console](/images/10-05-20.png)
 
+    The screen below has all the information you need to run the workshop:
+    ![open console](/images/10-05-30.png)
+
 1. Please note the region that the event is using. **Only actions in this region are allowed.**
 
-1. Copy and paste the CLI credentials (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`) as you will need these two values to configure the AWS Command line in [section 1.4](/10_prerequisites/30_configs.html#configuring-the-aws-command-line).
+1. Copy and paste the CLI credentials.  You will need these values thorough the workshop. Open a Terminal and execute the set of `export` commands you copied from the event engine page:
 
-1. Click the **Open AWS Console** button to open the AWS Console.  You can also copy the login link in case you want to return to the console later.
-![open console](/images/10-05-30.png)
+```bash
+
+# this is a copy paste from event engine console
+export AWS_ACCESS_KEY_ID=AKIAI44QH8DHBEXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+export AWS_SESSION_TOKEN=AQoDYXdzEJr...<remainder of security token>
+
+# create an AWS CLI profile for this workshop
+echo "[workshop]"  >> ~/.aws/config
+echo "region=us-west-2"  >> ~/.aws/config
+echo "[workshop]"  >> ~/.aws/credentials
+echo "aws_access_key_id = $AWS_ACCESS_KEY_ID"  >> ~/.aws/credentials
+echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY"  >> ~/.aws/credentials
+echo "aws_session_token = $AWS_SESSION_TOKEN"  >> ~/.aws/credentials
+
+# unset env variable to ensure CLI will use values from the profile.
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+export AWS_SESSION_TOKEN=
+```
+
+1. Finally, click the **Open AWS Console** button to open the AWS Console.  You can also copy the login link in case you want to return to the console later.
 
 Now that you have an AWS Account and a pair of Access Key / Secret Key, let's proceed to [the installation of development tools on your local machine](/10_prerequisites/20_installs.html).
