@@ -37,7 +37,6 @@ Before we can issue queries, we'll need to authenticate (because our AppSync API
 cd $PROJECT_DIRECTORY
 ../../scripts/get_app_client.sh
 ```
-
     Copy the **Client ID** value returned, for example:
     ![Client ID](/images/40-20-client-id.png)
 

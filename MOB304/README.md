@@ -11,16 +11,26 @@ Workshop web site is scaffolded and deployment pipeline ready.
 **Oct 22**
 Final application is working and demo-able.  Some tweaks and improvements can be done, but I have a basis to start to write the core of the workshop now.
 
-### TODO
+## TODO
+
+### Workshop Code
 
 - [ ] refactor code to download images asynchronously 
 - [ ] eliminate the TODO in the code
-- [ ] use Hugo page resource to load images
-- [ ] test and dry run
-- [X] refactor IAM permissions to use least priviledge
-- [ ] add reinvent specific instructions to use event engine accounts
-- [ ] ask guidance about best practices for Region choice.
+
+### Workshop Instructions
+
 - [ ] add instruction to use other IDP (google, amazon)
+- [ ] guidance about best practices for Region choice.
+- [ ] use Hugo page resource to load images
+
+### Done 
+
+- [X] add permissions to view Cognito in the console
+- [X] debug ../../scripts/get_app_client.sh 
+- [X] test and dry run
+- [X] refactor IAM permissions to use least priviledge
+- [X] add reinvent specific instructions to use event engine accounts
 - [X] scaffold the workshop web site
 - [X] host the project on github + amplify console for hosting and CI/CD.  Use the shared evangelist account.
 - [X] write the workshop instructions
@@ -48,6 +58,12 @@ To build the web site :
 ```
 cd instructions
 hugo
+```
+
+To serve the web site in development mode:
+```
+cd instructions
+hugo serve
 ```
 
 This site is automatically deployed to https://amplify-ios-workshop.go-aws.com

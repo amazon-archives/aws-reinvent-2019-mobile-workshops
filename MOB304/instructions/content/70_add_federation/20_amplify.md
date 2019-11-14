@@ -16,7 +16,6 @@ In a terminal, type:
 
 ```bash
 cd $PROJECT_DIRECTORY
-
 amplify update auth
 ```
 

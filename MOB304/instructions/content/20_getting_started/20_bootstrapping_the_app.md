@@ -10,9 +10,10 @@ The starting point for the workshop is the [Apple Swift UI tutorial](https://dev
 The file has the following directory structure
 ![Directory Structure](/images/20-10-directory-structure.png)
 
-1. This workshop will start from the *Complete* version of the tutorial project.  
-In the remaining part of this workshop, `$PROJECT_DIRECTORY` will refer to `~/Downloads/amplify-ios-workshop/Complete/Landmarks`.  
-Unzip the file and open the XCode project:
+1. This workshop will start from the *Complete* version of the tutorial project.  In the remaining part of this workshop, `$PROJECT_DIRECTORY` will refer to `~/Downloads/amplify-ios-workshop/Complete/Landmarks`.  
+
+    Unzip the file and open the XCode project:
+
 ```bash
 cd ~/Downloads
 mkdir amplify-ios-workshop 
@@ -25,10 +26,10 @@ cd $PROJECT_DIRECTORY
 open HandlingUserInput.xcodeproj
 ```
 
-You can safely ackowledge XCode's message informing you this app has been downloaded from Internet.
+    You can safely ackowledge XCode's message informing you this app has been downloaded from Internet.
 ![XCode warning](/images/20-20-xcode-warning.png)
 
-In XCode, **Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
+1. In XCode, **Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
 ![First build](/images/20-10-xcode.png)
 
 After a few seconds, you should see the application running in the iOS simulator.

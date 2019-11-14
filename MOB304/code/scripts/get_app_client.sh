@@ -23,7 +23,7 @@ USER_POOL_CLIENT=$(aws cognito-idp list-user-pool-clients --region $REGION      
                                                           --query 'UserPoolClients[].ClientName' \
                                                           --output table | grep Web | sed -e 's/|  //' | sed -e 's/  |//' )
 CLIENT_ID=$(aws cognito-idp list-user-pool-clients --region $REGION                       \
-                                                   --user-pool-id $USER_POOL_ID           \
+                                                   --profile $PROFILE                     \
                                                    --user-pool-id $USER_POOL_ID           \
                                                    --query "UserPoolClients[?ClientName=='${USER_POOL_CLIENT}'].ClientId" \
                                                    --output text )
