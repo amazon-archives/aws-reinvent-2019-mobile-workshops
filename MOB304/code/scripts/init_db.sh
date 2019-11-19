@@ -26,6 +26,11 @@ aws cognito-idp create-resource-server --region $REGION                         
                                        --name APIResourceServer                   \
                                        --identifier API                           \
                                        --scopes "ScopeName=all,ScopeDescription=Full API Access" > /dev/null
+if [ $? != 0 ];
+then
+  echo "Can not create temporary Cognito Resource Server, please check your AWS CLI credentials.  When using Event Engine, bear in mind credentials do expire after a few hours, you need to reconnect to event engine to get fresh ones and update the workshop profile in ~/.aws/credentials"
+  exit -1
+fi                                       
 # create a temporary app client to accept client_credentials request from this script
 aws cognito-idp create-user-pool-client --region $REGION                          \
                                         --profile $PROFILE                        \
