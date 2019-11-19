@@ -27,7 +27,7 @@ The file has the following directory structure
  ```
 
     You can safely ackowledge XCode's message informing you this app has been downloaded from Internet.
-    ![XCode warning](/images/20-20-xcode-warning.png)
+![XCode warning](/images/20-20-xcode-warning.png)
 
 1. In XCode, **Choose** the iOS Simulator you want to use (I am using iPhone 11) and click the **build** icon <i class="far fa-caret-square-right"></i> or press **&#8984;R**.
 ![First build](/images/20-10-xcode.png)
