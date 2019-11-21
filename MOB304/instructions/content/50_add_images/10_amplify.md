@@ -40,7 +40,7 @@ amplify add storage
 
 ![amplify add storage](/images/50-10-amplify-1.png)
 
-## Create the API backend in the cloud
+## Create the storage backend in the cloud
 
 In a Terminal, assuming you are still in your project directory, type:
 
