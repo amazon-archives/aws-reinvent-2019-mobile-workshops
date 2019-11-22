@@ -80,7 +80,7 @@ In the application preview, find the signin form provided by the `withAuthentica
 
 ![Signin Form](./images/4_signin_form.png)
 
-Select the *Create Account* link and follow the sign up flow to create a new user. Be sure to use an email address you have access to as you will need to confirm the account.
+Select the *Create Account* link and follow the sign up flow to create a new user. Be sure to use an email address you have access to as you will need to confirm the account. You may need to check your Junk Mail folder for the verification email.
 
 Once you have created a user, you will need to sign in with that user. After signing in, you will find yourself on a React starter page. In future modules, we will replace the boilerplate site.
 

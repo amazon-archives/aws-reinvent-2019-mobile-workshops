@@ -163,7 +163,7 @@ Next, create a photo in the album by replacing the previous mutation.
 mutation CreatePhoto {
   createPhoto(input: {
       photoAlbumId: "<INSERT ALBUM ID FROM PREVIOUS STEP>",
-      fullsize: { region: "us-east-1", bucket: "my-bucket", key: "photo1" }
+      fullsize: { region: "us-west-2", bucket: "my-bucket", key: "photo1" }
     })
   {
     id
