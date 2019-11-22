@@ -14,17 +14,17 @@ The file has the following directory structure
 
     Unzip the file and open the XCode project:
 
-```bash
-cd ~/Downloads
-mkdir amplify-ios-workshop 
-cd amplify-ios-workshop
-unzip ../HandlingUserInput.zip
+ ```bash
+ cd ~/Downloads
+ mkdir amplify-ios-workshop
+ cd amplify-ios-workshop
+ unzip ../HandlingUserInput.zip
 
-PROJECT_DIRECTORY=~/Downloads/amplify-ios-workshop/Complete/Landmarks
-cd $PROJECT_DIRECTORY
+ PROJECT_DIRECTORY=~/Downloads/amplify-ios-workshop/Complete/Landmarks
+ cd $PROJECT_DIRECTORY
 
-open HandlingUserInput.xcodeproj
-```
+ open HandlingUserInput.xcodeproj
+ ```
 
     You can safely ackowledge XCode's message informing you this app has been downloaded from Internet.
 ![XCode warning](/images/20-20-xcode-warning.png)

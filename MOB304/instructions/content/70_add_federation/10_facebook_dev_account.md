@@ -62,7 +62,7 @@ To setup oAuth with Facebook, follow these steps:
 
 1. Click **Save changes**.
 
-1. From the navigation bar choose **Products** and then **Set up** from **Facebook Login**.
+1. From the navigation bar on the left, click **Products (+)** and then **Set up** from **Facebook Login**.
 ![create a facebook app 6](/images/70-10-facebook-6.png)
 
 1. From the navigation bar choose **Facebook Login** and then **Settings**.

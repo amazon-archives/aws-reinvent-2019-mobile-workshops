@@ -18,7 +18,7 @@ In a Terminal, type:
 
 ```bash
 cd $PROJECT_DIRECTORY
-amplify add api 
+amplify add api
 ```
 
 1. Please select from one of the below mentioned services.  Use the arrow keys to select **GraphQL** and press enter.
@@ -81,23 +81,7 @@ There are a few things to notice about the schema:
 - `@auth` is another [GraphQL Transformer](https://aws-amplify.github.io/docs/cli-toolchain/graphql) used by Amplify.  It tells Amplify to restrict API access to users authenticated with Amazon Cognito User Pools only and to authorize read operations for all authenticated users.
 
 - the data schema itself is aligned to the JSON provided in the sample application (in *Landmarks/Resources/landmarkData.json*):
-```json
-{
-        "name": "Turtle Rock",
-        "category": "Rivers",
-        "city": "Twentynine Palms",
-        "state": "California",
-        "id": 1001,
-        "isFeatured": true,
-        "isFavorite": true,
-        "park": "Joshua Tree National Park",
-        "coordinates": {
-            "longitude": -116.166868,
-            "latitude": 34.011286
-        },
-        "imageName": "turtlerock"
-    }
-```
+![Sample Data](/images/40-10-data-sample.png)
 
 ## Create the API backend in the cloud
 
@@ -135,7 +119,7 @@ In a Terminal, type:
 
 ```bash
 cd $PROJECT_DIRECTORY
-../../scripts/init_db.sh 
+../../scripts/init_db.sh
 ```
 
 The script should output the following:
@@ -170,7 +154,7 @@ If you downloaded the sample project from Apple's Developer website instead of [
 
 If you're curious about how this script works, continue to read below, otherwise feel free to skip to the next section.
 
-### Anatomy of the import script (optional) 
+### Anatomy of the import script (optional)
 
 The script leverages the GraphQL API we just created to import the data from *landmarksData.json* file. In order to call the API, we need a valid Cognito User Pool token.  But the script has no known username or password to pass to Cognito.  So it takes advantage of having IAM Admin priviledge to temporarly add a new new client to the Cognito User Pool.  The script creates a special type of client that do not need a username or password, a **client_credentials** client type. This type of client is designed for application-to-application API access.  You can learn more about [Cognito User Pool client types in this blog post](https://aws.amazon.com/blogs/mobile/understanding-amazon-cognito-user-pool-oauth-2-0-grants/). The script requests a Cognito token to that client and uses the token to authenticate against the GraphQL API.
 
