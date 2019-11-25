@@ -154,8 +154,11 @@ function CanvasImage(props) {
     const ctx = cnvs.getContext('2d');
     const img = image.current;
 
+    img.addEventListener('load', e => {
+      ctx.drawImage(img, 0, 0);
+    });
+
     ctx.clearRect(0, 0, cnvs.width, cnvs.height);
-    ctx.drawImage(img, 0, 0);
   }, [src]);
 
   useEffect(() => {
@@ -204,6 +207,8 @@ function MLPhotoPicker(props) {
         return { ...state, file: action.file, data: action.data }
       case 'setSrc':
         return { ...state, src: action.url }
+      case 'reset':
+        return initalState;
       default:
         new Error();
     }
@@ -221,14 +226,22 @@ function MLPhotoPicker(props) {
     reader.readAsDataURL(file);
   }
 
+  function handleClose() {
+    dispatch({ type: 'reset' })
+    if (onClose) {
+      onClose(); // follow through with parent onClose 
+    }
+  }
+
   function doUpload() {
     if (onPick) {
       onPick(state.data);
     }
+    dispatch({ type: 'reset' })
   }
 
   return (
-    <Modal size='small' closeIcon trigger={ trigger } open={ open } onClose={ onClose }>
+    <Modal size='small' closeIcon trigger={ trigger } open={ open } onClose={ handleClose }>
       <Modal.Header>Add Photo</Modal.Header>
       <Modal.Content image>        
         <Modal.Description>
