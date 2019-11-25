@@ -131,14 +131,13 @@ Next, modify the imports at the top of the file to import several new UI compone
 ``` diff
 import React, { useEffect, useState, useReducer } from 'react';
 - import { Button, Card, Header, Icon, Image, Message, Modal } from 'semantic-ui-react';
-+ import { Button, Card, Header, Icon, Image, Input, Loader, Message, /* Modal */ Segment } from 'semantic-ui-react';
++ import { Button, Card, Header, Icon, Image, Input, Loader, Message, Segment } from 'semantic-ui-react';
 import { API, Storage, graphqlOperation } from 'aws-amplify';
 - import { S3Image, PhotoPicker } from 'aws-amplify-react';
 + import { S3Image } from 'aws-amplify-react';
 import awsconfig from './aws-exports';
 import uuid from 'uuid/v4';
 
-+ import useAmplifyAuth from './useAmplifyAuth';
 import MLPhotoPickerModal from './MLPhotoPickerModal';
 
 import { getAlbum as getAlbumQuery } from './graphql/queries';
@@ -146,61 +145,9 @@ import { createPhoto as createPhotoMutation } from './graphql/mutations';
 + import { updateAlbum as updateAlbumMutation } from './graphql/mutations';
 ```
 
-To enable sharing, we need to know the identity of the currently logged in user. This requires several small changes to the `AlbumDetail` component. We need to modify the component state and its managed in several places:
+To enable sharing, we need to know the identity of the currently logged in user. We use a React Context to pass this detail in from `src/App.js` as a property.
 
-``` diff
-  const initalState = {
-    album: {},
-    photos: [],
-+    currentUser: null,
-    // user interface
-    isLoading: false,
-    message: '',
-    error: null
-  };
-
-  const [openModal, showModal] = useState(false);
-  const [state, dispatch] = useReducer(reducer, initalState);
-+  const { state: { user } } = useAmplifyAuth();
-
-  useEffect(() => {
-    dispatch({ type: 'init' });
-    getAlbum(props.albumId, dispatch);
-  }, [props.albumId]);
-
-+  useEffect(() => {
-+    if (!user) { return; }
-+    const { username } = user;
-+    dispatch({ type: 'user', username });
-+ }, [user]);
-```
-
-We also need to update the component reducer function:
-
-``` diff
-  function reducer(state, action) {
-    switch(action.type) {
-      case 'init':
-        return { ...state, isLoading: true };
-      case 'set':
-        return { 
-          ...state,
-          isLoading: false,
-          album: action.album,
-          photos: action.album.photos.items ? action.album.photos.items : []
-        };
-+      case 'user':
-+        return { ...state, currentUser: action.username }
-      case 'message':
-        return { ...state, message: action.message };
-      case 'error':
-        return { ...state, error: true };
-      default:
-        new Error();
-    }
-```
-
-Next, at the bottom of the file, add a new `AlbumSharing` component just before the last line, which reads `export default AlbumDetail`. This component will display a simple control that allows the owner of an album to add viewers by name.
+At the bottom of the file, add a new `AlbumSharing` component just before the last line, which reads `export default AlbumDetail`. This component will display a simple control that allows the owner of an album to add viewers by name.
 
 ``` js
 function AlbumSharing(props) {
@@ -250,7 +197,7 @@ We can incoporate the new component in the `AlbumDetail` component as follows. A
 - <PhotoGrid photos={ state.photos } />
 + <PhotoGrid photos={ state.photos } owner={ state.album.ownerId } />
 
-+ { state.currentUser === state.album.owner &&
++ { user && user.username === state.album.owner &&
 +     <AlbumSharing album={ state.album } />}
 ```
 
