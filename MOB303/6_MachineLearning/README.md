@@ -273,7 +273,7 @@ return state.isLoading ? (
 -          <PhotoPicker preview onPick={(data) => createPhoto(data, state, dispatch)} />
 -        </Modal.Content>
 -      </Modal>
-+      { state.currentUser === state.album.owner &&
++      { user && user.username === state.album.owner &&
 +        <MLPhotoPickerModal
 +            open={openModal}
 +            onClose={() => { showModal(false) }}
@@ -292,7 +292,7 @@ return state.isLoading ? (
 
 Save your changes.
 
-Return to the application preview / React development server. Click on an album and then the "Add Photo" button to see the new photo picker:
+Return to the application preview / React development server. Click on an album and then the "Add Photo" button to see the new photo picker (note that the picker is not fully functional yet):
 
 ![Enhanced Photo Picker](./images/1_enhanced_photo_picker.png)
 

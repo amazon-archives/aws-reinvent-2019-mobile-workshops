@@ -51,7 +51,9 @@ Select your newly created repository (AmplifyPhotos) and branch (master). Click 
 
 ![Add Branch](./images/3_select_repository.png)
 
-We need to make two changes to the default build settings, both in the __Existing Amplify backend detected__ section. First, for the question "Would you like Amplify Console to deploy changes to these resources with your frontend?" select "dev".
+We need to make two changes to the default build settings, both in the __Existing Amplify backend detected__ section. First, for the backend "Select a backend environment" select "dev".
+
+![Create Amplify Service Role](./images/4_select_dev_backend.png)
 
 Second, if you have not used Amplify Console before, we need to create a new service role. Click the "Create new role" button. A new tab titled "Create role" will open. Follow the Role creation flow as shown in the following screens, clicking on the blue button in the lower corner on each step (accept default selections):
 
@@ -61,16 +63,9 @@ Back in Amplify Console, the screen should look like the following (you may need
 
 ![Configure Build](./images/5_configure_build.png)
 
-At the bottom of the "Configure build settings" page, expand "Advanced settings" and click the "Add package version override" button. Select "Amplify CLI". The Version for Amplify CLI should be "latest" as shown below.
-
-# UPDATE LATEST TO KNOWN VERSION
-
-
-![Configure Advanced Build Settings](./images/6_advanced_build_settings.png)
-
 Click "Next" at the bottom of the page.
 
-Review the settings and click "Save and Deploy." After a few minutes, your site will be ready to preview.
+Review the settings and click "Save and Deploy."
 
 ![Configure Build](./images/7_build_in_progress.png)
 

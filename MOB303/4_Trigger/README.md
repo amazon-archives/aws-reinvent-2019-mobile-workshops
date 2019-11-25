@@ -292,7 +292,7 @@ The status of your resources should be as shown below:
 
 * Are you sure you want to continue? __Y__
 
-When finished, go back to the browser and click on the album you created earlier. Click the "Add Photo" button and upload a photo of your choosing.
+When finished `push` is finished, go back to the browser and click on the first album you created earlier. Click the "Add Photo" button and upload a photo of your choosing. Unlike the previous photo upload, this one will trigger the Lambda function we just created, which will create a thumbnail of the image.
 
 > TIP: You can restart the React dev server using `npm start`.
 
@@ -354,11 +354,11 @@ function PhotoCard(props) {
         }
       </Card.Content>
     </Card>
-  )
+  );
 };
 ```
 
-Save the file, and if necessary, refresh the page. The Album Detail page should now include a thumbnail view of each uploaded photo, along with geolocation data where available.
+Save the file, and if necessary, refresh the page. The Album Detail page should now include a thumbnail view of the second uploaded photo, along with geolocation data if available (note that some images will not include EXIF data for various reasons). The first photo will not have a thumbnail version of the image.
 
 In the next module, we will deploy our application!
 
