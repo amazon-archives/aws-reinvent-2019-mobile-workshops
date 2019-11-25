@@ -274,10 +274,12 @@ Further down the page, add the new route:
 
 ``` diff
       <Container text style={{ marginTop: '5em' }}>
-        <Router>
-          <Albums path='/' user={ user } />
-+         <AlbumDetail path='/album/:albumId' user={ user } />
-        </Router>
+        <UserContext.Provider user={ user }>
+          <Router>
+            <Albums path='/' user={ user } />
++           <AlbumDetail path='/album/:albumId' user={ user } />
+          </Router>
+        </UserContext.Provider>
       </Container> 
 ```
 
