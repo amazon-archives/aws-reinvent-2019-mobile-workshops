@@ -155,10 +155,11 @@ function CanvasImage(props) {
     const img = image.current;
 
     img.addEventListener('load', e => {
-      ctx.drawImage(img, 0, 0);
+      ctx.drawImage(img, 0, 0); // firefox likes this
     });
 
     ctx.clearRect(0, 0, cnvs.width, cnvs.height);
+    ctx.drawImage(img, 0, 0); // chrome seems to prefer this approach
   }, [src]);
 
   useEffect(() => {
