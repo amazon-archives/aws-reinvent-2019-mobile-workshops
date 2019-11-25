@@ -209,7 +209,7 @@ import { Router, Link } from "@reach/router";
 import { withAuthenticator } from 'aws-amplify-react';
 import useAmplifyAuth from './useAmplifyAuth';
 
-
+export const UserContext = React.createContext();
 
 function App() {
   const { state: { user }, onSignOut } = useAmplifyAuth();
@@ -239,7 +239,9 @@ function App() {
       </Menu>
 
       <Container text style={{ marginTop: '5em' }}>
-        <p>To be updated...</p>
+        <UserContext.Provider user={ user }>
+          <p>To be updated...</p>
+        </UserContext.Provider>
       </Container>    
     </div>
   );
