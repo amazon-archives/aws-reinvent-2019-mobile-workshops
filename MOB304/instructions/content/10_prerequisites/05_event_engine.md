@@ -29,6 +29,9 @@ Should you attend this workshop on your own or in a non-AWS event, you can skip 
 
 ```bash
 # this is a copy paste from event engine console
+
+# !! PASTE THE LINES FROM AWS EVENT ENGINE PAGE !!
+
 # export AWS_ACCESS_KEY_ID=AKIAI44QH8DHBEXAMPLE
 # export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 # export AWS_SESSION_TOKEN=AQoDYXdzEJr...<remainder of security token>
@@ -42,7 +45,7 @@ echo "aws_access_key_id = $AWS_ACCESS_KEY_ID"  >> ~/.aws/credentials
 echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY"  >> ~/.aws/credentials
 echo "aws_session_token = $AWS_SESSION_TOKEN"  >> ~/.aws/credentials
 
-# unset env variableS to ensure CLI will use values from the profile.
+# unset env variables to ensure CLI will use values from the profile.
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 export AWS_SESSION_TOKEN=

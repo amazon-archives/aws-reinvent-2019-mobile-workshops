@@ -5,6 +5,7 @@ code/Complete-FINAL
 
 # Hugo public web site (generated at build time)
 instructions/public
+public
 
 #amplify
 **/amplify/\#current-cloud-backend

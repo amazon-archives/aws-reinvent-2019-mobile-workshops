@@ -58,7 +58,7 @@ If you already have one or several of these dependencies installed, just verify 
 
 ```bash
 brew --version
-# Homebrew 2.1.15
+# Homebrew 2.2.0
 # Homebrew/homebrew-core (git revision abe6e; last commit 2019-11-04)
 # Homebrew/homebrew-cask (git revision e317e; last commit 2019-11-04)
 
@@ -66,15 +66,15 @@ python3 --version
 # Python 3.7.5
 
 aws --version
-# aws-cli/1.16.273 Python/3.7.5 Darwin/18.7.0 botocore/1.13.9
+# aws-cli/1.16.290 Python/3.7.5 Darwin/18.7.0 botocore/1.13.26
 
 node --version
-# v12.12.0
+# v13.2.0
 
 amplify --version
 # Scanning for plugins...
 # Plugin scan successful
-# 3.17.0
+# 4.2.0
 
 pod --version
 # 1.8.4
