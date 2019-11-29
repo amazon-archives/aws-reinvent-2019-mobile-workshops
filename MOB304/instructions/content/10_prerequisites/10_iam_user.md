@@ -109,7 +109,8 @@ Once you have an AWS account, create an **IAM user** by following these steps:
                 "lambda:RemovePermission",
                 "lambda:UpdateFunctionCode",
                 "lambda:UpdateFunctionConfiguration",
-                "s3:*"
+                "s3:*",
+                "amplify:*"
             ],
             "Resource": "*"
         }
