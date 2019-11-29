@@ -32,7 +32,6 @@ import { Button, Form, Grid, Header, Input } from 'semantic-ui-react';
 import { API, graphqlOperation } from 'aws-amplify';
 import { Link } from "@reach/router";
 
-import useAmplifyAuth from './useAmplifyAuth';
 import { listAlbums as listAlbumsQuery } from './graphql/queries';
 
 const initalState = {
@@ -83,9 +82,8 @@ function AlbumList(props) {
   );
 }
 
-function Albums(props) {
+function Albums({ user }) {
   const [state, dispatch] = useReducer(reducer, initalState);
-  const { state: { user } } = useAmplifyAuth();
 
   useEffect(() => {
     listAlbums(dispatch)
@@ -232,9 +230,8 @@ function reducer(state, action) {
 Add a new `useEffect` Hook to the Albums component. This is where we will actually subscribe to changes in data, specifically the `onCreateAlbum` subscription. When new data arrives, we call the reducer to append the new album to the component state.
 
 ``` diff
-function Albums(props) {
+function Albums({ user }) {
   const [state, dispatch] = useReducer(reducer, initalState);
-  const { state: { user } } = useAmplifyAuth();
 
 +   useEffect(() => {
 +      if (!user) { return; }
@@ -277,10 +274,12 @@ Further down the page, add the new route:
 
 ``` diff
       <Container text style={{ marginTop: '5em' }}>
-        <Router>
-          <Albums path='/' />
-+         <AlbumDetail path='/album/:albumId'/>
-        </Router>
+        <UserContext.Provider user={ user }>
+          <Router>
+            <Albums path='/' user={ user } />
++           <AlbumDetail path='/album/:albumId' user={ user } />
+          </Router>
+        </UserContext.Provider>
       </Container> 
 ```
 
@@ -325,7 +324,7 @@ function PhotoGrid(props) {
   );
 }
 
-function AlbumDetail(props) {
+function AlbumDetail({ albumId, user }) {
   const {
     aws_user_files_s3_bucket_region: region,
     aws_user_files_s3_bucket: bucket
@@ -346,8 +345,8 @@ function AlbumDetail(props) {
 
   useEffect(() => {
     dispatch({ type: 'init' });
-    getAlbum(props.albumId, dispatch);
-  }, [props.albumId]);
+    getAlbum(albumId, dispatch);
+  }, [albumId]);
   
   function reducer(state, action) {
     switch(action.type) {
@@ -434,7 +433,7 @@ function AlbumDetail(props) {
 export default AlbumDetail;
 ```
 
-After saving the file, return to the browser (it's safe to ignore unused warnings). Click on the name of one of your albums to view the detail page.
+After saving the file, return to the browser (it's safe to ignore unused warnings). Click on the name of the first album to view the detail page.
 
 ![Album Detail](./images/3_album_detail.png)
 

@@ -154,8 +154,12 @@ function CanvasImage(props) {
     const ctx = cnvs.getContext('2d');
     const img = image.current;
 
+    img.addEventListener('load', e => {
+      ctx.drawImage(img, 0, 0); // firefox likes this
+    });
+
     ctx.clearRect(0, 0, cnvs.width, cnvs.height);
-    ctx.drawImage(img, 0, 0);
+    ctx.drawImage(img, 0, 0); // chrome seems to prefer this approach
   }, [src]);
 
   useEffect(() => {
@@ -204,6 +208,8 @@ function MLPhotoPicker(props) {
         return { ...state, file: action.file, data: action.data }
       case 'setSrc':
         return { ...state, src: action.url }
+      case 'reset':
+        return initalState;
       default:
         new Error();
     }
@@ -221,14 +227,22 @@ function MLPhotoPicker(props) {
     reader.readAsDataURL(file);
   }
 
+  function handleClose() {
+    dispatch({ type: 'reset' })
+    if (onClose) {
+      onClose(); // follow through with parent onClose 
+    }
+  }
+
   function doUpload() {
     if (onPick) {
       onPick(state.data);
     }
+    dispatch({ type: 'reset' })
   }
 
   return (
-    <Modal size='small' closeIcon trigger={ trigger } open={ open } onClose={ onClose }>
+    <Modal size='small' closeIcon trigger={ trigger } open={ open } onClose={ handleClose }>
       <Modal.Header>Add Photo</Modal.Header>
       <Modal.Content image>        
         <Modal.Description>
@@ -273,7 +287,7 @@ return state.isLoading ? (
 -          <PhotoPicker preview onPick={(data) => createPhoto(data, state, dispatch)} />
 -        </Modal.Content>
 -      </Modal>
-+      { state.currentUser === state.album.owner &&
++      { user && user.username === state.album.owner &&
 +        <MLPhotoPickerModal
 +            open={openModal}
 +            onClose={() => { showModal(false) }}
@@ -292,7 +306,7 @@ return state.isLoading ? (
 
 Save your changes.
 
-Return to the application preview / React development server. Click on an album and then the "Add Photo" button to see the new photo picker:
+Return to the application preview / React development server. Click on an album and then the "Add Photo" button to see the new photo picker (note that the picker is not fully functional yet):
 
 ![Enhanced Photo Picker](./images/1_enhanced_photo_picker.png)
 

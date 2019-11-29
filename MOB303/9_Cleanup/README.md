@@ -46,11 +46,9 @@ The Amplify `delete` command will delete all resources associated with your proj
 amplify delete
 ```
 
-
-
-## ALSO DELETE AMPLIFY CONSOLE + CODECOMMIT + CLOUD9
-
 If you are finished with today's workshop and do not want to keep the deployed the application, use `amplify delete` to remove. Note that the React application will not be deleted.
+
+For those using an account provided by AWS Event Engine, there is no further action required. If you have run this workshop in your account, please also delete CodeCommit, Cloud9, and Amplify resources.
 
 ## Thanks!
 

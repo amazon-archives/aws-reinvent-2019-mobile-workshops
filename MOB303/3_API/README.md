@@ -12,9 +12,10 @@ amplify add api
 
 * Please select from one of the below mentioned services __GraphQL__
 * Provide API name: __AmplifyPhotosApi__
-* Choose an authorization type for the API __Amazon Cognito User Pool__
+* Choose the default authorization type for the API __Amazon Cognito User Pool__
 * Do you want to configure advanced settings for the GraphQL API __Yes, I want to make some additional changes.__
-* Choose the additional authorization types you want to configure for the API __IAM__
+* Configure additional auth type? __Yes__
+* Choose the additional authorization types your want to configure for the API __IAM__
 * Do you have an annotated GraphQL schema? __No__
 * Do you want a guided schema creation? __Yes__
 * What best describes your project: __Single object with fields (e.g., “Todo” with ID, name, description)__
@@ -163,7 +164,7 @@ Next, create a photo in the album by replacing the previous mutation.
 mutation CreatePhoto {
   createPhoto(input: {
       photoAlbumId: "<INSERT ALBUM ID FROM PREVIOUS STEP>",
-      fullsize: { region: "us-east-1", bucket: "my-bucket", key: "photo1" }
+      fullsize: { region: "us-west-2", bucket: "my-bucket", key: "photo1" }
     })
   {
     id
