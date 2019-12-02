@@ -406,7 +406,7 @@ What did we just change ?
 
 - the rest of the caching and display logic is unchanged.
 
-The list of all changes we made to the code is visible in [this commit](https://github.com/sebsto/amplify-ios-workshop/commit/cbe400f6437540a98030679c7414f1cc2f506549#diff-c13367945d5d4c91047b3b50234aa7ab).
+The list of all changes we made to the code is visible in [this commit](https://github.com/aws-samples/aws-reinvent-2019-mobile-workshops/commit/cbe400f6437540a98030679c7414f1cc2f506549#diff-c13367945d5d4c91047b3b50234aa7ab).
 
 ## Launch the app 
 
