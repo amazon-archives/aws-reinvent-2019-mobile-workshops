@@ -25,7 +25,7 @@ Should you attend this workshop on your own or in a non-AWS event, you can skip 
 
 1. Please note the region that the event is using. **Only actions in this region are allowed.**
 
-1. Copy and paste the CLI credentials.  You will need these values thorough the workshop. Open a Terminal and execute the set of `export` commands you copied from the event engine page:
+1. Copy and paste the CLI credentials.  You will need these values thorough the workshop. Open a Terminal on your laptop and execute the set of `export` commands you copied from the event engine page:
 
 ```bash
 # this is a copy paste from event engine console
