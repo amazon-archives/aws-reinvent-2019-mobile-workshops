@@ -8,7 +8,7 @@ A single row to be displayed in a list of landmarks.
 import SwiftUI
 
 struct LandmarkRow: View {
-    var landmark: Landmark
+    @ObservedObject var landmark: Landmark
 
     var body: some View {
         HStack {

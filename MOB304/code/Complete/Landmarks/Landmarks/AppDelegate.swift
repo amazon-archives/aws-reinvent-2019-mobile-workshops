@@ -227,18 +227,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: AWS S3 & Image Loading
 
     /**
-        Asynchronously load the image from S3.  This method blocks until the S3 download is completed.
-        https://stackoverflow.com/questions/42484281/waiting-until-the-task-finishes
+        Asynchronously load the image from S3. 
      */
-    func image(_ imageName : String) -> Data? {
+    func image(_ imageName : String, dataAvailable: @escaping (Data) -> Void ) {
         
         print("Downloading image : \(imageName)")
-        
-        var result : Data?
-        
-        let group = DispatchGroup()
-        group.enter()
-        
+                
         let transferUtility = AWSS3TransferUtility.default()
         transferUtility.downloadData(
             forKey: "public/\(imageName).jpg",
@@ -249,17 +243,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("Can not download image : \(e)")
                 } else {
                     print("Image \(imageName) loaded")
-                    result = data!
+                    dataAvailable(data!);
                 }
                 
-                group.leave()
               }
         )
         
-        // wait for image to be downloaded
-        group.wait()
-        
-        return result
     }
 }
 

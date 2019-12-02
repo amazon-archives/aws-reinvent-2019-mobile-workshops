@@ -15,7 +15,6 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 
 ### Workshop Code
 
-- [ ] refactor code to download images asynchronously 
 - [ ] eliminate the TODO in the code
 
 ### Workshop Instructions
@@ -26,6 +25,7 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 
 ### Done 
 
+- [X] refactor code to download images asynchronously (GitHub only)
 - [X] add permissions to view Cognito in the console
 - [X] debug ../../scripts/get_app_client.sh 
 - [X] test and dry run
