@@ -417,7 +417,7 @@ After a few seconds, you should see the application running in the iOS simulator
 ![run](/images/40-30-appsync-code-2.png)
 
 {{% notice tip %}}
-There might be a small delay between the moment the Landmark list is displayed and the moment the list is populated.  This is because image loading is synchronous and calls are blocked while the images are downloaded.  One way to improve this would be to modify `UserData` class to return a pre-canned image while loading the landmark image, and replace images as they are being loaded.  
+There might be a small delay between the moment the Landmark list is displayed and the moment the list is populated.  This is because image loading is synchronous and calls are blocked while the images are downloaded.  One way to improve this would be to modify `ImageStore` class in `Data.swift` file to return a pre-canned image while loading the landmark image, and replace images as they are being loaded. You can see the required changes [on this commit](https://github.com/aws-samples/aws-reinvent-2019-mobile-workshops/commit/babb1dd8406a44a336fdee0af078bc1c0d5f6709) (It also has changes in `Landmark.swift` and `LandmarkRow.swift` files). You can take this an optional step in this workshop.  
 {{% /notice %}}
 
 Now that we have the basic building blocks of the app defined, let's explore the options offered to customize the authentication user interface and user experience.
