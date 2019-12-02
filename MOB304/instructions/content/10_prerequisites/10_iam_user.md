@@ -5,7 +5,7 @@ weight = 1
 +++
 
 {{% notice warning %}}
-If you are attending this MOB304 workshop at AWS re:Invent 2019 (in other words, if you are reading this on Monday 2 / 12, 2pm PST, Grand Ballroom D - T2 @ Mirage), you can choose to use a temporary account for the duration of this workshop.  
+If you are attending this MOB304 workshop at AWS re:Invent 2019 (in other words, if you are reading this on Monday 2 / 12, 4:45pm PST, Grand Ballroom D - T2 @ Mirage), you can choose to use a temporary account for the duration of this workshop.  
 If not done already, **follow [these instructions](05_event_engine.html) to access a temporary AWS account**.  Once you have access, [proceed to next section](/10_prerequisites/20_installs.html). **You can safely skip this page**.
 {{% /notice %}}
 
