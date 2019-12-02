@@ -65,7 +65,7 @@ struct LandingView_Previews: PreviewProvider {
 }
 {{< /highlight >}}
 
-The list of changes in the code (including Amplify configuration changes) are visible [in this commit](https://github.com/sebsto/amplify-ios-workshop/commit/df36753402d3dc123f4beaef095d4510dcfa1188).
+The list of changes in the code (including Amplify configuration changes) are visible [in this commit](https://github.com/aws-samples/aws-reinvent-2019-mobile-workshops/commit/df36753402d3dc123f4beaef095d4510dcfa1188).
 
 ## Build and Test
 

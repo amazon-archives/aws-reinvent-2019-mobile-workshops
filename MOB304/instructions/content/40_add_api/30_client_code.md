@@ -294,7 +294,7 @@ What we did change ?
 
 - finally, we added code to query the API and to populate the Landmrk list (`self.queryLandmarks()`) at two places.  First in the Authentication Listener Hub, when the app receives the `.signedIn` event, second in `AWSMobileClient.default().initialize` to ensure the application lods the list at startup, when the user is already authenticated. 
 
-The list of all changes we made to the code is visible in [this commit](https://github.com/sebsto/amplify-ios-workshop/commit/9ec7a9a76395f49e324781fb2cad055d9e7d087a).
+The list of all changes we made to the code is visible in [this commit](https://github.com/aws-samples/aws-reinvent-2019-mobile-workshops/commit/9ec7a9a76395f49e324781fb2cad055d9e7d087a).
 
 ## Launch the app 
 
