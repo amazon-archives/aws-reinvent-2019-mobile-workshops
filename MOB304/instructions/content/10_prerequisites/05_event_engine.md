@@ -38,8 +38,10 @@ Should you attend this workshop on your own or in a non-AWS event, you can skip 
 
 # create an AWS CLI profile for this workshop
 # IF YOU ALREADY HAVE A PROFILE NAMED "WORKSHOP" => CHOOSE ANOTHER NAME !
+echo >> ~/.aws/config
 echo "[workshop]"  >> ~/.aws/config
 echo "region=us-west-2"  >> ~/.aws/config
+echo >> ~/.aws/credentials
 echo "[workshop]"  >> ~/.aws/credentials
 echo "aws_access_key_id = $AWS_ACCESS_KEY_ID"  >> ~/.aws/credentials
 echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY"  >> ~/.aws/credentials
