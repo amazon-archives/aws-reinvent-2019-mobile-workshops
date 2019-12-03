@@ -28,6 +28,10 @@ identifier = "tw"
 url = "https://twitter.com/intent/user?screen_name=sebsto"
 weight = 1
 
+[markup.goldmark.renderer]
+unsafe= true
+# https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032
+
 [outputs]
 home = [ "HTML", "AMP", "RSS", "JSON"]
 page = [ "HTML", "AMP"]
