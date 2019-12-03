@@ -27,12 +27,12 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 
 - [ ] remove re:invent specific instructions
 - [ ] add s3 async download code to workshop instructions
-- [ ] use curl to download ZIP file
 - [ ] add instruction to use other IDP (apple, google, amazon)
 - [ ] use Hugo page resource to load images
 
 ### Done 
 
+- [X] use curl to download ZIP file
 - [X] test presence of ~/.aws directory in setup instructions
 - [X] refactor code to download images asynchronously (GitHub only)
 - [X] add permissions to view Cognito in the console

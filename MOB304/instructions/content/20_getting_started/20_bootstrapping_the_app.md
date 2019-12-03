@@ -15,14 +15,20 @@ The file has the following directory structure
     Unzip the file and open the XCode project:
 
  ```bash
+ # download the workshop ZIP file
+ curl -o ~/Downloads/HandlingUserInput.zip https://amplify-ios-workshop.go-aws.com/20_getting_started/20_bootstrapping_the_app.files/HandlingUserInput.zip
+
+ # unzip 
  cd ~/Downloads
  mkdir amplify-ios-workshop
  cd amplify-ios-workshop
  unzip ../HandlingUserInput.zip
 
+ # set env variable
  PROJECT_DIRECTORY=~/Downloads/amplify-ios-workshop/Complete/Landmarks
  cd $PROJECT_DIRECTORY
 
+ # open xcode 
  open HandlingUserInput.xcodeproj
  ```
 
