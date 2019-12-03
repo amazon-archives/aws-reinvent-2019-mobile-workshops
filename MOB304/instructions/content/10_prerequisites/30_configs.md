@@ -5,8 +5,7 @@ weight = 30
 +++
 
 {{% notice warning %}}
-If you are attending this MOB304 workshop at AWS re:Invent 2019 **and** you are using a temporary AWS account obtained previously, **You can safely skip this page**.  
-If not done already, **follow [these instructions](05_event_engine.html) to access a temporary AWS account**.  Once you have access, [proceed to next section](/20_getting_started.html).
+When attending this workshop during an event organised by AWS, you can choose to use a temporary account for the duration of this workshop.  If not done already, **follow [these instructions](05_event_engine.html) to access a temporary AWS account**.  Once you have access, [proceed to next section](/20_getting_started.html).
 {{% /notice %}}
 
 Now that the prerequisites are installed, let's finish the configuration.
