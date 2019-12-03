@@ -1,0 +1,6 @@
+{
+    "Version": 5,
+    "transformers": [
+        "./reinvent-string-validator"
+    ]
+}

@@ -1,0 +1,5 @@
+type Todo @model {
+  id: ID!
+  name: String! @length(minLength: 5, maxLength: 10)
+  description: String
+}

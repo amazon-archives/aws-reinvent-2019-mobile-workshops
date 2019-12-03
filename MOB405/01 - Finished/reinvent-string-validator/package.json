@@ -1,0 +1,25 @@
+{
+  "name": "reinvent-string-validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/graphql": "^0.13.4",
+    "@types/node": "^8.10.59",
+    "typescript": "~3.6.4"
+  },
+  "dependencies": {
+    "graphql": "^0.13.2",
+    "graphql-mapping-template": "^3.25.0",
+    "graphql-transformer-common": "^3.32.0",
+    "graphql-transformer-core": "^5.18.0"
+  }
+}
