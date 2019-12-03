@@ -6,10 +6,18 @@ theme = "hugo-theme-learn"
 uglyurls = true
 googleAnalytics = "UA-151590472-1"
 sectionPagesMenu = "main"
-pygmentsCodeFences = true
 
-[blackfriday]
-hrefTargetBlank = true
+# this is not necessary anymore with hugo 0.60 https://gohugo.io/news/0.60.0-relnotes/
+#pygmentsCodeFences = true
+#[blackfriday]
+#hrefTargetBlank = true
+
+[markup.highlight]
+codeFences = true
+
+[markup.goldmark.renderer]
+unsafe= true
+# https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032
 
 [params]
 themeVariant = "mine"
@@ -27,10 +35,6 @@ name = "<i class='fab fa-twitter fa-lg'></i> @sebsto"
 identifier = "tw"
 url = "https://twitter.com/intent/user?screen_name=sebsto"
 weight = 1
-
-[markup.goldmark.renderer]
-unsafe= true
-# https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032
 
 [outputs]
 home = [ "HTML", "AMP", "RSS", "JSON"]
