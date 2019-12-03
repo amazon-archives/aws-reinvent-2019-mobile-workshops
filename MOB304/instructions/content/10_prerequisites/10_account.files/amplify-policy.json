@@ -71,7 +71,8 @@
                 "lambda:RemovePermission",
                 "lambda:UpdateFunctionCode",
                 "lambda:UpdateFunctionConfiguration",                
-                "s3:*"
+                "s3:*",
+                "amplify:*"                
             ],
             "Resource": "*"
         }

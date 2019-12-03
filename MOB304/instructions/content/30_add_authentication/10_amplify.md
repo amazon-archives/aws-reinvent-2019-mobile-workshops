@@ -62,7 +62,7 @@ amplify add auth
 
 1. Do you want to add another redirect signout URI? Accept the default **N** and press enter.
 
-1. Select the social providers you want to configure for your user pool. Do not select any other provider at this stage, press enter.
+1. Select the social providers you want to configure for your user pool. **Do not select any other provider at this stage**, press **enter**.
 
 ![amplify init](/images/30-10-amplify-add-auth.png)
 

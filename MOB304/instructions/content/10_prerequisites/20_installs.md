@@ -21,18 +21,15 @@ This workshop requires [Swift 5.1](https://swift.org) and [Swift UI](https://dev
 
 You need different command line tools to be installed : `aws`, `amplify`, `cocoapods` and `jq`.  These tools have themselves requirements on `python`, `pip`, `nodejs` and `npm`.  To install and configure these, open a Terminal on your laptop and type the following commands:
 
-{{% tabs %}}
-{{% tab "brew" "Installation" %}}
 
 Follow these instructions to install the prerequisites using [HomeBrew](https://brew.sh/) package manager. 
 
 ```bash
-
 # install brew itself
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install python3 and pip3
-brew install python3 
+brew install python3
 
 # install the AWS CLI
 brew install awscli
@@ -51,14 +48,16 @@ brew install jq
 # install cocoa pods
 sudo gem install cocoapods
 ```
-{{% /tab %}}
 
-{{% tab "version" "Version Check" %}}
+{{% notice note %}}
+These commands will take a few minutes to finish.
+{{% /notice %}}
+
 If you already have one or several of these dependencies installed, just verify you have the latest version.  Here are the versions we tested the workshop instructions with.  Any more recent version should work as well.
 
 ```bash
 brew --version
-# Homebrew 2.1.15
+# Homebrew 2.2.0
 # Homebrew/homebrew-core (git revision abe6e; last commit 2019-11-04)
 # Homebrew/homebrew-cask (git revision e317e; last commit 2019-11-04)
 
@@ -66,27 +65,19 @@ python3 --version
 # Python 3.7.5
 
 aws --version
-# aws-cli/1.16.273 Python/3.7.5 Darwin/18.7.0 botocore/1.13.9
+# aws-cli/1.16.290 Python/3.7.5 Darwin/18.7.0 botocore/1.13.26
 
 node --version
-# v12.12.0
+# v13.2.0
 
 amplify --version
 # Scanning for plugins...
 # Plugin scan successful
-# 3.17.0
+# 4.2.0
 
 pod --version
 # 1.8.4
 ```
-
-{{% /tab %}}
-
-{{% /tabs %}}
-
-{{% notice note %}}
-These commands will take a few minutes to finish.
-{{% /notice %}}
 
 To learn more about the tools we are instaling, you can follow the following links:
 

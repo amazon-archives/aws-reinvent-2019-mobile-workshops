@@ -25,24 +25,30 @@ Should you attend this workshop on your own or in a non-AWS event, you can skip 
 
 1. Please note the region that the event is using. **Only actions in this region are allowed.**
 
-1. Copy and paste the CLI credentials.  You will need these values thorough the workshop. Open a Terminal and execute the set of `export` commands you copied from the event engine page:
+1. Copy and paste the CLI credentials.  You will need these values thorough the workshop. Open a Terminal on your laptop and execute the set of `export` commands you copied from the event engine page:
 
 ```bash
 # this is a copy paste from event engine console
+
+# !! PASTE THE LINES FROM AWS EVENT ENGINE PAGE !!
+
 # export AWS_ACCESS_KEY_ID=AKIAI44QH8DHBEXAMPLE
 # export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 # export AWS_SESSION_TOKEN=AQoDYXdzEJr...<remainder of security token>
 
 # create an AWS CLI profile for this workshop
 # IF YOU ALREADY HAVE A PROFILE NAMED "WORKSHOP" => CHOOSE ANOTHER NAME !
+mkdir ~/.aws &>/dev/null # harmless when the directory already exists
+echo >> ~/.aws/config
 echo "[workshop]"  >> ~/.aws/config
 echo "region=us-west-2"  >> ~/.aws/config
+echo >> ~/.aws/credentials
 echo "[workshop]"  >> ~/.aws/credentials
 echo "aws_access_key_id = $AWS_ACCESS_KEY_ID"  >> ~/.aws/credentials
 echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY"  >> ~/.aws/credentials
 echo "aws_session_token = $AWS_SESSION_TOKEN"  >> ~/.aws/credentials
 
-# unset env variableS to ensure CLI will use values from the profile.
+# unset env variables to ensure CLI will use values from the profile.
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 export AWS_SESSION_TOKEN=

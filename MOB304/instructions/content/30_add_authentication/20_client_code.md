@@ -559,4 +559,4 @@ Before proceeding to the next steps, **build** (&#8984;B) the project to ensure 
 
 ## Summary
 
-The list of all changes we made to the code is visible in [this commit](https://github.com/sebsto/amplify-ios-workshop/commit/5c2813864e6824fec55953bb40a848cd87fb7f9c).
+The list of all changes we made to the code is visible in [this commit](https://github.com/aws-samples/aws-reinvent-2019-mobile-workshops/commit/5c2813864e6824fec55953bb40a848cd87fb7f9c).

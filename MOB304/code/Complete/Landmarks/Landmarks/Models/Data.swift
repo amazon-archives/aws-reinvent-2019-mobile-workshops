@@ -35,37 +35,69 @@ func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
 }
 
 final class ImageStore {
+    
+    // a cache for my images
     typealias _ImageDictionary = [String: CGImage]
     fileprivate var images: _ImageDictionary = [:]
 
     fileprivate static var scale = 2
-    
     static var shared = ImageStore()
     
-    func image(name: String) -> Image {
-        let index = _guaranteeImage(name: name)
-        
-        return Image(images.values[index], scale: CGFloat(ImageStore.scale), label: Text(verbatim: name))
-    }
-
-    // load the image from Amazon S3 instead of local resource bundle
-    static func loadImage(name: String) -> CGImage {
-        let app = UIApplication.shared.delegate as! AppDelegate
+    init() {
+        // create a placeholder image at initialization time
         guard
-            // going trough a UIImage is the shortest way I found to get a CGImage from NSData
-            let i = UIImage(data: app.image(name)!),
-            let image = i.cgImage
+            let url = Bundle.main.url(forResource: "white", withExtension: "jpg"),
+            let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
+            let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
         else {
-            fatalError("Couldn't load image \(name).jpg from Amazon S3.")
+            fatalError("Couldn't load image white.jpg from main bundle.")
         }
-        return image
+        
+        // and cache it
+        images["placeholder"] = image
     }
     
-    fileprivate func _guaranteeImage(name: String) -> _ImageDictionary.Index {
-        if let index = images.index(forKey: name) { return index }
+    // return the placeholder
+    func placeholder() -> Image {
+        return self.image(name: "placeholder", landmark: nil)
+    }
+    
+    // return the image
+    func image(name: String, landmark : Landmark?) -> Image {
         
-        images[name] = ImageStore.loadImage(name: name)
-        return images.index(forKey: name)!
+        // first check if CGImage is in the cache, return the image when it is in the cache
+        if let index = images.index(forKey: name) {
+            
+            // create an image from CGImage at the correct size
+            let image =  Image(images.values[index], scale: CGFloat(ImageStore.scale), label: Text(verbatim: name))
+    
+            // set the landmark image
+            // this will trigger the update of the View (hence switching to GUI thread)
+            DispatchQueue.main.async() {
+                if let l = landmark {
+                    l.image = image
+                }
+            }
+            
+            return image
+
+        } else {
+        
+            // asynchronously load image, pass a callback to be notified when loaded
+            let app = UIApplication.shared.delegate as! AppDelegate
+            app.image(name, dataAvailable: { (data) -> Void in
+                
+                // image is loaded, store it in the cache
+                self.images[name] = UIImage(data: data)?.cgImage
+                
+                // recursive call to trigger an update on Landmark object
+                let _ = self.image(name: name, landmark: landmark)
+                
+            })
+        
+            // return any image, it will not be used.
+            return self.placeholder()
+        }
     }
 }
 

@@ -2,6 +2,12 @@ This is the source code for [https://amplify-ios-workshop.go-aws.com/](https://a
 
 ## Status
 
+**Dec 2**
+First delivery at re:Invent 2019
+
+**Nov 15**
+Dry Run done
+
 **Oct 27**
 First draft of workshop instruction released
 
@@ -15,17 +21,20 @@ Final application is working and demo-able.  Some tweaks and improvements can be
 
 ### Workshop Code
 
-- [ ] refactor code to download images asynchronously 
 - [ ] eliminate the TODO in the code
 
 ### Workshop Instructions
 
-- [ ] add instruction to use other IDP (google, amazon)
-- [ ] guidance about best practices for Region choice.
+- [ ] remove re:invent specific instructions
+- [ ] add s3 async download code to workshop instructions
+- [ ] add instruction to use other IDP (apple, google, amazon)
 - [ ] use Hugo page resource to load images
 
 ### Done 
 
+- [X] use curl to download ZIP file
+- [X] test presence of ~/.aws directory in setup instructions
+- [X] refactor code to download images asynchronously (GitHub only)
 - [X] add permissions to view Cognito in the console
 - [X] debug ../../scripts/get_app_client.sh 
 - [X] test and dry run

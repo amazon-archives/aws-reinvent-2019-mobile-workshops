@@ -24,8 +24,8 @@ The main learning objective of this workshop is to let you discover how to take 
 
 We divided this workshop in three parts :
 
-- In the first part ([section 3](30_add_authentication.html)) you will learn how to add a user authentication flow to your application.  In real life, multiple flows are required to support user authentication : SignIn, SignUp, Forgot Password, Email / Phone number verification etc.
+- In the first part ([section 3](30_add_authentication.html)) you will learn how to add a user authentication flow to your application.  In real life, multiple flows are required to support user authentication : SignIn, SignUp, Forgot Password, Email / Phone number verification etc. We are going to implement all of them with just a few lines of code.
 
-- In the second part ([section 4](40_add_api.html) and [5](50_add_images.html)) you will learn how to deploy and call an API from your mobile application.
+- In the second part ([section 4](40_add_api.html) and [section 5](50_add_images.html)) you will learn how to deploy and call an API from your mobile application.
 
 - Finally, you will learn how to customize the authentication user interface ([section 6](60_add_custom_gui.html)) and to add Identity Federation for your login screen (also known as "Login with XXX") ([section 7](70_add_federation.html))
