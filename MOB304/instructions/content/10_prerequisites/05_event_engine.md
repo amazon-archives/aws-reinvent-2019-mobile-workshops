@@ -38,6 +38,7 @@ Should you attend this workshop on your own or in a non-AWS event, you can skip 
 
 # create an AWS CLI profile for this workshop
 # IF YOU ALREADY HAVE A PROFILE NAMED "WORKSHOP" => CHOOSE ANOTHER NAME !
+mkdir ~/.aws &>/dev/null # harmless when the directory already exists
 echo >> ~/.aws/config
 echo "[workshop]"  >> ~/.aws/config
 echo "region=us-west-2"  >> ~/.aws/config
