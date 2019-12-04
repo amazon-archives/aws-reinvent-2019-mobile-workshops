@@ -15,10 +15,12 @@ Second, replace placeholder body content with a router that defines the various 
 
 ``` diff
 <Container text style={{ marginTop: '5em' }}>
+  <UserContext.Provider user={ user }>
 -   <p>To be updated...</p>
 +   <Router>
 +     <Albums path='/' user={ user } />
 +   </Router>
+  </UserContext.Provider>
 </Container>
 ```
 

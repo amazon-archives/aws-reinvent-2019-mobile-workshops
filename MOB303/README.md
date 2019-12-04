@@ -68,8 +68,6 @@ The Amplify CLI allows you to configure all the services needed to power your ba
 npm install -g @aws-amplify/cli
 ```
 
-> If you are using your laptop, you will also need to run `amplify configure`. See a video walkthrough of the configuration process [here](https://www.youtube.com/watch?v=fWbM5DLh25U).
-
 Once we have the CLI installed, we can initialize a new Amplify project. The `init` command will setup your local environment and create three cloud resources: (1) IAM role for unauthenticated user, (2) IAM role for authenticated users, and (3) an S3 bucket for deployments. Run the following command and respond to prompts as shown:
 
 ``` bash
