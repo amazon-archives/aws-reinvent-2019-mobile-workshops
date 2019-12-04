@@ -17,7 +17,7 @@ Second, replace placeholder body content with a router that defines the various 
 <Container text style={{ marginTop: '5em' }}>
 -   <p>To be updated...</p>
 +   <Router>
-+     <Albums path='/' />
++     <Albums path='/' user={user} />
 +   </Router>
 </Container>
 ```
