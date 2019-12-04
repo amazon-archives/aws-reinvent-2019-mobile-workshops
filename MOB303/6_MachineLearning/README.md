@@ -1,6 +1,6 @@
 # Build and ship full-stack serverless apps with AWS Amplify
 
-## Maching Learning
+## Machine Learning
 
 In this module, we will use Machine Learning to enhance the application's photo picker. Until now, the application has uploaded the image to S3 immediately on selection. Here, we extend the photo picker to find celebrity faces in the image prior to upload.
 
