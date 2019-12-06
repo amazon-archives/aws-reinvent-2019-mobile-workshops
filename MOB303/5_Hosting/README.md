@@ -39,7 +39,7 @@ git commit -m "Initial commit"
 git push origin master
 ```
 
-Next, navgiate to [Amplify Console](https://console.aws.amazon.com/amplify/home) and click the "Get Started" button under Deploy.
+Next, navigate to [Amplify Console](https://console.aws.amazon.com/amplify/home) and click the "Get Started" button under Deploy.
 
 ![Get Started](./images/1_amplify_console_get_started.png)
 
