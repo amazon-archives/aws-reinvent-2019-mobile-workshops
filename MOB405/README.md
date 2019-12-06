@@ -213,7 +213,9 @@ $ npm run build
 
 If everything is correct we have a compiled transformer that is already installed in the ```validatortest``` project.
 
-Amplify CLI provides a mocking feature which enables us to test the project without deployment, start the mocking from the ```validatortest``` directory: ```amplify mock```
+> To check if the project is initialized for Amplify CLI, execute the ```amplify status``` command. If it gives an error about the project is not initialized, then execute ```amplify init```. If Amplify CLI was never configured on the machine, you've to run ```amplify configure``` a one time configuration command before init.
+
+Amplify CLI provides a mocking feature which enables us to test the project locally without an actual cloud deployment. Start the mocking from the ```validatortest``` directory by executing the following command: ```amplify mock```
 
 A similar output should be in the console:
 
@@ -280,3 +282,13 @@ query ListTodos {
 ```
 
 As we can see the validation worked and in two cases we got the proper error messages and only 1 todo was inserted into the DynamoDB datastore.
+
+## Cleanup cloud deployment
+
+To remove the resources that were deployed by ```amplify init``` issue the following command from the ```validatortest``` folder:
+
+```
+$ amplify delete
+```
+
+At this point all the resources are removed from the cloud.

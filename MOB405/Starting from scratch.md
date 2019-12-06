@@ -14,6 +14,16 @@ $ mkdir reinvent-string-validator
 $ mkdir validatortest
 ```
 
+### Install Amplify CLI
+
+> If there is no Amplify CLI is installed on the machine or if the version of it is less than 4.5.0, make sure you update it to the latest version.
+
+```
+$ npm i -g @aws-amplify/cli
+```
+
+If this is a fresh install of Amplify CLI, you have to run ```amplify configure``` to create a AWS user and a profile on your machine.
+
 ## 2. Transformer setup
 
 ### Create the transformer package, add dependencies

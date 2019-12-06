@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "graphql": "^0.13.2",
-    "graphql-mapping-template": "^3.25.0",
-    "graphql-transformer-common": "^3.32.0",
-    "graphql-transformer-core": "^5.18.0"
+    "graphql-mapping-template": "^4.5.0",
+    "graphql-transformer-common": "^4.5.0",
+    "graphql-transformer-core": "^6.5.0"
   }
 }
