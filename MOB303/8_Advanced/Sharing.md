@@ -112,7 +112,7 @@ amplify push
 
 While Amplify performs updates, feel free to move on.
 
-To enable sharing in the React application, we need to make several changes in `src/AlbumDetails.js` and adjust the `getAlbum` query.
+To enable sharing in the React application, we need to make several changes in `src/AlbumDetail.js` and adjust the `getAlbum` query.
 
 First, open `src/graphql/queries.js` and modify the `getAlbum` query as shown below, then save the file:
 
