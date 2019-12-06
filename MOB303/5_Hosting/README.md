@@ -39,7 +39,7 @@ git commit -m "Initial commit"
 git push origin master
 ```
 
-Next, navgiate to [Amplify Console](https://console.aws.amazon.com/amplify/home) and click the "Get Started" button under Deploy.
+Next, navgiate to [Amplify Console](https://console.aws.amazon.com/amplify/home) and click the "Get Started" button under Deploy. NOTE: If you are using AWS Event ENgine, you might not see the screeb with Getting Started. Instead, click to 'Connect to app' on top right.
 
 ![Get Started](./images/1_amplify_console_get_started.png)
 
